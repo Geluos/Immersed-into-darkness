@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - SpawnFB
   - Enemy
+  - Enemy1
+  - FightController
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
+  - 
   - 
   - 
   - 
