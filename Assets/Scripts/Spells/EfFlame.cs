@@ -7,12 +7,14 @@ public class EfFlame : Effects
 	public Characters character;
 	public float damage;
 	private float interval;
+	public GameObject smoke;
 
     void Update()
     {
 		if (time<=0)
 		{
 			Destroy(gameObject);
+			Destroy(smoke);
 		}
 		else
 		{

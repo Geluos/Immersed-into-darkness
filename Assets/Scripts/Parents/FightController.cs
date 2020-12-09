@@ -51,6 +51,9 @@ public class FightController : MonoBehaviour
 	public TextMeshProUGUI textTimeRes;
 	[HideInInspector] public int CurrentUnitNum = -1;
 
+	public AudioSource music1;
+	public AudioSource music2;
+
     void Start()
     {
 		Canvas=CanvasObject.transform;
@@ -61,19 +64,37 @@ public class FightController : MonoBehaviour
 			icon[i].fight = this; 
 			icon[i].num = i;
 		}
+		StartCoroutine(PlayMusic());
     }
-	
-	void ChangeCurrentUnit()
+
+	IEnumerator PlayMusic()
 	{
-		if (friends.Count!=0)
+		yield return new WaitForSeconds(1);
+		music1.Play();
+		//yield return new WaitForSeconds(6.0857f);
+		yield return new WaitForSeconds(music1.clip.length);
+		music2.Play();
+	}
+
+		void ChangeCurrentUnit()
+	{
+		if (Input.GetKeyDown(KeyCode.Tab))
 		{
-			if (Input.GetKeyDown(KeyCode.Tab))
+			if (CurrentUnit==null)
 			{
-				if (CurrentUnit==null)
-				{
-					friends[0].GetSpells();
-				}
+				friends[0].GetSpells();
+				CurrentUnitNum=0;
 			}
+			else
+			{
+				CurrentUnitNum++;
+				if (CurrentUnitNum>=friends.Count) {CurrentUnitNum=0;}
+				friends[CurrentUnitNum].GetSpells();
+			}
+			SelectFriend.SetActive(false);
+			SelectEnemy.SetActive(false);
+			select_friend=false;
+			select_enemy=false;
 		}
 	}
 	
@@ -104,6 +125,10 @@ public class FightController : MonoBehaviour
 				if (enemies[i].EfFlame!=null) {Destroy(enemies[i].EfFlame.gameObject);}
 				enemies[i].sprite.color = new Color (1f, 1f, 1f, 1f);
 			}
+		}
+		else
+		{
+			ChangeCurrentUnit();
 		}
 		if (res)
 		{
@@ -142,6 +167,11 @@ public class FightController : MonoBehaviour
             resEn = 0;
 			//UPDATE
         }
+	
+		if(Input.GetKey("escape"))
+		{
+			Application.LoadLevel("Menu");
+		}
 	}
 	
 	public void SpellUseTarget()

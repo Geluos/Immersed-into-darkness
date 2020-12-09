@@ -32,7 +32,12 @@ public class EfFireball : Effects
                 Destroy(gameObject);
                 Destroy(prefFB);
             }
-        } else { Destroy(gameObject); }
+        } 
+        else 
+        { 
+            //GameObject pS = Instantiate(Play_Sound, transform.position, transform.rotation) as GameObject;
+            Destroy(gameObject); 
+        }
     }
 
 }

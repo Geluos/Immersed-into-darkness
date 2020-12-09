@@ -27,6 +27,13 @@ public abstract class Characters : MonoBehaviour
 	[HideInInspector] public Effects EfIce;
 	[HideInInspector] public bool IsFreezing = false;
 	
+	[HideInInspector]  public float insp = 0;
+    [HideInInspector]  public float minusCtime = 0;
+    [HideInInspector]  public float time = 0;
+	
+	[HideInInspector] public Effects Shield;
+	[HideInInspector] public float regen = 0;
+	
 	public void TakePoisonDamage() 
 	{
 		hp-=PoisonDamage;
@@ -67,7 +74,12 @@ public abstract class Characters : MonoBehaviour
 	
 	public void TakeDamage(float damage)
 	{
-		hp-=damage;
+		if (Shield!=null)
+		{
+			Shield.time-=damage/10;
+			Shield.a=1;
+		}
+		else {hp-=damage;}
 	}
 	
 	public void TakeHeal(float heal)

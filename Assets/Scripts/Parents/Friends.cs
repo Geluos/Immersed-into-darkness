@@ -16,6 +16,9 @@ public abstract class Friends : Characters
 
 	[HideInInspector] public List<SpellReload> ReloadList;
 
+	private int start;
+	private float ttime;
+
 	public void CreateSpellReload(int num, float time) //Создать индикатор перезарядки способности
 	{
 		var r = Instantiate(fight.SpellReloadPref, fight.IconPos[num].position, transform.rotation);
@@ -133,22 +136,30 @@ public abstract class Friends : Characters
 	}
 	void Update()
 	{
+        if (insp == 1)
+        {
+			TakeInspiration(minusCtime);
+		}
+        if (ttime <= 0 & start == 1)
+        {
+			UnTakeInspiration(minusCtime);
+		}
+		if (ttime > 0)
+        {
+            ttime -= Time.deltaTime;
+            mana += regen * Time.deltaTime;
+        }
+		ttime -= Time.deltaTime;
 		SpellsTimeOutDec();
 		if (PoisonDamage>0) {TakePoisonDamage();}
 		if (hp<maxhp) {TakeHealthRegen(hpreg);} else {hp=maxhp;}
 		if (mana<maxmana) {TakeManaRegen(manareg);} else {mana=maxmana;}
 		//
-		if (Input.GetKeyDown(KeyCode.Q))
-		{
-            if (this == fight.CurrentUnit)
-            {
-				hp -= 10;
-            }
-		}
 		if (hp <= 0)
 		{
 			if (EfIce!=null) {Destroy(EfIce.gameObject);}
-			if (EfFlame!=null) {Destroy(EfFlame.gameObject);}
+			if (EfFlame!=null) {EfFlame.time=0;}
+			if (Shield!=null) {Destroy(Shield.gameObject);}
 			gameObject.transform.position = new Vector2(-15,0);
 			fight.friends.Remove(this);
 			hp = maxhp;
@@ -171,4 +182,29 @@ public abstract class Friends : Characters
 		}
 		//
 	}
+
+	public void TakeInspiration(float minusCd)
+	{
+        for (int i = 0; i <= 2; i++)
+        {
+            if (spell_timeout[i] > 0)
+            {
+				spell_timeout[i] -= minusCd;
+			}
+			spell_cooldown[i] -= minusCd;
+        }
+		insp = 0;
+		start = 1;
+		ttime = time;
+	}
+
+	public void UnTakeInspiration(float minusCd)
+    {
+        for (int i = 0; i <= 2; i++)
+        {
+			start = 0;
+			spell_cooldown[i] += minusCd;
+        }
+	}
+
 }

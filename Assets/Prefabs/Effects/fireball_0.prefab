@@ -118,6 +118,7 @@ MonoBehaviour:
   time: 0
   a: 0
   sprite: {fileID: 5036192790727275225}
-  speed: 5
-  damage: 10
+  speed: 15
+  damage: 40
   character: {fileID: 0}
+  fight: {fileID: 0}

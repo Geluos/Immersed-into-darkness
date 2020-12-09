@@ -14,7 +14,7 @@ public abstract class Enemies : Characters
 		HealthBar.height=height;
 		HealthBar.canvas=bar;
 		HealthBar.SetMaxHealth();
-		HealthBar.transform.position+=new Vector3(0,height-1,0);
+		HealthBar.transform.position+=new Vector3(height - 0,8f);
 	}
 	void Start()
     {
@@ -113,7 +113,7 @@ public abstract class Enemies : Characters
 				FreezeParticle.GetComponent<ParticleSystem>().Stop();
 			}
 			if (EfIce!=null) {Destroy(EfIce.gameObject);}
-			if (EfFlame!=null) {Destroy(EfFlame.gameObject);}
+			if (EfFlame!=null) {EfFlame.time=0;}
 			fight.enemies.Remove(this);
 			Destroy(gameObject);
 		}

@@ -21,63 +21,79 @@ public class IconSpell : MonoBehaviour
 		
     }
 	
+	void UseSpell()
+	{
+		if ((!fight.select_friend)&&(!fight.select_enemy))
+		{
+			if ((character.spell_timeout[num]==0)&&(character.mana>=character.spell_cost[num]))
+			{
+				switch (type)
+				{
+					case "All":{
+						print("Применение ненаправленной способности");
+						spell.SpellUseAll(true); 
+						character.spell_timeout[num]=character.spell_cooldown[num];
+						character.mana-=character.spell_cost[num];
+						//Upd
+						character.CreateSpellReload(num,character.spell_cooldown[num]);
+						//Upd
+					break;}
+					case "Positive":{
+						print("Применение способности, направленной на союзника");
+						fight.UseFriend=character;
+						fight.spell=spell;
+						fight.spell_num=num;
+						fight.select_friend=true;
+						fight.SelectFriend.SetActive(true);
+					break;}
+					case "Negative":{
+						print("Применение способности, направленной на врага");
+						fight.UseFriend=character;
+						fight.spell=spell;
+						fight.spell_num=num;
+						fight.select_enemy=true;
+						fight.SelectEnemy.SetActive(true);
+					break;}
+				}
+			}
+		} 
+		else 
+		{
+			if (fight.spell==spell)
+			{
+				print("Применение способности отменено");
+				fight.select_friend=false; 
+				fight.select_enemy=false;
+				fight.SelectFriend.SetActive(false);
+				fight.SelectEnemy.SetActive(false);
+			}
+		}
+	}
+	
 	void OnMouseOver()
 	{ 
 		if ((active)&&(character!=null))
 		{
 			if (Input.GetMouseButtonDown(0))
 			{
-				if ((!fight.select_friend)&&(!fight.select_enemy))
-				{
-					if ((character.spell_timeout[num]==0)&&(character.mana>=character.spell_cost[num]))
-					{
-						switch (type)
-						{
-							case "All":{
-								print("Применение ненаправленной способности");
-								spell.SpellUseAll(true); 
-								character.spell_timeout[num]=character.spell_cooldown[num];
-								character.mana-=character.spell_cost[num];
-								//Upd
-								character.CreateSpellReload(num,character.spell_cooldown[num]);
-								//Upd
-							break;}
-							case "Positive":{
-								print("Применение способности, направленной на союзника");
-								fight.UseFriend=character;
-								fight.spell=spell;
-								fight.spell_num=num;
-								fight.select_friend=true;
-								fight.SelectFriend.SetActive(true);
-							break;}
-							case "Negative":{
-								print("Применение способности, направленной на врага");
-								fight.UseFriend=character;
-								fight.spell=spell;
-								fight.spell_num=num;
-								fight.select_enemy=true;
-								fight.SelectEnemy.SetActive(true);
-							break;}
-						}
-					}
-				} 
-				else 
-				{
-					if (fight.spell==spell)
-					{
-						print("Применение способности отменено");
-						fight.select_friend=false; 
-						fight.select_enemy=false;
-						fight.SelectFriend.SetActive(false);
-						fight.SelectEnemy.SetActive(false);
-					}
-				}
+				UseSpell();
 			}
 		}
 	}
+	
+	private KeyCode[] Key = new KeyCode[3] {KeyCode.Q,KeyCode.W,KeyCode.E};
+	void UseSpellOnKey()
+	{
+        if (Input.GetKeyDown(Key[num]))
+        {
+            UseSpell();
+        }
+	}
+	
+	
     // Update is called once per frame
-    void Update()
+	private void Update()
     {
-        
+        UseSpellOnKey();
     }
 }

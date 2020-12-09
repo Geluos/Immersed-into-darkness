@@ -10,18 +10,6 @@ public class Flame : Spells
 
 	private GameObject smokePr;
 	private EfFlame flame;
-	private int start;
-
-    private void Update()
-    {
-        if (start == 1)
-        {
-			if (flame.time <= 0)
-			{
-				Destroy(smokePr);
-			}
-		}
-    }
 
     public override void SpellUseTarget(Characters character)
 	{
@@ -33,10 +21,10 @@ public class Flame : Spells
 				flame = (Instantiate(FlamePref, character.transform.position, transform.rotation)).GetComponent<EfFlame>();
 				smokePr = Instantiate(SmokePref);
 				smokePr.transform.position = new Vector3(character.transform.position.x, character.transform.position.y, character.transform.position.z);
-				start = 1;
 				character.EfFlame=flame;
 				flame.time=time;
 				flame.character=character;
+				flame.smoke = smokePr;
 			}
 			else
 			{
