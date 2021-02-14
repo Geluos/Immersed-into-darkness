@@ -634,7 +634,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.79657173, y: 0.96}
+  m_Size: {x: 0.79657173, y: 1.5}
   m_EdgeRadius: 0
 --- !u!212 &121602724
 SpriteRenderer:
@@ -751,8 +751,8 @@ MonoBehaviour:
   - 25
   - 35
   spell_cooldown:
-  - 5
-  - 5
+  - 4
+  - 3
   - 5
   spell_timeout:
   - 0
@@ -1074,7 +1074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fight: {fileID: 1056311675}
-  time: 10
+  time: 6
   IcePref: {fileID: 3910440282933511059, guid: f3c106c82acee4748aff9acce4312332, type: 3}
 --- !u!1 &487976685
 GameObject:
@@ -2629,7 +2629,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1146393096
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2836,7 +2836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fight: {fileID: 1056311675}
-  time: 7
+  time: 4
   FlamePref: {fileID: 867263642970236781, guid: 9223940edaecee14e9ae28e7b2243524, type: 3}
   SmokePref: {fileID: 4523757736356740225, guid: fae6ba60af6e7b3428a6c7e5f2bef8a7, type: 3}
 --- !u!1 &1313394450
@@ -3602,7 +3602,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.032429934, y: -0.16080618}
+  m_Offset: {x: -0.032429934, y: 0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3613,7 +3613,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 1.3}
+  m_Size: {x: 0.8, y: 1.5}
   m_EdgeRadius: 0
 --- !u!212 &2065840788
 SpriteRenderer:
@@ -3723,7 +3723,7 @@ MonoBehaviour:
   - 
   spell_type:
   - All
-  - Positive
+  - Negative
   - Positive
   spell_cost:
   - 20
@@ -3731,7 +3731,7 @@ MonoBehaviour:
   - 20
   spell_cooldown:
   - 5
-  - 5
+  - 2
   - 5
   spell_timeout:
   - 0
@@ -3739,11 +3739,11 @@ MonoBehaviour:
   - 0
   spell_sprite:
   - {fileID: 21300000, guid: a8c166545c87cb243af68347fbde9941, type: 3}
-  - {fileID: 21300000, guid: 91579d4bc420b9343954761495b2bc30, type: 3}
+  - {fileID: 21300000, guid: 120b9fa426129d746b07a61343767ba9, type: 3}
   - {fileID: 21300000, guid: 4a61dbe0d41688843bb4470949baa689, type: 3}
   Spells:
   - {fileID: 1093793675}
-  - {fileID: 1713346770}
+  - {fileID: 1190554120}
   - {fileID: 243225798}
   IconHero: {fileID: 21300000, guid: 5ce9e3c58d7a466479505f294fed4429, type: 3}
   ReloadList: []
@@ -3812,7 +3812,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8070149, y: 1.1026119}
+  m_Size: {x: 1, y: 1.5}
   m_EdgeRadius: 0
 --- !u!212 &2122050340
 SpriteRenderer:
@@ -3929,9 +3929,9 @@ MonoBehaviour:
   - 20
   - 20
   spell_cooldown:
-  - 5
-  - 5
-  - 5
+  - 2
+  - 3
+  - 3
   spell_timeout:
   - 0
   - 0

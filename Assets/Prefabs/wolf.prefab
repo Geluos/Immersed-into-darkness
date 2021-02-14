@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   sprite: {fileID: 0}
-  maxhp: 100
+  maxhp: 80
   maxmana: 0
   hp: 100
   mana: 0
@@ -123,8 +123,8 @@ MonoBehaviour:
   AttackPref: {fileID: 1406967693763533615, guid: 35d82788289764047b5b7b9cd24e35ab, type: 3}
   AttackCooldown: 2
   AttackTimeout: 0
-  DamageMin: 5
-  DamageMax: 15
+  DamageMin: 8
+  DamageMax: 10
   Combat: 0
   AttackTarget: {fileID: 0}
 --- !u!61 &7385196848571093689

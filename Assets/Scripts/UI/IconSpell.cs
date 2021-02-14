@@ -30,12 +30,17 @@ public class IconSpell : MonoBehaviour
 				switch (type)
 				{
 					case "All":{
+						/* По хорошему, это нужно вынести*/
 						print("Применение ненаправленной способности");
-						spell.SpellUseAll(true); 
-						character.spell_timeout[num]=character.spell_cooldown[num];
-						character.mana-=character.spell_cost[num];
+						spell.SpellUseAll(true);
+						for(int i=0; i<3; ++i)
+							character.spell_timeout[i]=character.spell_cooldown[num];
+						//character.spell_timeout[num]=character.spell_cooldown[num];
+						//character.mana-=character.spell_cost[num];
 						//Upd
-						character.CreateSpellReload(num,character.spell_cooldown[num]);
+						for(int i=0; i<3; ++i)
+							character.CreateSpellReload(i,character.spell_cooldown[num]);
+						//character.CreateSpellReload(num,character.spell_cooldown[num]);
 						//Upd
 					break;}
 					case "Positive":{

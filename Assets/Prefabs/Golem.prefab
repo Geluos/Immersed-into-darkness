@@ -98,11 +98,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   sprite: {fileID: 0}
-  maxhp: 200
+  maxhp: 150
   maxmana: 0
   hp: 0
   mana: 0
-  hpreg: 1
+  hpreg: 0.5
   manareg: 0
   fight: {fileID: 0}
   FreezeParticle: {fileID: 0}
@@ -120,10 +120,10 @@ MonoBehaviour:
   height: 1
   AttackType: Melee
   AttackPref: {fileID: 5907825325455355098, guid: 609a6ff8589470b40801e25470174791, type: 3}
-  AttackCooldown: 8
+  AttackCooldown: 6
   AttackTimeout: 0
   DamageMin: 25
-  DamageMax: 40
+  DamageMax: 30
   Combat: 0
   AttackTarget: {fileID: 0}
 --- !u!61 &4333648086047084417

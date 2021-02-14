@@ -96,6 +96,34 @@ public class FightController : MonoBehaviour
 			select_friend=false;
 			select_enemy=false;
 		}
+		if (Input.GetKeyDown(KeyCode.Alpha1))
+		{
+
+			friends[0].GetSpells();
+			CurrentUnitNum=0;
+			SelectFriend.SetActive(false);
+			SelectEnemy.SetActive(false);
+			select_friend=false;
+			select_enemy=false;
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha2))
+		{
+			friends[2].GetSpells();
+			CurrentUnitNum=2;
+			SelectFriend.SetActive(false);
+			SelectEnemy.SetActive(false);
+			select_friend=false;
+			select_enemy=false;
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha3))
+		{
+			friends[1].GetSpells();
+			CurrentUnitNum=1;
+			SelectFriend.SetActive(false);
+			SelectEnemy.SetActive(false);
+			select_friend=false;
+			select_enemy=false;
+		}
 	}
 	
     private void Update()
@@ -181,12 +209,16 @@ public class FightController : MonoBehaviour
 			if (TargetFriend!=null)
 			{
 				spell.SpellUseTarget(TargetFriend);
-				UseFriend.spell_timeout[spell_num]=UseFriend.spell_cooldown[spell_num];
-				UseFriend.mana-=UseFriend.spell_cost[spell_num];
+				//UseFriend.spell_timeout[spell_num]=UseFriend.spell_cooldown[spell_num];
+				for(int i=0; i<3; ++i)
+					UseFriend.spell_timeout[i]=UseFriend.spell_cooldown[spell_num];
+				//UseFriend.mana-=UseFriend.spell_cost[spell_num];
 				select_friend=false;
 				SelectFriend.SetActive(false);
 				TargetFriend=null;
-				UseFriend.CreateSpellReload(spell_num,UseFriend.spell_cooldown[spell_num]);
+				for(int i=0; i<3; ++i)
+					UseFriend.CreateSpellReload(i,UseFriend.spell_cooldown[spell_num]);
+				//UseFriend.CreateSpellReload(spell_num,UseFriend.spell_cooldown[spell_num]);
 			}
 		}				
 		else
@@ -195,12 +227,15 @@ public class FightController : MonoBehaviour
 			if (TargetEnemy!=null)
 			{
 				spell.SpellUseTarget(TargetEnemy);
-				UseFriend.spell_timeout[spell_num]=UseFriend.spell_cooldown[spell_num];
-				UseFriend.mana-=UseFriend.spell_cost[spell_num];
+				//UseFriend.spell_timeout[spell_num]=UseFriend.spell_cooldown[spell_num];
+				for(int i=0; i<3; ++i)
+					UseFriend.spell_timeout[i]=UseFriend.spell_cooldown[spell_num];
+				//UseFriend.mana-=UseFriend.spell_cost[spell_num];
 				select_enemy=false;
 				SelectEnemy.SetActive(false);
 				TargetEnemy=null;
-				UseFriend.CreateSpellReload(spell_num,UseFriend.spell_cooldown[spell_num]);
+				for(int i=0; i<3; ++i)
+					UseFriend.CreateSpellReload(i,UseFriend.spell_cooldown[spell_num]);
 			}
 		}
 	}

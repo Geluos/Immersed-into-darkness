@@ -20,7 +20,7 @@ public class EfFlame : Effects
 		{
 			if (interval<=0)
 			{
-				character.hp-=5;
+				character.hp-=damage;
 				interval=1;
 			}
 			else
