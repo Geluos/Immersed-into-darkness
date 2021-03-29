@@ -12,6 +12,7 @@ public class Explosian : MonoBehaviour
         timeExplosian = timeExplosianStart;
     }
 
+    //Update
     void Update()
     {
         if (timeExplosian <= 0)
