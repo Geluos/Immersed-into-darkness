@@ -6,15 +6,17 @@ using TMPro;
 public class StoryText : MonoBehaviour
 {
 	[HideInInspector] public TextMeshProUGUI TextMesh; 
-    void Awake()
-    {
+	
+	void Awake()
+	{
 		TextMesh = GetComponent<TextMeshProUGUI>();
 		var controller = GameObject.FindWithTag("GameController").GetComponent<GlobalController>();
 
 		controller.Text=this;
 		controller.TextMesh=TextMesh;
-		
-    }
+
+	}
+    
 	//Тест
 	void Update()
 	{
