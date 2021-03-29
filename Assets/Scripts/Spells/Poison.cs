@@ -6,17 +6,16 @@ public class Poison : Spells
 {
 	public float PoisonPower;
 	public GameObject PoisonPref;
-
 	private GameObject prefPoison;
 	private UnityEngine.Object prefEfPoison;
 
 
-    private void Start()
-    {
+	private void Start()
+	{
 		prefEfPoison = Resources.Load("PoisonEffect");
 	}
 
-    public override void SpellUseTarget(Characters character)
+	public override void SpellUseTarget(Characters character)
 	{
 		print("Применено отравление");
 		if (character.PoisonParticle==null)
