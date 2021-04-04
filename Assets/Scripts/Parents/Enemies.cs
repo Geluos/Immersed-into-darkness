@@ -4,39 +4,6 @@ using UnityEngine;
 
 public abstract class Enemies : Characters
 {
-	public float height;
-	
-	void CreateHealthBar()
-	{
-		var bar=Instantiate(fight.EnemyHealthBarPref, transform.position, transform.rotation);
-		var HealthBar=bar.GetComponentInChildren<EnemyHealthBar>();
-		HealthBar.character=this;
-		HealthBar.height=height;
-		HealthBar.canvas=bar;
-		HealthBar.SetMaxHealth();
-		HealthBar.transform.position+=new Vector3(height - 0,8f);
-	}
-	void Start()
-    {
-		fight.enemies.Add(this);
-		sprite = GetComponent<SpriteRenderer>();
-		hp=maxhp;
-		mana=maxmana;
-		CreateHealthBar();
-    }
-	
-	void OnMouseOver()
-	{
-		if (Input.GetMouseButtonDown(0))
-		{
-			if (fight.select_enemy)
-			{
-				fight.TargetEnemy=this;
-				fight.SpellUseTarget();
-			}
-		}
-	}
-	
 	//Атака
 	public string AttackType;//Melee-ближний Distance-дальний
 	public GameObject AttackPref;
@@ -46,6 +13,27 @@ public abstract class Enemies : Characters
 	public float DamageMax;
 	public bool Combat;
 	[HideInInspector] public Friends AttackTarget;
+	
+
+	new void Start()
+    {
+		base.Start();
+		fightController.enemies.Add(this);
+		CreateHealthBar();
+    }
+	
+	void OnMouseOver()
+	{
+		if (Input.GetMouseButtonDown(0))
+		{
+			if (fightController.select_enemy)
+			{
+				fightController.TargetEnemy=this;
+				fightController.SpellUseTarget();
+			}
+		}
+	}
+	
 
 	void Awake()
 	{
@@ -59,7 +47,7 @@ public abstract class Enemies : Characters
 		{
 			if (AttackType=="Melee")
 			{
-				if (!fight.friends.Find(x => x==AttackTarget)) {AttackTarget=null;} else
+				if (!fightController.friends.Find(x => x==AttackTarget)) {AttackTarget=null;} else
 				{
 					AttackTimeout=AttackCooldown;
 					AttackTarget.TakeDamage(Random.Range(DamageMin, DamageMax));
@@ -72,20 +60,25 @@ public abstract class Enemies : Characters
 			SetTargetRandom();
 		}
 	}
+	//Переписать
 	void SetTargetRandom()
 	{
-		if (fight.friends.Count>0)
+		if (fightController.AliveHeroes()>0)
 		{
-			AttackTarget=fight.friends[Random.Range(0, fight.friends.Count)];
+			AttackTarget=fightController.friends[Random.Range(0, fightController.AliveHeroes())];
 		}
 	}
 	//Атака
 	
 	void Update()
 	{
-		if ((Combat)&&(!IsFreezing))
+		if ((Combat))
 		{
-			if (fight.friends.Count==0) {Combat=false;} else
+			if (fightController.AliveHeroes()==0)
+			{
+				Combat=false;
+			} 
+			else
 			{
 				if (AttackTimeout<=0)
 				{
@@ -97,24 +90,10 @@ public abstract class Enemies : Characters
 				}
 			}
 		}
-		if (PoisonDamage>0) {TakePoisonDamage();}
-		if (hp<maxhp) {TakeHealthRegen(hpreg);} else {hp=maxhp;}
-		if (mana<maxmana) {TakeManaRegen(manareg);} else {mana=maxmana;}
 		if (hp<=0)
 		{
-			if (PoisonParticle!=null)
-			{
-				Destroy(PoisonParticle,5);
-				PoisonParticle.GetComponent<ParticleSystem>().Stop();
-			}
-			if (FreezeParticle!=null) 
-			{
-				Destroy(FreezeParticle,5);
-				FreezeParticle.GetComponent<ParticleSystem>().Stop();
-			}
-			if (EfIce!=null) {Destroy(EfIce.gameObject);}
-			if (EfFlame!=null) {EfFlame.time=0;}
-			fight.enemies.Remove(this);
+			//Удалить все эффекты
+			fightController.enemies.Remove(this);
 			Destroy(gameObject);
 		}
 	}
