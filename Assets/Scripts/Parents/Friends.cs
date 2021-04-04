@@ -22,8 +22,10 @@ public abstract class Friends : Characters
 
 	void OnMouseOver()
 	{
+		print("Вы навели на персонажа");
 		if (Input.GetMouseButtonDown(0))
 		{
+			print("Вы нажали на персонажа");
 			if (fightController.select_friend)
 			{
 				fightController.TargetFriend=this;

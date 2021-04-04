@@ -16,7 +16,7 @@ public class FightController : MonoBehaviour
 	[HideInInspector] public Friends UseFriend;
 	[HideInInspector] public Friends TargetFriend;
 	[HideInInspector] public Enemies TargetEnemy;
-	[HideInInspector] public Friends CurrentUnit;
+	public Friends CurrentUnit;
 	public GameObject restart;
 	public GameObject SelectFriend;
 	public GameObject SelectEnemy;
@@ -68,6 +68,7 @@ public class FightController : MonoBehaviour
 			select_friend=false;
 			select_enemy=false;
 		}
+
 		if (Input.GetKeyDown(KeyCode.Alpha1))
 		{
 
@@ -121,6 +122,8 @@ public class FightController : MonoBehaviour
 		{
 			ChangeCurrentUnit();
 		}
+
+
 		if (res)
 		{
 			restart.SetActive(false);
