@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: "\u0429\u0435\u0440\u0431\u0438\u043D\u0430 \u0438 \u043F\u0440\u0438\u044F\u0442\u0435\u043B\u0438"
+  companyName: ImmersedIntoDarkness Team
   productName: ImmersedIntoDarkness
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -126,7 +126,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.1
+  bundleVersion: 0.1a
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0

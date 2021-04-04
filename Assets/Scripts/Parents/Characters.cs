@@ -1,100 +1,67 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public abstract class Characters : MonoBehaviour
 {	
 	public string Name;
-	[HideInInspector] public SpriteRenderer sprite;
-	
 	public float maxhp;
-	public float maxmana;
-	
 	[HideInInspector] public float hp;
-	[HideInInspector] public float mana;
-	
-	public float hpreg;
-	public float manareg;
-	
-	public FightController fight;
-	
-	[HideInInspector] public GameObject FreezeParticle;
-	[HideInInspector] public GameObject PoisonParticle;
+	public FightController fightController;
+	public float height;
 
-	[HideInInspector] public float PoisonDamage = 0;
-	[HideInInspector] public float FreezingTime = 0;
-	[HideInInspector] public Effects EfFlame;
-	[HideInInspector] public Effects EfIce;
-	[HideInInspector] public bool IsFreezing = false;
-	
-	[HideInInspector]  public float insp = 0;
-    [HideInInspector]  public float minusCtime = 0;
-    [HideInInspector]  public float time = 0;
-	
-	[HideInInspector] public Effects Shield;
-	[HideInInspector] public float regen = 0;
-	
-	public void TakePoisonDamage() 
+	public bool alive;
+
+	public void CreateHealthBar()
 	{
-		hp-=PoisonDamage;
-		sprite.color = new Color (1f-PoisonDamage*10, 1f, 1f-PoisonDamage*10, 1f);
-		PoisonDamage-=0.01f*Time.deltaTime;
-		if (PoisonDamage<=0)
-		{
-			PoisonDamage=0;
-			sprite.color = new Color (1f, 1f, 1f, 1f);
-			if (PoisonParticle!=null)
-			{
-				Destroy(PoisonParticle,5);
-				PoisonParticle.GetComponent<ParticleSystem>().Stop();
-				PoisonParticle=null;
-			}
-		}
+		GameObject HB = Resources.Load<GameObject>("HealthBar");
+		print(height);
+		var bar=Instantiate(HB, transform);
+		var HealthBar = bar.GetComponentInChildren<HealthBar>();
+		HealthBar.transform.parent.position += new Vector3(0, height/2+4f, 0);
+		HealthBar.character=this;
+		HealthBar.SetMaxHealth();
 	}
-	void Start()
+	
+	public void Start()
 	{
-		sprite = GetComponent<SpriteRenderer>();
-		FightController fight = (GameObject.FindWithTag("FightController")).GetComponent<FightController>();
+		print("Base Start Chars");
+		FightController fightController = (GameObject.FindWithTag("FightController")).GetComponent<FightController>();
 		hp=maxhp;
-		mana=maxmana;
+		alive = true;
+
+		//Расчет высоты спрайта
+		SpriteRenderer spt;
+		spt = gameObject.GetComponent<SpriteRenderer>();
+		height = spt.sprite.bounds.size.y;
 	}
 	
 	void Update()
 	{
-		if (PoisonDamage>0) {TakePoisonDamage();}
-		if (hp<maxhp) {TakeHealthRegen(hpreg);} else {hp=maxhp;}
-		if (mana<maxmana) {TakeManaRegen(manareg);} else {mana=maxmana;}
 		if (hp<=0)
 		{
-			Destroy(gameObject);
-			if (EfIce!=null) {Destroy(EfIce.gameObject);}
-			if (EfFlame!=null) {Destroy(EfFlame.gameObject);}
+			//Уничтожать объект - плохое решение. Будем делать неактивным
+			//Destroy(gameObject);
+			//Уничтожить эффекты эффектов
+			Death();
 		}
+	}
+
+	public void Death()
+	{
+		gameObject.SetActive(false);
+		alive = false;
 	}
 	
 	public void TakeDamage(float damage)
 	{
-		if (Shield!=null)
-		{
-			Shield.time-=damage/10;
-			Shield.a=1;
-		}
-		else {hp-=damage;}
+		hp = Math.Max(0f, hp-damage);
 	}
 	
 	public void TakeHeal(float heal)
 	{
-		hp+=heal;
-	}
-	
-	public void TakeManaRegen(float reg)
-	{
-		mana+=reg * Time.deltaTime;
-	}
-	
-	public void TakeHealthRegen(float reg)
-	{
-		hp+=reg * Time.deltaTime;
+		hp = Math.Min(hp + heal, maxhp);
 	}
 
 }

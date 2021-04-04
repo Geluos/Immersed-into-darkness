@@ -6,75 +6,68 @@ public class IconSpell : MonoBehaviour
 {
 	public string Name;
 	public string info;
-	public string type;
-	public float cost;
-	public int num;
-	public float cooldown;
-	public float time;
-	public SpriteRenderer Sprite;
-	public FightController fight;
+	public FightController fightController;
 	public Friends character;
 	public Spells spell;
+	public SpriteRenderer Sprite;
 	public bool active=false;
+	public int num;
     void Start()
     {
-		
+		FightController fightController = (GameObject.FindWithTag("FightController")).GetComponent<FightController>();
     }
 	
 	void UseSpell()
 	{
-		if ((!fight.select_friend)&&(!fight.select_enemy))
+		if ((!fightController.select_friend)&&(!fightController.select_enemy))
 		{
-			if ((character.spell_timeout[num]==0)&&(character.mana>=character.spell_cost[num]))
+			if (character.reloadTime==0)
 			{
-				switch (type)
+				switch (spell.type)
 				{
 					case "All":{
 						print("Применение ненаправленной способности");
-						spell.SpellUseAll(true); 
-						character.spell_timeout[num]=character.spell_cooldown[num];
-						character.mana-=character.spell_cost[num];
-						//Upd
-						character.CreateSpellReload(num,character.spell_cooldown[num]);
-						//Upd
+						fightController.spell=spell;
+						fightController.SpellUseAll();
+						//Затемнение иконок способностей
 					break;}
 					case "Positive":{
 						print("Применение способности, направленной на союзника");
-						fight.UseFriend=character;
-						fight.spell=spell;
-						fight.spell_num=num;
-						fight.select_friend=true;
-						fight.SelectFriend.SetActive(true);
+						fightController.UseFriend=character;
+						fightController.spell=spell;
+						fightController.select_friend=true;
+						fightController.SelectFriend.SetActive(true);
 					break;}
 					case "Negative":{
 						print("Применение способности, направленной на врага");
-						fight.UseFriend=character;
-						fight.spell=spell;
-						fight.spell_num=num;
-						fight.select_enemy=true;
-						fight.SelectEnemy.SetActive(true);
+						fightController.UseFriend=character;
+						fightController.spell=spell;
+						fightController.select_enemy=true;
+						fightController.SelectEnemy.SetActive(true);
 					break;}
 				}
 			}
 		} 
 		else 
 		{
-			if (fight.spell==spell)
+			if (fightController.spell==spell)
 			{
 				print("Применение способности отменено");
-				fight.select_friend=false; 
-				fight.select_enemy=false;
-				fight.SelectFriend.SetActive(false);
-				fight.SelectEnemy.SetActive(false);
+				fightController.select_friend=false; 
+				fightController.select_enemy=false;
+				fightController.SelectFriend.SetActive(false);
+				fightController.SelectEnemy.SetActive(false);
 			}
 		}
+		
 	}
 	
 	void OnMouseOver()
 	{ 
-		if ((active)&&(character!=null))
+		print("Push Button Spell");
+		if (Input.GetMouseButtonDown(0))
 		{
-			if (Input.GetMouseButtonDown(0))
+			if ((active)&&(character!=null))
 			{
 				UseSpell();
 			}
@@ -84,7 +77,8 @@ public class IconSpell : MonoBehaviour
 	private KeyCode[] Key = new KeyCode[3] {KeyCode.Q,KeyCode.W,KeyCode.E};
 	void UseSpellOnKey()
 	{
-        if (Input.GetKeyDown(Key[num]))
+		print("QWE");
+        if (Input.GetKeyDown(Key[num]) && fightController.CurrentUnit == character)
         {
             UseSpell();
         }

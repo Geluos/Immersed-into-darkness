@@ -7,28 +7,37 @@ public class HealthBar : MonoBehaviour
 {
     public Slider slider;
     public Image fill;
-	public FightController fight;
+	public float height;
+	[HideInInspector] public Characters character;
+	[HideInInspector] public GameObject canvas;
 
 	void Start()
 	{
-		fight = (GameObject.FindWithTag("FightController")).GetComponent<FightController>();
+
 	}
 	
     public void SetMaxHealth()
     {
-		if (fight.CurrentUnit!=null)
+		if (character!=null)
 		{
-			slider.maxValue = fight.CurrentUnit.maxhp;
-			slider.value = fight.CurrentUnit.hp;
+			slider.maxValue = character.maxhp;
+			slider.value = character.hp;
 		}
     }
 
     public void SetHealth()
     {
-		if (fight.CurrentUnit!=null)
+		if (character!=null)
 		{
-			if (slider.value != fight.CurrentUnit.hp/fight.CurrentUnit.maxhp)
-			{slider.value = fight.CurrentUnit.hp/fight.CurrentUnit.maxhp;}
+			//gameObject.transform.position=character.gameObject.transform.position+new Vector3(0,0,0);
+			if (slider.value != character.hp)
+			{
+				slider.value = character.hp;
+			}
+		} 
+		else
+		{
+			Destroy(canvas);
 		}
     }
 	

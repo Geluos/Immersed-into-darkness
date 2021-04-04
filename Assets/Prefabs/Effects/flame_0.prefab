@@ -119,4 +119,5 @@ MonoBehaviour:
   a: 0
   sprite: {fileID: 718534819146694785}
   character: {fileID: 0}
-  damage: 5
+  damage: 20
+  smoke: {fileID: 0}
