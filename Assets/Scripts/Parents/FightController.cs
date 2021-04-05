@@ -68,7 +68,6 @@ public class FightController : MonoBehaviour
 			select_friend=false;
 			select_enemy=false;
 		}
-
 		if (Input.GetKeyDown(KeyCode.Alpha1))
 		{
 

@@ -26,6 +26,7 @@ public class IconSpell : MonoBehaviour
 				switch (spell.type)
 				{
 					case "All":{
+						/* По хорошему, это нужно вынести*/
 						print("Применение ненаправленной способности");
 						fightController.spell=spell;
 						fightController.SpellUseAll();
