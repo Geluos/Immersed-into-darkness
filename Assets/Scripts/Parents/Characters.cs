@@ -7,7 +7,7 @@ public abstract class Characters : MonoBehaviour
 {	
 	public string Name;
 	public float maxhp;
-	[HideInInspector] public float hp;
+	public float hp;
 	public FightController fightController;
 	public float height;
 
@@ -16,7 +16,6 @@ public abstract class Characters : MonoBehaviour
 	public void CreateHealthBar()
 	{
 		GameObject HB = Resources.Load<GameObject>("HealthBar");
-		print(height);
 		var bar=Instantiate(HB, transform);
 		var HealthBar = bar.GetComponentInChildren<HealthBar>();
 		HealthBar.transform.parent.position += new Vector3(0, height/2+4f, 0);
@@ -26,7 +25,6 @@ public abstract class Characters : MonoBehaviour
 	
 	public void Start()
 	{
-		print("Base Start Chars");
 		FightController fightController = (GameObject.FindWithTag("FightController")).GetComponent<FightController>();
 		hp=maxhp;
 		alive = true;

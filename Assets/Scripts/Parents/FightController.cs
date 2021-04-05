@@ -12,7 +12,7 @@ public class FightController : MonoBehaviour
 	[HideInInspector] public List<Friends> friends2;
 	public List<Enemies> enemies;
 	public GameObject[] EnemyPref = new GameObject[1];//UPDATE
-	[HideInInspector] public Spells spell;
+	public Spells spell;
 	[HideInInspector] public Friends UseFriend;
 	[HideInInspector] public Friends TargetFriend;
 	[HideInInspector] public Enemies TargetEnemy;
@@ -28,7 +28,6 @@ public class FightController : MonoBehaviour
 	public GameObject[] posEn = new GameObject[3];
 	
 	public TextMeshProUGUI textTimeRes;
-	[HideInInspector] public int CurrentUnitNum = -1;
 
 	public AudioSource music1;
 	public AudioSource music2;
@@ -54,25 +53,25 @@ public class FightController : MonoBehaviour
 		{
 			if (CurrentUnit==null)
 			{
-				//friends[0].GetSpells();
-				CurrentUnitNum=0;
+				CurrentUnit = friends[0];
+				CurrentUnit.ActiveHero();
 			}
 			else
 			{
-				CurrentUnitNum++;
-				if (CurrentUnitNum>=friends.Count) {CurrentUnitNum=0;}
-				//friends[CurrentUnitNum].GetSpells();
+				CurrentUnit = friends[ (friends.IndexOf(CurrentUnit)+1) % 3];
+				CurrentUnit.ActiveHero();
 			}
 			SelectFriend.SetActive(false);
 			SelectEnemy.SetActive(false);
 			select_friend=false;
 			select_enemy=false;
+			print("Выбран " + CurrentUnit.gameObject.name);
 		}
 		if (Input.GetKeyDown(KeyCode.Alpha1))
 		{
 
-			//friends[0].GetSpells();
-			CurrentUnitNum=0;
+			CurrentUnit = friends[0];
+			CurrentUnit.ActiveHero();
 			SelectFriend.SetActive(false);
 			SelectEnemy.SetActive(false);
 			select_friend=false;
@@ -80,8 +79,8 @@ public class FightController : MonoBehaviour
 		}
 		if (Input.GetKeyDown(KeyCode.Alpha2))
 		{
-			//friends[2].GetSpells();
-			CurrentUnitNum=2;
+			CurrentUnit = friends[1];
+			CurrentUnit.ActiveHero();
 			SelectFriend.SetActive(false);
 			SelectEnemy.SetActive(false);
 			select_friend=false;
@@ -89,8 +88,8 @@ public class FightController : MonoBehaviour
 		}
 		if (Input.GetKeyDown(KeyCode.Alpha3))
 		{
-			//friends[1].GetSpells();
-			CurrentUnitNum=1;
+			CurrentUnit = friends[2];
+			CurrentUnit.ActiveHero();
 			SelectFriend.SetActive(false);
 			SelectEnemy.SetActive(false);
 			select_friend=false;
@@ -121,8 +120,6 @@ public class FightController : MonoBehaviour
 		{
 			ChangeCurrentUnit();
 		}
-
-
 		if (res)
 		{
 			restart.SetActive(false);
@@ -186,6 +183,7 @@ public class FightController : MonoBehaviour
 		{
 			if (TargetEnemy!=null)
 			{
+				print("ABBA");
 				spell.Use(TargetEnemy);
 				//!
 				//UseFriend.reloadTime=UseFriend.spell_cooldown[spell_num];

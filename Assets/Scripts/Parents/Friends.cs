@@ -7,7 +7,7 @@ public abstract class Friends : Characters
 {
     public List<Spells> Spells;
 	public List<IconSpell> SpellsIcons;
-	[HideInInspector] public float reloadTime;
+	public float reloadTime;
 
 	new void Start()
 	{
@@ -15,21 +15,39 @@ public abstract class Friends : Characters
 		fightController.friends.Add(this);
 		fightController.friends2.Add(this);
 		hp=maxhp;
-		reloadTime = 0;
+		reloadTime = 0f;
 		CreateHealthBar();
 		CreateIcons();
 	}
 
+	public void ActiveHero()
+	{
+		if (fightController.CurrentUnit != this)
+		{
+			/*if (fightController.CurrentUnit != null)
+			{
+				fightController.CurrentUnit.DeactivateReload();
+			}*/
+			//Повтор?
+			fightController.CurrentUnit = this;
+			//ActivateReload();
+			//print("Получена информация о " + this);
+		}
+	}
+
 	void OnMouseOver()
 	{
-		print("Вы навели на персонажа");
 		if (Input.GetMouseButtonDown(0))
 		{
-			print("Вы нажали на персонажа");
+			print("Вы нажали на " + this);
 			if (fightController.select_friend)
 			{
 				fightController.TargetFriend=this;
 				fightController.SpellUseTarget();
+			}
+			if (!fightController.select_enemy) 
+			{
+				ActiveHero();
 			}
 		}
 	}
@@ -38,6 +56,8 @@ public abstract class Friends : Characters
 	{
 		for(int i=0; i<3; ++i)
 		{
+			Spells[i] = Instantiate(Spells[i], transform).GetComponent<Spells>();
+			Spells[i].HeroCharacter = this;
 			SpellsIcons.Add((Instantiate(Resources.Load<GameObject>("SpellIcon"), transform)).GetComponent<IconSpell>());
 			SpellsIcons[i].Name = Spells[i].Name;
 			SpellsIcons[i].info = "Витя";

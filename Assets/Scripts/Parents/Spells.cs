@@ -16,15 +16,16 @@ public abstract class Spells : MonoBehaviour
 	public void Start()
 	{
 		power = 1f;
+		print("Я мыслю");
 	}
 
-	public void Use()
+	virtual public void Use()
 	{
 
 	}
 
-	public void Use(Characters character)
+	virtual public void Use(Characters character)
 	{
-
+		print("Не туда воюешь!");
 	}
 }

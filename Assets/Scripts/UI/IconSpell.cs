@@ -19,27 +19,29 @@ public class IconSpell : MonoBehaviour
 	
 	void UseSpell()
 	{
+		print("UseSpell1");
 		if ((!fightController.select_friend)&&(!fightController.select_enemy))
 		{
+			print("UseSpell2");
 			if (character.reloadTime==0)
 			{
+				print("UseSpell2.5");
 				switch (spell.type)
 				{
 					case "All":{
-						/* По хорошему, это нужно вынести*/
 						print("Применение ненаправленной способности");
 						fightController.spell=spell;
 						fightController.SpellUseAll();
 						//Затемнение иконок способностей
 					break;}
-					case "Positive":{
+					case "TargetFriend":{
 						print("Применение способности, направленной на союзника");
 						fightController.UseFriend=character;
 						fightController.spell=spell;
 						fightController.select_friend=true;
 						fightController.SelectFriend.SetActive(true);
 					break;}
-					case "Negative":{
+					case "TargetEnemy":{
 						print("Применение способности, направленной на врага");
 						fightController.UseFriend=character;
 						fightController.spell=spell;
@@ -51,6 +53,7 @@ public class IconSpell : MonoBehaviour
 		} 
 		else 
 		{
+			print("UseSpell3");
 			if (fightController.spell==spell)
 			{
 				print("Применение способности отменено");
@@ -65,11 +68,13 @@ public class IconSpell : MonoBehaviour
 	
 	void OnMouseOver()
 	{ 
-		print("Push Button Spell");
+		print("Mouse on Button Spell");
 		if (Input.GetMouseButtonDown(0))
 		{
+			print("Push Button Spell");
 			if ((active)&&(character!=null))
 			{
+				print("Попытка использовать заклинание");
 				UseSpell();
 			}
 		}

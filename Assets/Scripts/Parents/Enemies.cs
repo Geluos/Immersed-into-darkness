@@ -26,8 +26,10 @@ public abstract class Enemies : Characters
 	{
 		if (Input.GetMouseButtonDown(0))
 		{
+			print("Вы нажали на врага");
 			if (fightController.select_enemy)
 			{
+				print("Враг выбран!");
 				fightController.TargetEnemy=this;
 				fightController.SpellUseTarget();
 			}
