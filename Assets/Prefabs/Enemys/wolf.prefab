@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5e8cf1b9150e9d943807c93be2f0a3fd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5f67bbfa5b750d043bbc7d19d5909dd8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,26 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 
-  sprite: {fileID: 0}
   maxhp: 80
-  maxmana: 0
   hp: 100
-  mana: 0
-  hpreg: 0
-  manareg: 0
-  fight: {fileID: 0}
-  FreezeParticle: {fileID: 0}
-  PoisonParticle: {fileID: 0}
-  PoisonDamage: 0
-  FreezingTime: 0
-  EfFlame: {fileID: 0}
-  EfIce: {fileID: 0}
-  IsFreezing: 0
-  insp: 0
-  minusCtime: 0
-  time: 0
-  Shield: {fileID: 0}
-  regen: 0
+  fightController: {fileID: 0}
+  alive: 0
   height: 1
   AttackType: Melee
   AttackPref: {fileID: 1406967693763533615, guid: 35d82788289764047b5b7b9cd24e35ab, type: 3}
@@ -125,7 +109,7 @@ MonoBehaviour:
   AttackTimeout: 0
   DamageMin: 8
   DamageMax: 10
-  Combat: 0
+  Combat: 1
   AttackTarget: {fileID: 0}
 --- !u!61 &7385196848571093689
 BoxCollider2D:
@@ -140,18 +124,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.015622735}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 0.96}
+    oldSize: {x: 255, y: 136}
     newSize: {x: 1.28, y: 0.96}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.28, y: 0.92875445}
+  m_Size: {x: 200, y: 100}
   m_EdgeRadius: 0
 --- !u!50 &7385196848571093690
 Rigidbody2D:

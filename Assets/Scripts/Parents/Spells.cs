@@ -4,13 +4,27 @@ using UnityEngine;
 
 public abstract class Spells : MonoBehaviour
 {
-	public FightController fight;
-	public virtual void SpellUseAll(bool IsFriends)
+	public string Name;
+	public FightController fightController;
+	public Friends HeroCharacter;
+	public string type;
+	public float power;
+	public Sprite sprite;
+
+	public float reloadtime;
+	
+	public void Start()
 	{
-		print("Применение ненаправленной способности");
+		power = 1f;
 	}
-	public virtual void SpellUseTarget(Characters character)
+
+	public void Use()
 	{
-		print("Применение направленной способности");
+
+	}
+
+	public void Use(Characters character)
+	{
+
 	}
 }

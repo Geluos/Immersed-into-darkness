@@ -11,33 +11,12 @@ public class FightController : MonoBehaviour
 	public List<Friends> friends;
 	[HideInInspector] public List<Friends> friends2;
 	public List<Enemies> enemies;
-	
-	public GameObject IconPref;
-	public Transform[] IconPos = new Transform[3];
-	
-	[HideInInspector] public GameObject[] Icon = new GameObject[3];
-	[HideInInspector] public IconSpell[] icon = new IconSpell[3];
 	public GameObject[] EnemyPref = new GameObject[1];//UPDATE
-	
-	[HideInInspector] public int spell_num;
 	[HideInInspector] public Spells spell;
 	[HideInInspector] public Friends UseFriend;
 	[HideInInspector] public Friends TargetFriend;
 	[HideInInspector] public Enemies TargetEnemy;
-	[HideInInspector] public Friends CurrentUnit;
-	
-	public GameObject SpellReloadPref;
-	public GameObject EnemyHealthBarPref;
-	public GameObject CanvasObject;
-	public IconHero IconHero;
-	[HideInInspector] public Transform Canvas;
-	
-	[HideInInspector] public HealthBar health;
-	[HideInInspector] public ManaBar mana;
-	
-	public GameObject healthBar;
-	public GameObject manaBar;
-
+	public Friends CurrentUnit;
 	public GameObject restart;
 	public GameObject SelectFriend;
 	public GameObject SelectEnemy;
@@ -56,14 +35,7 @@ public class FightController : MonoBehaviour
 
     void Start()
     {
-		Canvas=CanvasObject.transform;
-		for (int i=0; i<=2; i+=1)
-		{
-			Icon[i] = (GameObject)Instantiate(IconPref, IconPos[i].position, transform.rotation) as GameObject;
-			icon[i] = Icon[i].GetComponent<IconSpell>();
-			icon[i].fight = this; 
-			icon[i].num = i;
-		}
+		//Здесь была отрисовка иконок
 		StartCoroutine(PlayMusic());
     }
 
@@ -76,20 +48,20 @@ public class FightController : MonoBehaviour
 		music2.Play();
 	}
 
-		void ChangeCurrentUnit()
+	void ChangeCurrentUnit()
 	{
 		if (Input.GetKeyDown(KeyCode.Tab))
 		{
 			if (CurrentUnit==null)
 			{
-				friends[0].GetSpells();
+				//friends[0].GetSpells();
 				CurrentUnitNum=0;
 			}
 			else
 			{
 				CurrentUnitNum++;
 				if (CurrentUnitNum>=friends.Count) {CurrentUnitNum=0;}
-				friends[CurrentUnitNum].GetSpells();
+				//friends[CurrentUnitNum].GetSpells();
 			}
 			SelectFriend.SetActive(false);
 			SelectEnemy.SetActive(false);
@@ -99,7 +71,7 @@ public class FightController : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Alpha1))
 		{
 
-			friends[0].GetSpells();
+			//friends[0].GetSpells();
 			CurrentUnitNum=0;
 			SelectFriend.SetActive(false);
 			SelectEnemy.SetActive(false);
@@ -108,7 +80,7 @@ public class FightController : MonoBehaviour
 		}
 		if (Input.GetKeyDown(KeyCode.Alpha2))
 		{
-			friends[2].GetSpells();
+			//friends[2].GetSpells();
 			CurrentUnitNum=2;
 			SelectFriend.SetActive(false);
 			SelectEnemy.SetActive(false);
@@ -117,7 +89,7 @@ public class FightController : MonoBehaviour
 		}
 		if (Input.GetKeyDown(KeyCode.Alpha3))
 		{
-			friends[1].GetSpells();
+			//friends[1].GetSpells();
 			CurrentUnitNum=1;
 			SelectFriend.SetActive(false);
 			SelectEnemy.SetActive(false);
@@ -125,39 +97,32 @@ public class FightController : MonoBehaviour
 			select_enemy=false;
 		}
 	}
+
+	public int AliveHeroes()
+	{
+		int res = 0;
+		foreach(Friends fr in friends)
+		{
+			if(fr.alive)
+				res++;
+		}
+		//print("Кол-во живых героев" + res);
+		return res;
+	}
 	
     private void Update()
     {
-		if (friends.Count == 0)
+		if (AliveHeroes() == 0)
 		{
 			restart.SetActive(true);
-			for (int i = 0; i <= enemies.Count-1; i++)
-            {
-				//UPDATE
-				if (enemies[i].PoisonParticle!=null)
-				{
-					Destroy(enemies[i].PoisonParticle,5);
-					enemies[i].PoisonParticle.GetComponent<ParticleSystem>().Stop();
-					enemies[i].PoisonParticle=null;
-				}
-				if (enemies[i].FreezeParticle!=null)
-				{
-					Destroy(enemies[i].FreezeParticle,5);
-					enemies[i].FreezeParticle.GetComponent<ParticleSystem>().Stop();
-					enemies[i].FreezeParticle=null;
-				}
-				//UPDATE
-				enemies[i].IsFreezing=false;
-				enemies[i].PoisonDamage=0;
-				if (enemies[i].EfIce!=null) {Destroy(enemies[i].EfIce.gameObject);}
-				if (enemies[i].EfFlame!=null) {Destroy(enemies[i].EfFlame.gameObject);}
-				enemies[i].sprite.color = new Color (1f, 1f, 1f, 1f);
-			}
+			//Снятие эффектов у врагов
 		}
 		else
 		{
 			ChangeCurrentUnit();
 		}
+
+
 		if (res)
 		{
 			restart.SetActive(false);
@@ -190,35 +155,30 @@ public class FightController : MonoBehaviour
             for (int i = 0; i <r ; i++)
             {
 				var enemy = Instantiate(EnemyPref[Random.Range(0,EnemyPref.Length)], posEn[i].transform.position, transform.rotation) as GameObject;
-				enemy.GetComponent<Enemies>().fight=this;
+				enemy.GetComponent<Enemies>().fightController=this;
             }
             resEn = 0;
 			//UPDATE
         }
-	
-		if(Input.GetKey("escape"))
-		{
-			Application.LoadLevel("Menu");
-		}
 	}
-	
-	public void SpellUseTarget()
+
+
+    public void SpellUseTarget()
 	{
+		
 		if (select_friend) 
 		{
 			if (TargetFriend!=null)
 			{
-				spell.SpellUseTarget(TargetFriend);
-				//UseFriend.spell_timeout[spell_num]=UseFriend.spell_cooldown[spell_num];
-				for(int i=0; i<3; ++i)
-					UseFriend.spell_timeout[i]=UseFriend.spell_cooldown[spell_num];
-				//UseFriend.mana-=UseFriend.spell_cost[spell_num];
+				spell.Use(TargetFriend);
+				//!
+				//UseFriend.reloadTime=UseFriend.spell_cooldown[spell_num];
 				select_friend=false;
 				SelectFriend.SetActive(false);
 				TargetFriend=null;
-				for(int i=0; i<3; ++i)
-					UseFriend.CreateSpellReload(i,UseFriend.spell_cooldown[spell_num]);
-				//UseFriend.CreateSpellReload(spell_num,UseFriend.spell_cooldown[spell_num]);
+				//!Отрисовать затемнение на иконках способностей
+				/*for(int i=0; i<3; ++i)
+					UseFriend.CreateSpellReload(i,UseFriend.spell_cooldown[spell_num]);*/
 			}
 		}				
 		else
@@ -226,17 +186,25 @@ public class FightController : MonoBehaviour
 		{
 			if (TargetEnemy!=null)
 			{
-				spell.SpellUseTarget(TargetEnemy);
-				//UseFriend.spell_timeout[spell_num]=UseFriend.spell_cooldown[spell_num];
-				for(int i=0; i<3; ++i)
-					UseFriend.spell_timeout[i]=UseFriend.spell_cooldown[spell_num];
-				//UseFriend.mana-=UseFriend.spell_cost[spell_num];
+				spell.Use(TargetEnemy);
+				//!
+				//UseFriend.reloadTime=UseFriend.spell_cooldown[spell_num];
 				select_enemy=false;
 				SelectEnemy.SetActive(false);
 				TargetEnemy=null;
-				for(int i=0; i<3; ++i)
-					UseFriend.CreateSpellReload(i,UseFriend.spell_cooldown[spell_num]);
+				//!Отрисовать затемнение на иконках способностей
+				/*for(int i=0; i<3; ++i)
+					UseFriend.CreateSpellReload(i,UseFriend.spell_cooldown[spell_num]);*/
 			}
 		}
 	}
+
+	public void SpellUseAll()
+	{
+		spell.Use();
+		//character.SetReload(spell.reloadtime);
+		//Затемнение иконок способностей
+	}
+
+	
 }

@@ -97,26 +97,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 
-  sprite: {fileID: 0}
   maxhp: 150
-  maxmana: 0
   hp: 0
-  mana: 0
-  hpreg: 0.5
-  manareg: 0
-  fight: {fileID: 0}
-  FreezeParticle: {fileID: 0}
-  PoisonParticle: {fileID: 0}
-  PoisonDamage: 0
-  FreezingTime: 0
-  EfFlame: {fileID: 0}
-  EfIce: {fileID: 0}
-  IsFreezing: 0
-  insp: 0
-  minusCtime: 0
-  time: 0
-  Shield: {fileID: 0}
-  regen: 0
+  fightController: {fileID: 0}
+  alive: 0
   height: 1
   AttackType: Melee
   AttackPref: {fileID: 5907825325455355098, guid: 609a6ff8589470b40801e25470174791, type: 3}
@@ -124,7 +108,7 @@ MonoBehaviour:
   AttackTimeout: 0
   DamageMin: 25
   DamageMax: 30
-  Combat: 0
+  Combat: 1
   AttackTarget: {fileID: 0}
 --- !u!61 &4333648086047084417
 BoxCollider2D:
@@ -143,12 +127,12 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.68, y: 3.27}
+    oldSize: {x: 368, y: 327}
     newSize: {x: 1.6, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2.3}
+  m_Size: {x: 300, y: 280}
   m_EdgeRadius: 0

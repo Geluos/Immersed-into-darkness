@@ -5,11 +5,12 @@ using UnityEngine;
 public class Hub_person : MonoBehaviour
 {
     public GameObject Canvas;
+    public GameObject CharCanvas;
     void OnMouseOver()
 	{
         if (Input.GetMouseButtonDown(0))
 		{
-            //И где-то здесь передача данных
+            CharCanvas.SetActive(false);
             Canvas.SetActive(true);
         }
     }

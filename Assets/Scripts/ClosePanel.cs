@@ -5,14 +5,14 @@ using UnityEngine;
 public class ClosePanel : MonoBehaviour
 {
     public GameObject Canvas;
-    public int temp = 10;
+    public GameObject Char_Canvas;
     // Update is called once per frame
     void OnMouseOver()
 	{
         if (Input.GetMouseButtonDown(0))
 		{
             Canvas.SetActive(false);
-            temp++;
+            Char_Canvas.SetActive(true);
         }
     }
 }
