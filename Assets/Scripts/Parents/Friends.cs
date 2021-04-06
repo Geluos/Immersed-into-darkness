@@ -9,12 +9,12 @@ public abstract class Friends : Characters
     public List<Spells> Spells;
 	public List<IconSpell> SpellsIcons;
 	public float reloadTime;
+	public int NumInList;
 
 	new void Start()
 	{
 		base.Start();
 		fightController.friends.Add(this);
-		fightController.friends2.Add(this);
 		hp=maxhp;
 		reloadTime = 0f;
 		CreateHealthBar();

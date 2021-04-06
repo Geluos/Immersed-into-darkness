@@ -9,7 +9,6 @@ public class FightController : MonoBehaviour
 	[HideInInspector] public bool select_enemy;
 	
 	public List<Friends> friends;
-	[HideInInspector] public List<Friends> friends2;
 	public List<Enemies> enemies;
 	public GameObject[] EnemyPref = new GameObject[1];//UPDATE
 	public Spells spell;
@@ -32,11 +31,42 @@ public class FightController : MonoBehaviour
 	public AudioSource music1;
 	public AudioSource music2;
 
+	void Awake()
+    {
+
+	}
     void Start()
     {
 		//Здесь была отрисовка иконок
 		StartCoroutine(PlayMusic());
+		StartCoroutine(SortHeroes());
     }
+
+	IEnumerator SortHeroes()
+    {
+		yield return new WaitForFixedUpdate();
+		Friends TempF;
+		if(friends[0].NumInList!=0)
+        {
+			TempF = friends[0];
+			friends[0] = friends[1];
+			friends[1] = TempF;
+			if (friends[0].NumInList != 0)
+            {
+				TempF = friends[0];
+				friends[0] = friends[2];
+				friends[2] = TempF;
+			}
+
+		}
+
+		if (friends[1].NumInList != 1)
+        {
+			TempF = friends[1];
+			friends[1] = friends[2];
+			friends[2] = TempF;
+		}
+	}
 
 	IEnumerator PlayMusic()
 	{
@@ -61,10 +91,12 @@ public class FightController : MonoBehaviour
 			else
 			{
 				CurrentUnit.DestroyHalo(CurrentUnit.halo);
-
-				CurrentUnit = friends[ (friends.IndexOf(CurrentUnit)+1) % 3];
+				do
+				{
+					CurrentUnit = friends[(friends.IndexOf(CurrentUnit) + 1) % 3];
+				}
+				while (CurrentUnit.alive == false);
 				CurrentUnit.ActiveHero();
-
 				CurrentUnit.DestroyHalo(CurrentUnit.halo);
 				CurrentUnit.halo = CurrentUnit.CreateHalo(Color.yellow);
 			}
@@ -76,8 +108,17 @@ public class FightController : MonoBehaviour
 		}
 		if (Input.GetKeyDown(KeyCode.Alpha1))
 		{
+			if(CurrentUnit!=null)
+            {
+				CurrentUnit.DestroyHalo(CurrentUnit.halo);
+			}
+			
 
 			CurrentUnit = friends[0];
+
+			CurrentUnit.DestroyHalo(CurrentUnit.halo);
+			CurrentUnit.halo = CurrentUnit.CreateHalo(Color.yellow);
+
 			CurrentUnit.ActiveHero();
 			SelectFriend.SetActive(false);
 			SelectEnemy.SetActive(false);
@@ -86,7 +127,17 @@ public class FightController : MonoBehaviour
 		}
 		if (Input.GetKeyDown(KeyCode.Alpha2))
 		{
+			if (CurrentUnit != null)
+			{
+				CurrentUnit.DestroyHalo(CurrentUnit.halo);
+			}
+
+
 			CurrentUnit = friends[1];
+
+			CurrentUnit.DestroyHalo(CurrentUnit.halo);
+			CurrentUnit.halo = CurrentUnit.CreateHalo(Color.yellow);
+
 			CurrentUnit.ActiveHero();
 			SelectFriend.SetActive(false);
 			SelectEnemy.SetActive(false);
@@ -95,7 +146,17 @@ public class FightController : MonoBehaviour
 		}
 		if (Input.GetKeyDown(KeyCode.Alpha3))
 		{
+			if (CurrentUnit != null)
+			{
+				CurrentUnit.DestroyHalo(CurrentUnit.halo);
+			}
+
+
 			CurrentUnit = friends[2];
+
+			CurrentUnit.DestroyHalo(CurrentUnit.halo);
+			CurrentUnit.halo = CurrentUnit.CreateHalo(Color.yellow);
+
 			CurrentUnit.ActiveHero();
 			SelectFriend.SetActive(false);
 			SelectEnemy.SetActive(false);
@@ -130,11 +191,6 @@ public class FightController : MonoBehaviour
 		if (res)
 		{
 			restart.SetActive(false);
-            for (int i = 0; i <= friends2.Count-1; i++)
-            {
-				friends.Add(friends2[i]);
-				friends2[i].transform.position = pos[i].transform.position;
-            }
 			//UPDATE
             for (int i = 0; i <= enemies.Count-1; i++)
             {
