@@ -538,7 +538,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 20}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -549,7 +549,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 200}
+  m_Size: {x: 100, y: 150}
   m_EdgeRadius: 0
 --- !u!212 &121602724
 SpriteRenderer:
@@ -610,7 +610,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121602721}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -234, y: 277, z: 1}
+  m_LocalPosition: {x: -240, y: 250, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 671552527}
@@ -644,6 +644,7 @@ MonoBehaviour:
   - {fileID: 2018025219170527894, guid: 44ca56e46a706a643962ca2ca6160b0b, type: 3}
   SpellsIcons: []
   reloadTime: 0
+  NumInList: 1
 --- !u!1 &259094097
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,7 +802,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487976685}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 124, y: 97, z: 2.5637589}
+  m_LocalPosition: {x: 157, y: 156, z: 2.5637589}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1313394451}
@@ -1078,7 +1079,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701046752}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -157, y: 83, z: 2.5637589}
+  m_LocalPosition: {x: -157, y: 141, z: 2.5637589}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1313394451}
@@ -1273,7 +1274,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913271867}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -45, y: 99, z: 2.563759}
+  m_LocalPosition: {x: 16, y: 236, z: 2.563759}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1313394451}
@@ -1413,7 +1414,6 @@ MonoBehaviour:
   select_friend: 0
   select_enemy: 0
   friends: []
-  friends2: []
   enemies: []
   EnemyPref:
   - {fileID: 7385196848571093691, guid: a940a3aa12e989943ae03184193da201, type: 3}
@@ -2756,7 +2756,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 10}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2767,7 +2767,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 200}
+  m_Size: {x: 100, y: 150}
   m_EdgeRadius: 0
 --- !u!212 &2065840788
 SpriteRenderer:
@@ -2862,6 +2862,7 @@ MonoBehaviour:
   - {fileID: 2018025219170527894, guid: 44ca56e46a706a643962ca2ca6160b0b, type: 3}
   SpellsIcons: []
   reloadTime: 0
+  NumInList: 0
 --- !u!1 &2122050337
 GameObject:
   m_ObjectHideFlags: 0
@@ -2894,7 +2895,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 40}
+  m_Offset: {x: 0, y: 10}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2905,7 +2906,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 60, y: 120}
+  m_Size: {x: 100, y: 150}
   m_EdgeRadius: 0
 --- !u!212 &2122050340
 SpriteRenderer:
@@ -3000,6 +3001,7 @@ MonoBehaviour:
   - {fileID: 2018025219170527894, guid: 44ca56e46a706a643962ca2ca6160b0b, type: 3}
   SpellsIcons: []
   reloadTime: 0
+  NumInList: 2
 --- !u!1001 &8223884792478789479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3055,5 +3057,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 8223884792593466441, guid: 1405702fa30650f42b97b948e59a49fd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e6fa88370c67a764883090bf91df7136, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1405702fa30650f42b97b948e59a49fd, type: 3}
