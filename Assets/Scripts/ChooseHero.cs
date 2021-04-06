@@ -53,10 +53,14 @@ public class ChooseHero : MonoBehaviour
 
     public void ButtonStart()
     {
-        if (names[2] != "")
+        if (names[2] != "" && names[1] != "" && names[0] != "")
         {
             print(true);
-        } else { print("Нужно выбрать 3 героя"); }
+        } 
+        else 
+        { 
+            print("Нужно выбрать 3 героя");
+        }
     }
 
 }
