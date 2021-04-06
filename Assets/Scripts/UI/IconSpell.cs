@@ -83,7 +83,7 @@ public class IconSpell : MonoBehaviour
 	private KeyCode[] Key = new KeyCode[3] {KeyCode.Q,KeyCode.W,KeyCode.E};
 	void UseSpellOnKey()
 	{
-		print("QWE");
+		//print("QWE");
         if (Input.GetKeyDown(Key[num]) && fightController.CurrentUnit == character)
         {
             UseSpell();

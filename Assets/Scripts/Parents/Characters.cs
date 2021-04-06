@@ -10,8 +10,27 @@ public abstract class Characters : MonoBehaviour
 	public float hp;
 	public FightController fightController;
 	public float height;
+	[HideInInspector] public bool IsSelected = false;
 
 	public bool alive;
+
+	public Halo halo; //Ореол
+	public Halo CreateHalo(Color col) //Создать ореол
+	{
+		var obj = (Instantiate(Resources.Load<GameObject>("Halo"))).GetComponent<Halo>();
+		obj.spr.sprite = gameObject.GetComponent<SpriteRenderer>().sprite;
+		obj.transform.position = transform.position;
+		obj.transform.localScale = transform.localScale;
+		obj.color = col;
+		return obj;
+	}
+	public void DestroyHalo(Halo obj) //Удалить ореол
+	{
+		if (obj!=null)
+		{
+			Destroy(obj.gameObject);
+		}
+	}
 
 	public void CreateHealthBar()
 	{

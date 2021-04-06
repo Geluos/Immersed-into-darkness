@@ -24,6 +24,8 @@ public abstract class Enemies : Characters
 	
 	void OnMouseOver()
 	{
+		IsSelected = true;
+		if (halo==null) halo = CreateHalo(Color.red);
 		if (Input.GetMouseButtonDown(0))
 		{
 			print("Вы нажали на врага");
@@ -34,6 +36,11 @@ public abstract class Enemies : Characters
 				fightController.SpellUseTarget();
 			}
 		}
+	}
+	void OnMouseExit()
+	{
+		IsSelected = false;
+		if ((halo!=null)&&(halo.color!=Color.yellow)) DestroyHalo(halo);
 	}
 	
 

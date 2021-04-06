@@ -55,11 +55,18 @@ public class FightController : MonoBehaviour
 			{
 				CurrentUnit = friends[0];
 				CurrentUnit.ActiveHero();
+				friends[0].DestroyHalo(friends[0].halo);
+				friends[0].halo = friends[0].CreateHalo(Color.yellow);
 			}
 			else
 			{
+				CurrentUnit.DestroyHalo(CurrentUnit.halo);
+
 				CurrentUnit = friends[ (friends.IndexOf(CurrentUnit)+1) % 3];
 				CurrentUnit.ActiveHero();
+
+				CurrentUnit.DestroyHalo(CurrentUnit.halo);
+				CurrentUnit.halo = CurrentUnit.CreateHalo(Color.yellow);
 			}
 			SelectFriend.SetActive(false);
 			SelectEnemy.SetActive(false);

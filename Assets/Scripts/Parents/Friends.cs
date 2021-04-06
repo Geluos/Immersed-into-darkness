@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TMPro;
 
 public abstract class Friends : Characters
 {
@@ -37,8 +38,15 @@ public abstract class Friends : Characters
 
 	void OnMouseOver()
 	{
+		IsSelected = true;
+		if (halo==null) halo = CreateHalo(Color.green);
 		if (Input.GetMouseButtonDown(0))
 		{
+			DestroyHalo(halo);
+			halo = CreateHalo(Color.yellow);
+			if(fightController.CurrentUnit!=null)
+				fightController.CurrentUnit.DestroyHalo(fightController.CurrentUnit.halo);
+			fightController.CurrentUnit = this;
 			print("Вы нажали на " + this);
 			if (fightController.select_friend)
 			{
@@ -50,6 +58,11 @@ public abstract class Friends : Characters
 				ActiveHero();
 			}
 		}
+	}
+	void OnMouseExit()
+	{
+		IsSelected = false;
+		if ((halo!=null)&&(halo.color!=Color.yellow)) DestroyHalo(halo);
 	}
 
 	void CreateIcons()
