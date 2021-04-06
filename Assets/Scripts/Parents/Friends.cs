@@ -90,8 +90,25 @@ public abstract class Friends : Characters
 	void Update()
 	{
 		reloadTime = Math.Max(0f, reloadTime-Time.deltaTime);
+		//!Переписать
+		if(reloadTime != 0f)
+        {
+			for(int i=0; i<3; ++i)
+            {
+				SpellsIcons[i].GetComponent<SpriteRenderer>().color = Color.gray;
+			}
+        }
+		else
+        {
+			for (int i = 0; i < 3; ++i)
+			{
+				SpellsIcons[i].GetComponent<SpriteRenderer>().color = Color.white;
+			}
+		}
+		HB.GetComponentInChildren<TextMeshProUGUI>().text = $"{Mathf.Ceil(hp)}/{Mathf.Ceil(maxhp)}";
 		if (hp <= 0)
 		{
+			DestroyHalo(halo);
 			Death();
 		}
 	}

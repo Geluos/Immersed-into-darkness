@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public abstract class Enemies : Characters
 {
@@ -81,6 +82,7 @@ public abstract class Enemies : Characters
 	
 	void Update()
 	{
+		HB.GetComponentInChildren<TextMeshProUGUI>().text = $"{Mathf.Ceil(hp)}/{Mathf.Ceil(maxhp)}";
 		if ((Combat))
 		{
 			if (fightController.AliveHeroes()==0)
@@ -103,6 +105,7 @@ public abstract class Enemies : Characters
 		{
 			//Удалить все эффекты
 			fightController.enemies.Remove(this);
+			DestroyHalo(halo);
 			Destroy(gameObject);
 		}
 	}

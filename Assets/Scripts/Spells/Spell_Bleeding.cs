@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Speel_Bleeding : Spells
+public class Spell_Bleeding : Spells
 {
-    const float damage = 5.0f;
-    PoisonStatus PS;
+    //Переименовать в скальпель
+    const float damage = 6.0f;
+    public PoisonStatus PS;
     override public void Use(Characters character)
 	{
-        print("Отравили");
+        print("Наложили кровотечение");
         var st = Instantiate(PS, character.transform);
-        st.damage = damage * power;
+        st.damage = damage * power / 3;
         st.lifetime = 10f;
         st.period = 2f;
+        st.character = character;
         //character.StatusList.Add()
+        character.TakeDamage(power * damage);
         HeroCharacter.SetReload(reloadtime);
 	}
 }

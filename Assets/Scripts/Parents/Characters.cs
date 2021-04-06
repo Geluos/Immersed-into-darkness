@@ -11,6 +11,7 @@ public abstract class Characters : MonoBehaviour
 	public FightController fightController;
 	public float height;
 	[HideInInspector] public bool IsSelected = false;
+	[HideInInspector] public GameObject HB;
 
 	public List<Status> StatusList;
 
@@ -36,8 +37,9 @@ public abstract class Characters : MonoBehaviour
 
 	public void CreateHealthBar()
 	{
-		GameObject HB = Resources.Load<GameObject>("HealthBar");
-		var bar=Instantiate(HB, transform);
+		var THB = Resources.Load<GameObject>("HealthBar");
+		var bar=Instantiate(THB, transform);
+		HB = bar;
 		var HealthBar = bar.GetComponentInChildren<HealthBar>();
 		HealthBar.transform.parent.position += new Vector3(0, height/2+4f, 0);
 		HealthBar.character=this;

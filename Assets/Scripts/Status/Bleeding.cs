@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Poison : Status
+public class Bleeding : Status
 {
     public float damage;
 
