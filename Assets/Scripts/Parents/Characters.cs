@@ -12,6 +12,8 @@ public abstract class Characters : MonoBehaviour
 	public float height;
 	[HideInInspector] public bool IsSelected = false;
 
+	public List<Status> StatusList;
+
 	public bool alive;
 
 	public Halo halo; //Ореол
