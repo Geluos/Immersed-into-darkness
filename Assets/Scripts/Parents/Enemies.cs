@@ -7,9 +7,9 @@ public abstract class Enemies : Characters
 {
 	//Атака
 	public string AttackType;//Melee-ближний Distance-дальний
-	public GameObject AttackPref;
+	//public GameObject AttackPref;
 	public float AttackCooldown;
-	public float AttackTimeout;
+	[HideInInspector] public float AttackTimeout;
 	public float DamageMin;
 	public float DamageMax;
 	public bool Combat;
@@ -19,6 +19,7 @@ public abstract class Enemies : Characters
 	new void Start()
     {
 		base.Start();
+		AttackTimeout = AttackCooldown;
 		fightController.enemies.Add(this);
 		CreateHealthBar();
     }
@@ -53,7 +54,7 @@ public abstract class Enemies : Characters
 
 	void Attack()
 	{
-		if (AttackTarget!=null)
+		if (AttackTarget != null && AttackTarget.alive)
 		{
 			if (AttackType=="Melee")
 			{
@@ -61,7 +62,8 @@ public abstract class Enemies : Characters
 				{
 					AttackTimeout=AttackCooldown;
 					AttackTarget.TakeDamage(Random.Range(DamageMin, DamageMax));
-					Instantiate(AttackPref,AttackTarget.transform.position,transform.rotation);
+					StartCoroutine(AttackTarget.TakingDamageAnim());
+					//Instantiate(AttackPref,AttackTarget.transform.position,transform.rotation);
 				}
 			}
 		}

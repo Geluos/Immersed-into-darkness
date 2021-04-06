@@ -16,7 +16,7 @@ public abstract class Spells : MonoBehaviour
 	public void Start()
 	{
 		power = 1f;
-		print("Я мыслю");
+		//print("Я мыслю");
 	}
 
 	virtual public void Use()

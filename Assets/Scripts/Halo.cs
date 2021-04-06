@@ -19,7 +19,7 @@ public class Halo : MonoBehaviour
 		{
 			spr.material = material;
 			spr.color = color;
-			transform.localScale += new Vector3(0.02f, 0.02f, 0.02f);
+			transform.localScale += new Vector3(2/ spr.sprite.bounds.size.x, 2 / spr.sprite.bounds.size.y, 0);
 		}
     }
 

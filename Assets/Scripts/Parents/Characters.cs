@@ -57,7 +57,35 @@ public abstract class Characters : MonoBehaviour
 		spt = gameObject.GetComponent<SpriteRenderer>();
 		height = spt.sprite.bounds.size.y;
 	}
-	
+
+
+	public IEnumerator TakingDamageAnim()
+    {
+		print("Анимация?");
+		for(int i=0; i<5; ++i)
+        {
+			gameObject.transform.position -= new Vector3(0.2f, 0, 0);
+			yield return new WaitForFixedUpdate();
+		}
+		yield return new WaitForSeconds(0.5f);
+		for (int i = 0; i < 20; ++i)
+		{
+			gameObject.transform.position += new Vector3(0.2f / 4, 0, 0);
+			yield return new WaitForFixedUpdate();
+		}
+	}
+
+	public IEnumerator DoTransparent()
+    {
+		var spr = gameObject.GetComponent<SpriteRenderer>();
+		for (int i = 1; i < 30; ++i)
+		{
+			spr.color = new Vector4(spr.color.r, spr.color.g, spr.color.b, spr.color.a - spr.color.a/ (500f-(float)(i)));
+			yield return new WaitForFixedUpdate();
+		}
+		gameObject.SetActive(false);
+		yield return new WaitForFixedUpdate();
+	}
 	void Update()
 	{
 		if (hp<=0)
@@ -71,7 +99,7 @@ public abstract class Characters : MonoBehaviour
 
 	public void Death()
 	{
-		gameObject.SetActive(false);
+		StartCoroutine(DoTransparent());
 		alive = false;
 	}
 	

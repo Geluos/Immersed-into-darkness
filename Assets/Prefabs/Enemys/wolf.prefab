@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f7367ecedfe5d1542b670cdab1f589d5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,13 +99,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   maxhp: 80
-  hp: 100
+  hp: 80
   fightController: {fileID: 0}
-  alive: 0
   height: 1
+  IsSelected: 0
+  HB: {fileID: 0}
+  StatusList: []
+  alive: 0
+  halo: {fileID: 0}
   AttackType: Melee
-  AttackPref: {fileID: 1406967693763533615, guid: 35d82788289764047b5b7b9cd24e35ab, type: 3}
-  AttackCooldown: 2
+  AttackCooldown: 5
   AttackTimeout: 0
   DamageMin: 8
   DamageMax: 10
