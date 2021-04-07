@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainController : MonoBehaviour
 {
@@ -13,9 +14,7 @@ public class MainController : MonoBehaviour
 
     void Start()
     {
-        Pages.Add(Instantiate(FirstPage, transform));
-        //Активируем первую страницу
-        Pages[0].SetActive(true);
+        
     }
 
 
@@ -41,6 +40,16 @@ public class MainController : MonoBehaviour
     public void UnActiveLastPage()
     {
         Pages[Pages.Count-1].SetActive(false);
+    }
+
+    public void Do()
+    {
+        print("Раз");
+        //if (SceneManager.GetActiveScene().name == "StoryScene")
+        print("Два");
+        Pages.Add(Instantiate(FirstPage, transform));
+        //Активируем первую страницу
+        Pages[0].SetActive(true);
     }
 
     // Update is called once per frame

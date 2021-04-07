@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChooseHero : MonoBehaviour
 {
@@ -55,10 +56,12 @@ public class ChooseHero : MonoBehaviour
     {
         if (names[2] != "" && names[1] != "" && names[0] != "")
         {
-            print(true);
+            SceneManager.LoadScene("StoryScene");
+            GameObject.FindWithTag("GameController").GetComponent<MainController>().Do();
+            print("Do");
         } 
         else 
-        { 
+        {
             print("Нужно выбрать 3 героя");
         }
     }
