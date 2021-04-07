@@ -7,18 +7,16 @@ public class ChooseHero : MonoBehaviour
 {
     public GameObject[] icon = new GameObject[3];
     public string[] names = new string[3];
-    public GameObject[] iconHero = new GameObject[3];
+    public GameObject[] iconHero = new GameObject[4];
 
     public void TakeName(ref string[] names, string name)
     {
-        int ind;
         for (int i = 0; i < names.Length; i++)
         {
             if (names[i] == "" && names[0] != name && names[1] != name && names[2] != name)
             {
                 names[i] = name;
-                ind = i;
-                IconHero(name, ind);
+                IconHero(name, i);
                 break;
             }
         }
@@ -49,6 +47,9 @@ public class ChooseHero : MonoBehaviour
             case "alchemist":
                 Instantiate(iconHero[2], icon[ind].transform);
                 break;
+            case "rifflewoman":
+                Instantiate(iconHero[3], icon[ind].transform);
+                break;
         }
     }
 
@@ -57,8 +58,12 @@ public class ChooseHero : MonoBehaviour
         if (names[2] != "" && names[1] != "" && names[0] != "")
         {
             SceneManager.LoadScene("StoryScene");
-            GameObject.FindWithTag("GameController").GetComponent<MainController>().Do();
-            print("Do");
+            var GC = GameObject.FindWithTag("GameController").GetComponent<MainController>();
+            GC.stage = 2;
+            StartCoroutine(GC.StopMusic());
+            StartCoroutine(GC.PlayMusic("Nikfus - Dialogue"));
+            GC.Do();
+            //print("Do");
         } 
         else 
         {

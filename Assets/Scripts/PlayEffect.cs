@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayEffect : MonoBehaviour
 {
     public AudioSource sound;
-    float life_time;
+    float life_time = 0;
 
     // Start is called before the first frame update
     void Start()

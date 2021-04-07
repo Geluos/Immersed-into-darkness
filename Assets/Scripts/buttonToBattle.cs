@@ -23,6 +23,7 @@ public class buttonToBattle : MonoBehaviour
             //Здесь устанавливаем в MainController все данные о бое
 
             //Перестать отображть page
+            StartCoroutine(MC.StopMusic());
             MC.UnActiveLastPage();
             SceneManager.LoadScene("FightScene");
         }

@@ -1,13 +1,12 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spell_Slash : Spells
+public class Spell_Shoot : Spells
 {
-    const float damage = 16.0f;
+    const float damage = 18.0f;
     override public void Use(Characters character)
 	{
-        print("Slash применен!!!");
         character.TakeDamage(power*damage);
         HeroCharacter.SetReload(reloadtime);
 	}

@@ -1649,8 +1649,7 @@ MonoBehaviour:
   select_enemy: 0
   friends: []
   enemies: []
-  EnemyPref:
-  - {fileID: 7385196848571093691, guid: a940a3aa12e989943ae03184193da201, type: 3}
+  EnemyPref: []
   spell: {fileID: 0}
   UseFriend: {fileID: 0}
   TargetFriend: {fileID: 0}

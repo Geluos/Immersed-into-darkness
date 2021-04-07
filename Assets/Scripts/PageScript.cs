@@ -52,6 +52,16 @@ public class PageScript : MonoBehaviour
             if(time<=0)
             {
                 if(tpos<txt.Length){
+                    if(txt[tpos]=='<')
+                    {
+                        ptxt += txt[tpos];
+                        ++tpos;
+                        while(txt[tpos]!='>')
+                        {
+                            ptxt += txt[tpos];
+                            ++tpos;
+                        }
+                    }
                     ptxt += txt[tpos];
                     ++tpos;
                     var t = Text.GetComponent<TextMeshProUGUI>();
