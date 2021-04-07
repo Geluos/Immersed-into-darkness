@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Button : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            fight.res = true;
+            SceneManager.LoadScene("Menu");
         }
     }
 }

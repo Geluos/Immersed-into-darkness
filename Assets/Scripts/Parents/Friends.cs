@@ -11,14 +11,23 @@ public abstract class Friends : Characters
 	public float reloadTime;
 	public int NumInList;
 
+	bool ready = false;
+
 	new void Start()
 	{
 		base.Start();
 		fightController.friends.Add(this);
 		hp=maxhp;
 		reloadTime = 0f;
+		StartCoroutine(CI()); 
+	}
+
+	public IEnumerator CI()
+    {
+		yield return new WaitForSeconds(0.2f);
 		CreateHealthBar();
 		CreateIcons();
+		ready = true;
 	}
 
 	public void ActiveHero()
@@ -89,27 +98,30 @@ public abstract class Friends : Characters
 
 	void Update()
 	{
-		reloadTime = Math.Max(0f, reloadTime-Time.deltaTime);
-		//!Переписать
-		if(reloadTime != 0f)
-        {
-			for(int i=0; i<3; ++i)
-            {
-				SpellsIcons[i].GetComponent<SpriteRenderer>().color = Color.gray;
-			}
-        }
-		else
-        {
-			for (int i = 0; i < 3; ++i)
-			{
-				SpellsIcons[i].GetComponent<SpriteRenderer>().color = Color.white;
-			}
-		}
-		HB.GetComponentInChildren<TextMeshProUGUI>().text = $"{Mathf.Ceil(hp)}/{Mathf.Ceil(maxhp)}";
-		if (hp <= 0)
+		if (ready)
 		{
-			DestroyHalo(halo);
-			Death();
+			reloadTime = Math.Max(0f, reloadTime - Time.deltaTime);
+			//!Переписать
+			if (reloadTime != 0f)
+			{
+				for (int i = 0; i < 3; ++i)
+				{
+					SpellsIcons[i].GetComponent<SpriteRenderer>().color = Color.gray;
+				}
+			}
+			else
+			{
+				for (int i = 0; i < 3; ++i)
+				{
+					SpellsIcons[i].GetComponent<SpriteRenderer>().color = Color.white;
+				}
+			}
+			HB.GetComponentInChildren<TextMeshProUGUI>().text = $"{Mathf.Ceil(hp)}/{Mathf.Ceil(maxhp)}";
+			if (hp <= 0)
+			{
+				DestroyHalo(halo);
+				Death();
+			}
 		}
 	}
 

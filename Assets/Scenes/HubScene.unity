@@ -3579,6 +3579,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: SwordmanP
+      value: 
+      objectReference: {fileID: 6369252786735352375, guid: 94b6c7abeff577049a227464e487eb92, type: 3}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: AlchemistP
+      value: 
+      objectReference: {fileID: 5291907527962126756, guid: ece297ca14481f5429eb90bc061ee3f5, type: 3}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: DocP
+      value: 
+      objectReference: {fileID: 2845886109357559944, guid: b459e0071a2b5fe40b0ba9f713c06f05, type: 3}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: RifflewomanP
+      value: 
+      objectReference: {fileID: 5948462398377755431, guid: ecdf58337437bb243b43c0a3f510f702, type: 3}
     - target: {fileID: 6654286766640664026, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

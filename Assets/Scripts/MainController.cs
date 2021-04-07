@@ -18,6 +18,15 @@ public class MainController : MonoBehaviour
     //1 - Хаб
     //2 - Начальный текст
 
+    public Friends SwordmanP;
+    public Friends AlchemistP;
+    public Friends DocP;
+    public Friends RifflewomanP;
+
+    public List<Friends> friends;
+
+    [HideInInspector] public string[] names;
+
     void Start()
     {
         stage = 1;
@@ -45,6 +54,7 @@ public class MainController : MonoBehaviour
             pg.SetActive(false);
         }
         Pages.Add(Instantiate(BattlePage, transform));
+        PlayMusic("Nikfus - Dialogue");
     }
     public void EndBattle()
     {
@@ -87,9 +97,27 @@ public class MainController : MonoBehaviour
                 PlayMusic("Nikfus - Lullaby");
                 break;
             case 2:
+                for(int i=0; i<3; ++i)
+                {
+                    switch(names[i])
+                    {
+                        case "swordsman":
+                            friends.Add(SwordmanP);
+                            break;
+                        case "doctor":
+                            friends.Add(DocP);
+                            break;
+                        case "alchemist":
+                            friends.Add(AlchemistP);
+                            break;
+                        case "rifflewoman":
+                            friends.Add(RifflewomanP);
+                            break;
+                    }
+                }
                 Pages.Add(Instantiate(FirstPage, transform));
                 //Активируем первую страницу
-                Pages[0].SetActive(true);
+                Pages[1].SetActive(true);
                 break;
             default:
                 break;

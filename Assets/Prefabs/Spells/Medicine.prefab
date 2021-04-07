@@ -49,6 +49,6 @@ MonoBehaviour:
   HeroCharacter: {fileID: 0}
   type: TargetFriend
   power: 0
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 693e045d3d1acf84d88e52db501f9b81, type: 3}
   reloadtime: 0
   heal: 12

@@ -27,8 +27,10 @@ public class buttonToBattle : MonoBehaviour
             MC.UnActiveLastPage();
             if(MC.stage==2)
                 SceneManager.LoadScene("FightSceneWolfs");
-            else
+            else if(MC.stage == 3)
                 SceneManager.LoadScene("FightSceneShark");
+            else
+                SceneManager.LoadScene("Goddes");
             MC.BattlePage = NextPage;
         }
     }

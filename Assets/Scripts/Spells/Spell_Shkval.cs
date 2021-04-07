@@ -9,6 +9,7 @@ public class Spell_Shkval : Spells
 	{
         character.TakeDamage(power*damage);
         HeroCharacter.SetReload(reloadtime);
+        fightController = character.fightController;
         foreach (var enemy in fightController.enemies)
         {
             if (enemy != character)

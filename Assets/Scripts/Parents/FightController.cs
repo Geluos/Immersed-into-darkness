@@ -45,6 +45,7 @@ public class FightController : MonoBehaviour
 	IEnumerator SortHeroes()
     {
 		yield return new WaitForFixedUpdate();
+		
 		Friends TempF;
 		if(friends[0].NumInList!=0)
         {
@@ -57,7 +58,6 @@ public class FightController : MonoBehaviour
 				friends[0] = friends[2];
 				friends[2] = TempF;
 			}
-
 		}
 
 		if (friends[1].NumInList != 1)
@@ -66,6 +66,21 @@ public class FightController : MonoBehaviour
 			friends[1] = friends[2];
 			friends[2] = TempF;
 		}
+
+		for (int i = 0; i < 3; ++i)
+		{
+			var GC = GameObject.FindWithTag("GameController").GetComponent<MainController>();
+			friends[i].Name = GC.friends[i].Name;
+			friends[i].hp = GC.friends[i].hp;
+			friends[i].maxhp = GC.friends[i].maxhp;
+			/*for (int j = 0; j < 3; ++j)
+			{
+				friends[i].Spells[j] = GC.friends[i].Spells[j];
+			}*/
+			friends[i].alive = GC.friends[i].alive;
+			friends[i].gameObject.GetComponent<SpriteRenderer>().sprite = GC.friends[i].gameObject.GetComponent<SpriteRenderer>().sprite;
+		}
+		print("копирование способностей прошло успешно");
 	}
 
 	IEnumerator PlayMusic()
@@ -189,7 +204,7 @@ public class FightController : MonoBehaviour
 			finish = true;
 			GameObject.FindWithTag("GameController").GetComponent<MainController>().EndBattle();
 		}
-		/*
+		
 		if (AliveHeroes() == 0)
 		{
 			restart.SetActive(true);
@@ -199,6 +214,7 @@ public class FightController : MonoBehaviour
 		{
 			ChangeCurrentUnit();
 		}
+		/*
 		if (res)
 		{
 			restart.SetActive(false);

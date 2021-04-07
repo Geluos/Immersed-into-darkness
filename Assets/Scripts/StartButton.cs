@@ -12,7 +12,6 @@ public class StartButton : MonoBehaviour
 
     public void ButtonQuit()
     {
-        print("Выход");
-        //Application.Quit();
+        Application.Quit();
     }
 }
