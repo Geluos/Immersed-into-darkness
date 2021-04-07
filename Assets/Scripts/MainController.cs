@@ -9,6 +9,8 @@ public class MainController : MonoBehaviour
     //Изначально 
     public GameObject FirstPage;
 
+    public GameObject BattlePage;
+
     //Пока публичный для просмотра
     public List<GameObject> Pages;
 
@@ -34,6 +36,21 @@ public class MainController : MonoBehaviour
 			Destroy(gameObject);
 		}
     }
+    IEnumerator EndB()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("StoryScene");
+        foreach(GameObject pg in Pages)
+        {
+            pg.SetActive(false);
+        }
+        Pages.Add(Instantiate(BattlePage, transform));
+    }
+    public void EndBattle()
+    {
+        ++stage;
+        StartCoroutine(EndB());
+    }
 
     public void toPage(GameObject pg)
     {
@@ -47,17 +64,17 @@ public class MainController : MonoBehaviour
         Pages[Pages.Count-1].SetActive(false);
     }
 
-    public IEnumerator PlayMusic(string name)
+    public void PlayMusic(string name)
     {
-        yield return new WaitForSeconds(0.5f);
         print("Музука");
-        gameObject.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>("name");
+        gameObject.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>(name);
         gameObject.GetComponent<AudioSource>().Play();
     }
 
-    public IEnumerator StopMusic()
+
+    public void StopMusic()
     {
-        yield return new WaitForSeconds(0f);
+        
         print("No musuca");
         gameObject.GetComponent<AudioSource>().Stop();
     }
@@ -67,7 +84,7 @@ public class MainController : MonoBehaviour
         //Временное решение?
         switch (stage) {
             case 1:
-                StartCoroutine(PlayMusic("Nikfus - Lullaby"));
+                PlayMusic("Nikfus - Lullaby");
                 break;
             case 2:
                 Pages.Add(Instantiate(FirstPage, transform));

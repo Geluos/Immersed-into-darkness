@@ -23,9 +23,13 @@ public class buttonToBattle : MonoBehaviour
             //Здесь устанавливаем в MainController все данные о бое
 
             //Перестать отображть page
-            StartCoroutine(MC.StopMusic());
+            MC.StopMusic();
             MC.UnActiveLastPage();
-            SceneManager.LoadScene("FightScene");
+            if(MC.stage==2)
+                SceneManager.LoadScene("FightSceneWolfs");
+            else
+                SceneManager.LoadScene("FightSceneShark");
+            MC.BattlePage = NextPage;
         }
     }
 }

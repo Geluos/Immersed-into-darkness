@@ -176,9 +176,20 @@ public class FightController : MonoBehaviour
 		//print("Кол-во живых героев" + res);
 		return res;
 	}
-	
+
+	bool finish = false;
     private void Update()
     {
+		if(AliveHeroes() == 0)
+        {
+			//Поражение
+        }
+		if(enemies.Count == 0 && !finish)
+        {
+			finish = true;
+			GameObject.FindWithTag("GameController").GetComponent<MainController>().EndBattle();
+		}
+		/*
 		if (AliveHeroes() == 0)
 		{
 			restart.SetActive(true);
@@ -219,7 +230,7 @@ public class FightController : MonoBehaviour
             }
             resEn = 0;
 			//UPDATE
-        }
+        }*/
 	}
 
 

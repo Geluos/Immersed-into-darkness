@@ -44,10 +44,22 @@ public class PageScript : MonoBehaviour
         }
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
-        if(!printed)
+        if (!printed && Input.GetMouseButtonDown(0) && ptxt.Length>20)
+        {
+            printed = true;
+            ptxt = txt;
+            var t = Text.GetComponent<TextMeshProUGUI>();
+            t.text = ptxt;
+            show_All_Buttons();
+        }
+
+
+        if (!printed)
         {
             if(time<=0)
             {

@@ -60,8 +60,8 @@ public class ChooseHero : MonoBehaviour
             SceneManager.LoadScene("StoryScene");
             var GC = GameObject.FindWithTag("GameController").GetComponent<MainController>();
             GC.stage = 2;
-            StartCoroutine(GC.StopMusic());
-            StartCoroutine(GC.PlayMusic("Nikfus - Dialogue"));
+            GC.StopMusic();
+            GC.PlayMusic("Nikfus - Dialogue");
             GC.Do();
             //print("Do");
         } 
