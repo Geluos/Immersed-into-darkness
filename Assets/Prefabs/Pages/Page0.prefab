@@ -454,7 +454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92abe0925254317489820dbca37fa51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textSpeed: 3.4
+  textSpeed: 1
   time: 1
   Text: {fileID: 9079484145144373306}
   buttonsList:
