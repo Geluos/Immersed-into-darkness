@@ -54,23 +54,11 @@ public abstract class Enemies : Characters
 
 	void Attack()
 	{
-		if (AttackTarget != null && AttackTarget.alive)
-		{
-			if (AttackType=="Melee")
-			{
-				if (!fightController.friends.Find(x => x==AttackTarget)) {AttackTarget=null;} else
-				{
-					AttackTimeout=AttackCooldown;
-					AttackTarget.TakeDamage(Random.Range(DamageMin, DamageMax));
-					StartCoroutine(AttackTarget.TakingDamageAnim());
-					//Instantiate(AttackPref,AttackTarget.transform.position,transform.rotation);
-				}
-			}
-		}
-		else
-		{
-			SetTargetRandom();
-		}
+		SetTargetRandom();
+		AttackTimeout=AttackCooldown;
+		AttackTarget.TakeDamage(Random.Range(DamageMin, DamageMax));
+		StartCoroutine(AttackTarget.TakingDamageAnim());
+		//Instantiate(AttackPref,AttackTarget.transform.position,transform.rotation);
 	}
 	//Переписать
 	void SetTargetRandom()

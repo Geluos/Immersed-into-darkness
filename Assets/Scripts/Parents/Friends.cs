@@ -19,12 +19,11 @@ public abstract class Friends : Characters
 		fightController.friends.Add(this);
 		hp=maxhp;
 		reloadTime = 0f;
-		StartCoroutine(CI()); 
+		
 	}
 
-	public IEnumerator CI()
+	public void Initialize()
     {
-		yield return new WaitForSeconds(0.2f);
 		CreateHealthBar();
 		CreateIcons();
 		ready = true;
@@ -48,7 +47,8 @@ public abstract class Friends : Characters
 	void OnMouseOver()
 	{
 		IsSelected = true;
-		if (halo==null) halo = CreateHalo(Color.green);
+		if (halo==null && ready) 
+			halo = CreateHalo(Color.green);
 		if (Input.GetMouseButtonDown(0))
 		{
 			DestroyHalo(halo);

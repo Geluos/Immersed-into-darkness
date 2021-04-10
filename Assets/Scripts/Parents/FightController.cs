@@ -39,7 +39,7 @@ public class FightController : MonoBehaviour
     {
 		//Здесь была отрисовка иконок
 		StartCoroutine(PlayMusic());
-		StartCoroutine(SortHeroes());
+		StartCoroutine(SortHeroes()); 
     }
 
 	IEnumerator SortHeroes()
@@ -67,9 +67,12 @@ public class FightController : MonoBehaviour
 			friends[2] = TempF;
 		}
 
+		//копирование героев из контроллера на боевую сцену
 		for (int i = 0; i < 3; ++i)
 		{
 			var GC = GameObject.FindWithTag("GameController").GetComponent<MainController>();
+			//friends[i] = GC.friends[i];
+
 			friends[i].Name = GC.friends[i].Name;
 			friends[i].hp = GC.friends[i].hp;
 			friends[i].maxhp = GC.friends[i].maxhp;
@@ -79,6 +82,7 @@ public class FightController : MonoBehaviour
 			}*/
 			friends[i].alive = GC.friends[i].alive;
 			friends[i].gameObject.GetComponent<SpriteRenderer>().sprite = GC.friends[i].gameObject.GetComponent<SpriteRenderer>().sprite;
+			friends[i].Initialize();
 		}
 		print("копирование способностей прошло успешно");
 	}
