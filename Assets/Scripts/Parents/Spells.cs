@@ -15,7 +15,7 @@ public abstract class Spells : MonoBehaviour
 	
 	public void Start()
 	{
-		power = 1f;
+		power = HeroCharacter.power;
 		//print("Я мыслю");
 	}
 
@@ -27,5 +27,10 @@ public abstract class Spells : MonoBehaviour
 	virtual public void Use(Characters character)
 	{
 		print("Не туда воюешь!");
+	}
+
+	void Update()
+    {
+		power = HeroCharacter.power;
 	}
 }

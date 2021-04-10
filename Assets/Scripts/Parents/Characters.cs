@@ -17,7 +17,11 @@ public abstract class Characters : MonoBehaviour
 
 	public bool alive;
 
-	public Halo halo; //Ореол
+	public float power = 1f;
+
+	public float defenceMultiply = 1f;
+
+	[HideInInspector] public Halo halo; //Ореол
 	public Halo CreateHalo(Color col) //Создать ореол
 	{
 		var obj = (Instantiate(Resources.Load<GameObject>("Halo"), transform)).GetComponent<Halo>();
@@ -105,7 +109,7 @@ public abstract class Characters : MonoBehaviour
 	
 	public void TakeDamage(float damage)
 	{
-		hp = Math.Max(0f, hp-damage);
+		hp = Math.Max(0f, hp-damage*defenceMultiply);
 	}
 	
 	public void TakeHeal(float heal)

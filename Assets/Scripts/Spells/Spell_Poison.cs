@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class Spell_Poison : Spells
 {
-    const float damage = 17.0f;
+    const float damage = 2.0f;
+    public PoisonStatus PS;
     override public void Use(Characters character)
 	{
         print("Отравили");
-        //var st = Instantiate()
+        var st = Instantiate(PS, character.transform);
+        st.damage = damage*power;
+        st.lifetime = 7f;
+        st.period = 1f;
+        st.character = character;
         //character.StatusList.Add()
+        character.TakeDamage(power * damage);
         HeroCharacter.SetReload(reloadtime);
-	}
+    }
 }

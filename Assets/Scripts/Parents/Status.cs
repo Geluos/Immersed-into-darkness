@@ -13,7 +13,7 @@ public abstract class Status : MonoBehaviour
     public Characters character;
     [HideInInspector] public float time;
 
-    void Start()
+    public void Start()
     {
         time = period;
     }
