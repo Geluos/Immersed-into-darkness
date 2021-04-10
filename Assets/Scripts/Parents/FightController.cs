@@ -76,10 +76,10 @@ public class FightController : MonoBehaviour
 			friends[i].Name = GC.friends[i].Name;
 			friends[i].hp = GC.friends[i].hp;
 			friends[i].maxhp = GC.friends[i].maxhp;
-			/*for (int j = 0; j < 3; ++j)
+			for (int j = 0; j < 3; ++j)
 			{
 				friends[i].Spells[j] = GC.friends[i].Spells[j];
-			}*/
+			}
 			friends[i].alive = GC.friends[i].alive;
 			friends[i].gameObject.GetComponent<SpriteRenderer>().sprite = GC.friends[i].gameObject.GetComponent<SpriteRenderer>().sprite;
 			friends[i].Initialize();
