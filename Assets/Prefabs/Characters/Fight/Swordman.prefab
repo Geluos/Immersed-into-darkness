@@ -131,10 +131,12 @@ MonoBehaviour:
   HB: {fileID: 0}
   StatusList: []
   alive: 1
+  power: 1
+  defenceMultiply: 1
   halo: {fileID: 0}
   Spells:
-  - {fileID: 2018025219170527894, guid: 44ca56e46a706a643962ca2ca6160b0b, type: 3}
-  - {fileID: 2018025219170527894, guid: 44ca56e46a706a643962ca2ca6160b0b, type: 3}
+  - {fileID: 806147621915311276, guid: dc682f643b3dc0745bc483f31462c96e, type: 3}
+  - {fileID: 7984099033843012995, guid: 048a73501c24d374fb0810e572fa29fa, type: 3}
   - {fileID: 2018025219170527894, guid: 44ca56e46a706a643962ca2ca6160b0b, type: 3}
   SpellsIcons: []
   reloadTime: 0

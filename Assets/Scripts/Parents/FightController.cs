@@ -261,6 +261,7 @@ public class FightController : MonoBehaviour
 		{
 			if (TargetFriend!=null)
 			{
+				StartCoroutine(spell.HeroCharacter.AtakeAnim());
 				spell.Use(TargetFriend);
 				//!
 				//UseFriend.reloadTime=UseFriend.spell_cooldown[spell_num];
@@ -277,6 +278,7 @@ public class FightController : MonoBehaviour
 		{
 			if (TargetEnemy!=null)
 			{
+				StartCoroutine(spell.HeroCharacter.AtakeAnim());
 				print("ABBA");
 				spell.Use(TargetEnemy);
 				//!

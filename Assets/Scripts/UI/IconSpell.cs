@@ -19,16 +19,19 @@ public class IconSpell : MonoBehaviour
 	
 	void UseSpell()
 	{
+		
 		print("UseSpell1");
 		if ((!fightController.select_friend)&&(!fightController.select_enemy))
 		{
 			print("UseSpell2");
 			if (character.reloadTime==0)
 			{
+				
 				print("UseSpell2.5");
 				switch (spell.type)
 				{
 					case "All":{
+						StartCoroutine(character.AtakeAnim());
 						print("Применение ненаправленной способности");
 						fightController.spell=spell;
 						fightController.SpellUseAll();

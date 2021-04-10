@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3706741305324013217
+--- !u!1 &5086424284507942904
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5630920986372444429}
-  - component: {fileID: 1708011467649049992}
+  - component: {fileID: 6251351613057597379}
+  - component: {fileID: 3776186801722636152}
   m_Layer: 0
-  m_Name: Medicine
+  m_Name: RedMark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5630920986372444429
+--- !u!4 &6251351613057597379
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3706741305324013217}
+  m_GameObject: {fileID: 5086424284507942904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -74.02324, y: 205.64111, z: -215.19199}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1708011467649049992
+--- !u!114 &3776186801722636152
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3706741305324013217}
+  m_GameObject: {fileID: 5086424284507942904}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d906c4b09aa1de9439aa89fbe7cb60bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 4bacc2c34c7662549bcebea511c76243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: "\u041D\u0435\u0441\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u043D\u0430\u044F
-    \u043C\u0435\u0434\u0438\u0446\u0438\u043D\u0430"
+  Name: 
   fightController: {fileID: 0}
   HeroCharacter: {fileID: 0}
-  type: TargetFriend
+  type: TargetEnemy
   power: 0
-  sprite: {fileID: 21300000, guid: 693e045d3d1acf84d88e52db501f9b81, type: 3}
-  reloadtime: 9
-  heal: 12
+  sprite: {fileID: 21300000, guid: 3a53214e2546dd54c94fdb0dec0c91b8, type: 3}
+  reloadtime: 4
+  VS: {fileID: 1970459056119566784, guid: b12b353bdb66ef94fb7b1228716a5476, type: 3}

@@ -79,6 +79,22 @@ public abstract class Characters : MonoBehaviour
 		}
 	}
 
+	public IEnumerator AtakeAnim()
+	{
+		print("Анимация?");
+		for (int i = 0; i < 5; ++i)
+		{
+			gameObject.transform.position += new Vector3(0.4f, 0, 0);
+			yield return new WaitForFixedUpdate();
+		}
+		yield return new WaitForSeconds(0.2f);
+		for (int i = 0; i < 20; ++i)
+		{
+			gameObject.transform.position -= new Vector3(0.4f / 4, 0, 0);
+			yield return new WaitForFixedUpdate();
+		}
+	}
+
 	public IEnumerator DoTransparent()
     {
 		var spr = gameObject.GetComponent<SpriteRenderer>();
