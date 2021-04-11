@@ -103,18 +103,19 @@ public class MainController : MonoBehaviour
                     switch(names[i])
                     {
                         case "swordsman":
-                            friends.Add(SwordmanP);
+                            friends.Add(Instantiate(SwordmanP, transform).GetComponent<Warrior>());
                             break;
                         case "doctor":
-                            friends.Add(DocP);
+                            friends.Add(Instantiate(DocP, transform).GetComponent<Warrior>());
                             break;
                         case "alchemist":
-                            friends.Add(AlchemistP);
+                            friends.Add(Instantiate(AlchemistP, transform).GetComponent<Warrior>());
                             break;
                         case "rifflewoman":
-                            friends.Add(RifflewomanP);
+                            friends.Add(Instantiate(RifflewomanP, transform).GetComponent<Warrior>());
                             break;
                     }
+                    friends[i].gameObject.SetActive(false);
                 }
                 Pages.Add(Instantiate(FirstPage, transform));
                 //Активируем первую страницу
