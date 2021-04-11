@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Audio;
 
 public abstract class Characters : MonoBehaviour
 {	
@@ -55,7 +56,8 @@ public abstract class Characters : MonoBehaviour
 		FightController fightController = (GameObject.FindWithTag("FightController")).GetComponent<FightController>();
 		hp=maxhp;
 		alive = true;
-		gameObject.AddComponent<AudioSource>();
+		var AS = gameObject.AddComponent<AudioSource>();
+		AS.outputAudioMixerGroup = Resources.Load<AudioMixer>("AudioMixer").FindMatchingGroups("Effects")[0];
 		//Расчет высоты спрайта
 		SpriteRenderer spt;
 		spt = gameObject.GetComponent<SpriteRenderer>();
