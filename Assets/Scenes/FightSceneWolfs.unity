@@ -524,6 +524,7 @@ MonoBehaviour:
   alive: 0
   power: 1
   defenceMultiply: 1
+  am: {fileID: 0}
   halo: {fileID: 0}
   Spells:
   - {fileID: -609199673152717092, guid: ec1a96c536fcaf8408ac8eeb90003bb3, type: 3}
@@ -1512,6 +1513,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 915718529207600136, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 915718529207600136, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 915718529207600136, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 915718529207600136, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1056311679}
+    - target: {fileID: 915718529207600136, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseGame, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 915718529207600136, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeVolumeEffects
+      objectReference: {fileID: 0}
+    - target: {fileID: 915718529207600136, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 915718529207600136, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274507905904173574, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1056311679}
+    - target: {fileID: 1274507905904173574, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MusicOpen
+      objectReference: {fileID: 0}
     - target: {fileID: 1329862436786276276, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1600,6 +1641,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pauseUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1329862436786276280, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1329862436823344817, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1616,11 +1661,111 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Quit
       objectReference: {fileID: 0}
+    - target: {fileID: 4429487041928655798, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429487041928655798, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429487041928655798, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429487041928655798, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1056311679}
+    - target: {fileID: 4429487041928655798, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseGame, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429487041928655798, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeVolumeMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429487041928655798, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429487041928655798, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824932434716877261, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824932434716877261, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824932434716877261, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824932434716877261, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1056311679}
+    - target: {fileID: 4824932434716877261, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseGame, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824932434716877261, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeVolumeMaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824932434716877261, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824932434716877261, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519476743954841364, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1056311679}
+    - target: {fileID: 7519476743954841364, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseGame, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519476743954841364, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MusicClose
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519476743954841364, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
 --- !u!1 &932272867 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1329862436786276280, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+  m_PrefabInstance: {fileID: 932272866}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &932272868 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8891489176115865790, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+  m_PrefabInstance: {fileID: 932272866}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &932272869 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1329862438241869903, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+  m_PrefabInstance: {fileID: 932272866}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &932272870 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1329862436823344823, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+  m_PrefabInstance: {fileID: 932272866}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &932272871 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9145935082529007182, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
   m_PrefabInstance: {fileID: 932272866}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1056311674
@@ -1683,6 +1828,7 @@ MonoBehaviour:
   textTimeRes: {fileID: 102170330}
   music1: {fileID: 1056311677}
   music2: {fileID: 1056311678}
+  am: {fileID: 24100000, guid: 2f6cfd3125d3df94a9b2273d902f8482, type: 2}
 --- !u!4 &1056311676
 Transform:
   m_ObjectHideFlags: 0
@@ -1903,6 +2049,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPause: 0
   pauseUI: {fileID: 932272867}
+  musicUI: {fileID: 932272871}
+  MasterMixer: {fileID: 24300002, guid: 2f6cfd3125d3df94a9b2273d902f8482, type: 2}
+  MusicMixer: {fileID: -4647458607948366122, guid: 2f6cfd3125d3df94a9b2273d902f8482, type: 2}
+  EffectsMixer: {fileID: -8711531368219989189, guid: 2f6cfd3125d3df94a9b2273d902f8482, type: 2}
+  buttons:
+  - {fileID: 932272870}
+  - {fileID: 932272869}
+  - {fileID: 932272868}
 --- !u!1 &1096766468
 GameObject:
   m_ObjectHideFlags: 0
@@ -2689,6 +2843,7 @@ MonoBehaviour:
   alive: 0
   power: 1
   defenceMultiply: 1
+  am: {fileID: 0}
   halo: {fileID: 0}
   Spells:
   - {fileID: -2946307387239578792, guid: 810a884573225fc499925cfc6066914d, type: 3}
@@ -2830,6 +2985,7 @@ MonoBehaviour:
   alive: 0
   power: 1
   defenceMultiply: 1
+  am: {fileID: 0}
   halo: {fileID: 0}
   Spells:
   - {fileID: -2946307387239578792, guid: 810a884573225fc499925cfc6066914d, type: 3}

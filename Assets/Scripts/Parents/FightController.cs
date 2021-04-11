@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Audio;
 
 public class FightController : MonoBehaviour
 {

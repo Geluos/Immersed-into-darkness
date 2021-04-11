@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Audio;
 
 public abstract class Characters : MonoBehaviour
 {	
@@ -20,6 +21,8 @@ public abstract class Characters : MonoBehaviour
 	public float power = 1f;
 
 	public float defenceMultiply = 1f;
+
+	public AudioMixer am;
 
 	[HideInInspector] public Halo halo; //Ореол
 	public Halo CreateHalo(Color col) //Создать ореол

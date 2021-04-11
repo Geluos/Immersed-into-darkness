@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class MainController : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class MainController : MonoBehaviour
     public List<Friends> friends;
 
     [HideInInspector] public string[] names;
+
+    public AudioMixerGroup Mixer;
 
     void Start()
     {

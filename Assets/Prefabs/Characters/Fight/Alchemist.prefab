@@ -132,6 +132,7 @@ MonoBehaviour:
   StatusList: []
   alive: 1
   power: 1
+  defenceMultiply: 1
   halo: {fileID: 0}
   Spells:
   - {fileID: 6409980640784776321, guid: 2ae537bad717d2542abd0436b6e77191, type: 3}
