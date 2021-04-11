@@ -67,6 +67,12 @@ public class FightController : MonoBehaviour
 			friends[2] = TempF;
 		}
 
+		CopyHeroesFromMain();
+		print("копирование способностей прошло успешно");
+	}
+
+	public void CopyHeroesFromMain()
+    {
 		//копирование героев из контроллера на боевую сцену
 		for (int i = 0; i < 3; ++i)
 		{
@@ -84,7 +90,16 @@ public class FightController : MonoBehaviour
 			friends[i].gameObject.GetComponent<SpriteRenderer>().sprite = GC.friends[i].gameObject.GetComponent<SpriteRenderer>().sprite;
 			friends[i].Initialize();
 		}
-		print("копирование способностей прошло успешно");
+	}
+
+	public void CopyHeroesToMain()
+    {
+		var GC = GameObject.FindWithTag("GameController").GetComponent<MainController>();
+		for (int i = 0; i < 3; ++i)
+		{
+			GC.friends[i].hp = friends[i].hp;
+			GC.friends[i].alive = friends[i].alive;
+		}
 	}
 
 	IEnumerator PlayMusic()

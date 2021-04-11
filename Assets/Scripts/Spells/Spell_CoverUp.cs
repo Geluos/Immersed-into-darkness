@@ -7,6 +7,7 @@ public class Spell_CoverUp : Spells
     public Cover_Up status;
     override public void Use(Characters character)
     {
+        HeroCharacter.PlayEffect("Блок");
         print("Прикрытие");
         var st = Instantiate(status, character.transform);
         st.lifetime = 8f * power;
