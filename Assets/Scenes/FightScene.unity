@@ -205,7 +205,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1056311679}
         m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
         m_MethodName: Quit
         m_Mode: 1
@@ -771,6 +771,8 @@ MonoBehaviour:
   HB: {fileID: 0}
   StatusList: []
   alive: 0
+  power: 1
+  defenceMultiply: 1
   halo: {fileID: 0}
   Spells:
   - {fileID: 2018025219170527894, guid: 44ca56e46a706a643962ca2ca6160b0b, type: 3}
@@ -1624,6 +1626,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1056311676}
   - component: {fileID: 1056311675}
+  - component: {fileID: 1056311679}
   - component: {fileID: 1056311677}
   - component: {fileID: 1056311678}
   m_Layer: 0
@@ -1879,6 +1882,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1056311679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056311674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0139fc7aacc23ce4bab0e196e4ec701d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPause: 0
+  pauseUI: {fileID: 1462485444}
 --- !u!1 &1061153340
 GameObject:
   m_ObjectHideFlags: 0
@@ -2342,7 +2359,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1056311679}
         m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -3179,6 +3196,8 @@ MonoBehaviour:
   HB: {fileID: 0}
   StatusList: []
   alive: 0
+  power: 1
+  defenceMultiply: 1
   halo: {fileID: 0}
   Spells:
   - {fileID: 2018025219170527894, guid: 44ca56e46a706a643962ca2ca6160b0b, type: 3}
@@ -3318,6 +3337,8 @@ MonoBehaviour:
   HB: {fileID: 0}
   StatusList: []
   alive: 0
+  power: 1
+  defenceMultiply: 1
   halo: {fileID: 0}
   Spells:
   - {fileID: -609199673152717092, guid: ec1a96c536fcaf8408ac8eeb90003bb3, type: 3}

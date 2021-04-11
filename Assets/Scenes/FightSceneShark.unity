@@ -205,7 +205,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1056311679}
         m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
         m_MethodName: Quit
         m_Mode: 1
@@ -654,6 +654,8 @@ MonoBehaviour:
   HB: {fileID: 0}
   StatusList: []
   alive: 0
+  power: 1
+  defenceMultiply: 1
   halo: {fileID: 0}
   Spells:
   - {fileID: -2946307387239578792, guid: 810a884573225fc499925cfc6066914d, type: 3}
@@ -1712,6 +1714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1056311676}
   - component: {fileID: 1056311675}
+  - component: {fileID: 1056311679}
   - component: {fileID: 1056311677}
   - component: {fileID: 1056311678}
   m_Layer: 0
@@ -1784,7 +1787,7 @@ AudioSource:
   m_GameObject: {fileID: 1056311674}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -4647458607948366122, guid: 2f6cfd3125d3df94a9b2273d902f8482, type: 2}
   m_audioClip: {fileID: 8300000, guid: 802aafefde19dec459af70eed6f9fa25, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.794
@@ -1880,7 +1883,7 @@ AudioSource:
   m_GameObject: {fileID: 1056311674}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -4647458607948366122, guid: 2f6cfd3125d3df94a9b2273d902f8482, type: 2}
   m_audioClip: {fileID: 8300000, guid: 035cfdd52fdef8446a04fa4cbe6568bc, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1967,6 +1970,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1056311679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056311674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0139fc7aacc23ce4bab0e196e4ec701d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPause: 0
+  pauseUI: {fileID: 1462485444}
 --- !u!1 &1096766468
 GameObject:
   m_ObjectHideFlags: 0
@@ -2362,7 +2379,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1056311679}
         m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -2489,7 +2506,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!224 &1462485448
 RectTransform:
@@ -3157,6 +3174,8 @@ MonoBehaviour:
   HB: {fileID: 0}
   StatusList: []
   alive: 0
+  power: 1
+  defenceMultiply: 1
   halo: {fileID: 0}
   Spells:
   - {fileID: 2018025219170527894, guid: 44ca56e46a706a643962ca2ca6160b0b, type: 3}
@@ -3296,6 +3315,8 @@ MonoBehaviour:
   HB: {fileID: 0}
   StatusList: []
   alive: 0
+  power: 1
+  defenceMultiply: 1
   halo: {fileID: 0}
   Spells:
   - {fileID: -609199673152717092, guid: ec1a96c536fcaf8408ac8eeb90003bb3, type: 3}
