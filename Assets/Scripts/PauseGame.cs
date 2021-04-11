@@ -28,9 +28,9 @@ public class PauseGame : MonoBehaviour
 		}
 	}
 
-	void Awake()
+	public void Start()
     {
-		DontDestroyOnLoad(gameObject);
+		DontDestroyOnLoad(pauseUI);
 	}
 
 	public void Resume()
