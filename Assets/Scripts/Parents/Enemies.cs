@@ -64,9 +64,15 @@ public abstract class Enemies : Characters
 	//Переписать
 	void SetTargetRandom()
 	{
-		if (fightController.AliveHeroes()>0)
+		if (fightController.AliveHeroes() > 0)
 		{
-			AttackTarget=fightController.friends[Random.Range(0, fightController.AliveHeroes())];
+			List<Friends> tmpL = new List<Friends>();
+			foreach(Friends fr in fightController.friends)
+			{
+				if (fr.alive)
+					tmpL.Add(fr);
+			}
+			AttackTarget=tmpL[Random.Range(0, fightController.AliveHeroes())];
 		}
 	}
 	//Атака
