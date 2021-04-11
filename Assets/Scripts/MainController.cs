@@ -48,6 +48,7 @@ public class MainController : MonoBehaviour
     IEnumerator EndB()
     {
         yield return new WaitForSeconds(3f);
+        GameObject.FindWithTag("FightController").GetComponent<FightController>().CopyHeroesToMain();
         SceneManager.LoadScene("StoryScene");
         foreach(GameObject pg in Pages)
         {
