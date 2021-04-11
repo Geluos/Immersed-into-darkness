@@ -55,7 +55,7 @@ public abstract class Characters : MonoBehaviour
 		FightController fightController = (GameObject.FindWithTag("FightController")).GetComponent<FightController>();
 		hp=maxhp;
 		alive = true;
-
+		gameObject.AddComponent<AudioSource>();
 		//Расчет высоты спрайта
 		SpriteRenderer spt;
 		spt = gameObject.GetComponent<SpriteRenderer>();
