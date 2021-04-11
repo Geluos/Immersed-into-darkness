@@ -1738,6 +1738,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6371433683417125532, guid: 1405702fa30650f42b97b948e59a49fd, type: 3}
+      propertyPath: orthographic size
+      value: 240
+      objectReference: {fileID: 0}
     - target: {fileID: 6371433683417125535, guid: 1405702fa30650f42b97b948e59a49fd, type: 3}
       propertyPath: m_Name
       value: Camera prefab
@@ -2023,6 +2027,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394999317}
   m_CullTransparentMesh: 0
+--- !u!1 &423168861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1938082963636525706, guid: 0b52fd2131f9e674a8e77c1f34fcfe3f, type: 3}
+  m_PrefabInstance: {fileID: 1088615905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &423168863 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1938082963636525704, guid: 0b52fd2131f9e674a8e77c1f34fcfe3f, type: 3}
+  m_PrefabInstance: {fileID: 1088615905}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423168861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a4db7a114972834c8e4117be1d82ba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &423168866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423168861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648c301b9edc5234097af547cbb111d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollBar: {fileID: 423168863}
+  koef: 0.5
 --- !u!1 &430604052
 GameObject:
   m_ObjectHideFlags: 0
@@ -3459,6 +3493,7 @@ GameObject:
   - component: {fileID: 968342263}
   - component: {fileID: 968342262}
   - component: {fileID: 968342261}
+  - component: {fileID: 968342264}
   m_Layer: 5
   m_Name: Scrollbar
   m_TagString: Untagged
@@ -3572,6 +3607,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 968342259}
   m_CullTransparentMesh: 0
+--- !u!114 &968342264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968342259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648c301b9edc5234097af547cbb111d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollBar: {fileID: 968342261}
+  koef: 0.5
 --- !u!1001 &1005686742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11563,6 +11612,7 @@ GameObject:
   - component: {fileID: 1812052048}
   - component: {fileID: 1812052047}
   - component: {fileID: 1812052046}
+  - component: {fileID: 1812052049}
   m_Layer: 5
   m_Name: Scrollbar
   m_TagString: Untagged
@@ -11676,6 +11726,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812052044}
   m_CullTransparentMesh: 0
+--- !u!114 &1812052049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812052044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648c301b9edc5234097af547cbb111d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollBar: {fileID: 1812052046}
+  koef: 0.5
 --- !u!1 &1841400599
 GameObject:
   m_ObjectHideFlags: 0
@@ -11688,6 +11752,7 @@ GameObject:
   - component: {fileID: 1841400603}
   - component: {fileID: 1841400602}
   - component: {fileID: 1841400601}
+  - component: {fileID: 1841400604}
   m_Layer: 5
   m_Name: Scrollbar
   m_TagString: Untagged
@@ -11801,6 +11866,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841400599}
   m_CullTransparentMesh: 0
+--- !u!114 &1841400604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841400599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648c301b9edc5234097af547cbb111d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollBar: {fileID: 1841400601}
+  koef: 0.5
 --- !u!1 &1916120896
 GameObject:
   m_ObjectHideFlags: 0
