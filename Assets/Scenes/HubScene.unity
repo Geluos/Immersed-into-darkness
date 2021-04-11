@@ -563,7 +563,7 @@ MonoBehaviour:
   buttons:
   - {fileID: 1501053127}
   - {fileID: 1383072188}
-  - {fileID: 1580500377}
+  - {fileID: 357111877}
 --- !u!1 &53672134
 GameObject:
   m_ObjectHideFlags: 0
@@ -2143,6 +2143,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341912146}
   m_CullTransparentMesh: 0
+--- !u!1 &357111877 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8891489176115865790, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+  m_PrefabInstance: {fileID: 423101299}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &394999317
 GameObject:
   m_ObjectHideFlags: 0
