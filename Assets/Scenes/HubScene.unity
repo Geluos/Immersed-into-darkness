@@ -2193,6 +2193,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1329862436823344817, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 47309823}
+    - target: {fileID: 1329862436823344817, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 1329862438241869897, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 47309823}
+    - target: {fileID: 1329862438241869897, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
     - target: {fileID: 4429487041928655798, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 1
