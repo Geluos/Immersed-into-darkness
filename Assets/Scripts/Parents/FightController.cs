@@ -32,10 +32,6 @@ public class FightController : MonoBehaviour
 	public AudioSource music1;
 	public AudioSource music2;
 
-	void Awake()
-    {
-
-	}
     void Start()
     {
 		//Здесь была отрисовка иконок
