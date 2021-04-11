@@ -27,6 +27,9 @@ public class MainController : MonoBehaviour
 
     [HideInInspector] public string[] names;
 
+    public GameObject InfoBarPref; //Префаб всплывающего окна с информацией
+    [HideInInspector] public GameObject infoBar; //Текущее окно с информацией
+
     void Start()
     {
         stage = 1;
