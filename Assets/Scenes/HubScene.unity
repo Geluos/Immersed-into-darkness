@@ -3628,6 +3628,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 577017662581961242, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 2f6cfd3125d3df94a9b2273d902f8482, type: 2}
     - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
       propertyPath: SwordmanP
       value: 
