@@ -21,8 +21,16 @@ public class PauseGame : MonoBehaviour
 			{
 				Resume();
 			}
-			else { Pause(); }
+			else 
+			{ 
+				Pause(); 
+			}
 		}
+	}
+
+	void Awake()
+    {
+		DontDestroyOnLoad(gameObject);
 	}
 
 	public void Resume()
