@@ -8,6 +8,7 @@ public class Spell_Potion_of_Devil : Spells
     public ObsessionStatus status;
     override public void Use(Characters character)
     {
+        HeroCharacter.PlayEffect("Зелье дьявола");
         print("Зелье Дьявола");
         var st = Instantiate(status, character.transform);
         st.lifetime = 8f*power;

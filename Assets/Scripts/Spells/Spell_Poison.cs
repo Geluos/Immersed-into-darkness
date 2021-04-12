@@ -8,6 +8,7 @@ public class Spell_Poison : Spells
     public PoisonStatus PS;
     override public void Use(Characters character)
 	{
+        HeroCharacter.PlayEffect("Яд");
         print("Отравили");
         var st = Instantiate(PS, character.transform);
         st.damage = damage*power;

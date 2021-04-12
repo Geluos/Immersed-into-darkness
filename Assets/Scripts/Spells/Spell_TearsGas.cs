@@ -9,6 +9,7 @@ public class Spell_TearsGas : Spells
     public WeakStatus WS;
     override public void Use()
     {
+        HeroCharacter.PlayEffect("слезоточивый газ");
         weekPercent += (int)(Math.Min(50f, 20f * (power - 1f)));
         fightController = HeroCharacter.fightController;
         foreach (var enemy in fightController.enemies)
