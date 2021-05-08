@@ -5,6 +5,8 @@ using System;
 
 public abstract class Status : MonoBehaviour
 {
+    public float power;
+    public float level;
 
     public float lifetime;
     public float period;
@@ -15,16 +17,38 @@ public abstract class Status : MonoBehaviour
 
     public void Start()
     {
+        if (character!=null)
+        {
+            character.StatusList.Add(this);
+            character.RefreshStatusIcons();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         time = period;
     }
 
+    public void OnDestroy()
+    {
+        character?.StatusList.Remove(this);
+        character?.RefreshStatusIcons();
+    }
     public void Update()
     {
-        time = Math.Max(0, time - Time.deltaTime);
-        lifetime -= Time.deltaTime;
-        if(lifetime<0f)
+        if (character != null)
         {
-            Destroy(this);
+            time = Math.Max(0, time - Time.deltaTime);
+            lifetime -= Time.deltaTime;
+            if (lifetime < 0f)
+            {
+                character.StatusList.Remove(this);
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }

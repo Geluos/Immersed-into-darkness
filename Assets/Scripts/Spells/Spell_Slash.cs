@@ -5,12 +5,11 @@ using UnityEngine.Audio;
 
 public class Spell_Slash : Spells
 {
-    const float damage = 16.0f;
     override public void Use(Characters character)
 	{
         HeroCharacter.PlayEffect("Способность - рассечь");
         print("Slash применен!!!");
-        character.TakeDamage(power*damage);
+        character.TakeDamage(Information.GetSpellStates("Рассечь",level,power)[0]);
         HeroCharacter.SetReload(reloadtime);
 	}
 }

@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spell_Medicine : Spells
+public class Spell_Stimulator : Spells
 {
-    public Pain status;
+    public Euphoria status;
     override public void Use(Characters character)
-	{
-        character.TakeHeal(Information.GetSpellStates("Нестандартная медицина",level,power)[0]);
+    {
         var st = Instantiate(status, character.transform);
         st.level = level;
         st.power = power;
-        st.lifetime = 50;
+        st.lifetime = Information.GetEffectStates("Эйфория", level, power)[1];
         st.character = character;
         HeroCharacter.SetReload(reloadtime);
     }

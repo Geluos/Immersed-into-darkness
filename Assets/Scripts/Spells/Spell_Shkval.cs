@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class Spell_Shkval : Spells
 {
-    public float damage = 9.0f;
     override public void Use(Characters character)
 	{
-        character.TakeDamage(power*damage);
+        character.TakeDamage(Information.GetSpellStates("Стрельба на поражение", level, power)[0]);
         HeroCharacter.SetReload(reloadtime);
         fightController = character.fightController;
         foreach (var enemy in fightController.enemies)
         {
             if (enemy != character)
-                enemy.TakeDamage(damage / 3 * power);
+                enemy.TakeDamage(Information.GetSpellStates("Стрельба на поражение", level, power)[1]);
         }
 	}
 }

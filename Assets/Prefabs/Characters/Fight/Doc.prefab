@@ -125,6 +125,8 @@ MonoBehaviour:
   Name: 
   maxhp: 100
   hp: 100
+  HpRegen: 0
+  CooldownReduction: 0
   fightController: {fileID: 0}
   height: 0
   IsSelected: 0
@@ -136,8 +138,12 @@ MonoBehaviour:
   halo: {fileID: 0}
   Spells:
   - {fileID: 1708011467649049992, guid: 3fa8b91cc4efffe4288fbced014c8f39, type: 3}
-  - {fileID: 1708011467649049992, guid: 3fa8b91cc4efffe4288fbced014c8f39, type: 3}
+  - {fileID: 7006195040736533456, guid: 9cc09e18e432c0a4cbaae29d0cd79182, type: 3}
   - {fileID: -609199673152717092, guid: ec1a96c536fcaf8408ac8eeb90003bb3, type: 3}
   SpellsIcons: []
   reloadTime: 0
   NumInList: 0
+  Level: 1
+  CurrentExp: 0
+  RequiredExp: 100
+  SpellLevel: 000000000000000000000000

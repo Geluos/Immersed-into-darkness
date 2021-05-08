@@ -79,9 +79,17 @@ public class FightController : MonoBehaviour
 			friends[i].Name = GC.friends[i].Name;
 			friends[i].hp = GC.friends[i].hp;
 			friends[i].maxhp = GC.friends[i].maxhp;
+			friends[i].defenceMultiply = GC.friends[i].defenceMultiply;
+			friends[i].power = GC.friends[i].power;
+			friends[i].HpRegen = GC.friends[i].HpRegen;
+			friends[i].CooldownReduction = GC.friends[i].CooldownReduction;
+			friends[i].CurrentExp = GC.friends[i].CurrentExp;
+			friends[i].RequiredExp = GC.friends[i].RequiredExp;
+			friends[i].Level = GC.friends[i].Level;
 			for (int j = 0; j < 3; ++j)
 			{
 				friends[i].Spells[j] = GC.friends[i].Spells[j];
+				friends[i].SpellLevel[j] = GC.friends[i].SpellLevel[j];
 			}
 			friends[i].alive = GC.friends[i].alive;
 			friends[i].gameObject.GetComponent<SpriteRenderer>().sprite = GC.friends[i].gameObject.GetComponent<SpriteRenderer>().sprite;

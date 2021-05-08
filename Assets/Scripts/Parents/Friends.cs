@@ -10,6 +10,10 @@ public abstract class Friends : Characters
 	public List<IconSpell> SpellsIcons;
 	public float reloadTime;
 	public int NumInList;
+	public float Level = 1; //Уровень персонажа
+	public float CurrentExp = 0; //Текущий опыт
+	public float RequiredExp = 100; //Необходимый для нового уровня опыт
+	public int[] SpellLevel = { 0, 0, 0 }; //Уровень способности
 
 	bool ready = false;
 
@@ -127,7 +131,7 @@ public abstract class Friends : Characters
 
 	public void SetReload(float time)
 	{
-		reloadTime = time;
+		reloadTime = time * (1 - CooldownReduction);
 	}
 
 }

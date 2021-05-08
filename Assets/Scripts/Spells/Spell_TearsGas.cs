@@ -5,18 +5,16 @@ using System;
 
 public class Spell_TearsGas : Spells
 {
-    public int weekPercent = 40;
     public WeakStatus WS;
     override public void Use()
     {
         HeroCharacter.PlayEffect("слезоточивый газ");
-        weekPercent += (int)(Math.Min(50f, 20f * (power - 1f)));
         fightController = HeroCharacter.fightController;
         foreach (var enemy in fightController.enemies)
         {
             var st = Instantiate(WS, enemy.transform);
-            st.weekPercent = weekPercent;
-            st.lifetime = 15f;
+            st.percent = Information.GetEffectStates("Ослабление", level, power)[0];
+            st.lifetime = Information.GetSpellStates("Слезоточивый газ", level, power)[0];
             st.character = enemy;
         }
         HeroCharacter.SetReload(reloadtime);

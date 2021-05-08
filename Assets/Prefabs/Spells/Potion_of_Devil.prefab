@@ -43,11 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97b92f08c5a90b5419e7c0c1e27d433f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
+  Name: "\u0417\u0435\u043B\u044C\u0435 \u0434\u044C\u044F\u0432\u043E\u043B\u0430"
   fightController: {fileID: 0}
   HeroCharacter: {fileID: 0}
   type: TargetFriend
   power: 0
+  level: 0
   sprite: {fileID: 21300000, guid: fca76823e0c3d974eb9c9c9ffe7fad36, type: 3}
   reloadtime: 9
   status: {fileID: 3443218558557082595, guid: 015db796b82008942bb9c7a2e4e40bf6, type: 3}

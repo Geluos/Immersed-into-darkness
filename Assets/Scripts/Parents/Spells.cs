@@ -9,6 +9,7 @@ public abstract class Spells : MonoBehaviour
 	public Friends HeroCharacter;
 	public string type;
 	public float power;
+	public int level;
 	public Sprite sprite;
 
 	public float reloadtime;

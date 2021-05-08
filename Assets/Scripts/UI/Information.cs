@@ -4,127 +4,127 @@ using UnityEngine;
 
 public class Information : MonoBehaviour
 {
-	public static float[] GetSpellStates(string name, float Power = 0, float MagicPower = 0) //Возвращает некоторые характеристики способностей в виде массива вещественных чисел
+	public static float[] GetSpellStates(string name, float Level = 0, float Power = 0) //Возвращает некоторые характеристики способностей в виде массива вещественных чисел
 	{
 		List<float> states = new List<float>();
 		switch (name)
 		{
 			case "Нестандартная медицина":
 				{
-					states.Add((12 + Power) * (1 + MagicPower / 100)); //damage
+					states.Add((12 + Level) * (1 + Power / 100)); //damage
 					break;
 				}
 			case "Скальпель":
 				{
-					states.Add((5 + Power) * (1 + MagicPower / 100)); //damage
+					states.Add((5 + Level) * (1 + Power / 100)); //damage
 					break;
 				}
 			case "Слезоточивый газ":
 				{
-					states.Add((10 + Power) * (1 + MagicPower / 100)); //time
+					states.Add((10 + Level) * (1 + Power / 100)); //time
 					break;
 				}
 			case "Стремительный выпад":
 				{
-					states.Add((7 + Power) * (1 + MagicPower / 100)); //time
+					states.Add((7 + Level) * (1 + Power / 100)); //time
 					break;
 				}
 			case "Рассечь":
 				{
-					states.Add((16 + Power) * (1 + MagicPower / 100)); //damage
+					states.Add((16 + Level) * (1 + Power / 100)); //damage
 					break;
 				}
 			case "Стрельба на поражение":
 				{
-					states.Add((12 + Power) * (1 + MagicPower / 100)); //damage
+					states.Add((12 + Level) * (1 + Power / 100)); //damage
 					break;
 				}
 			case "Прострел":
 				{
-					states.Add((18 + Power) * (1 + MagicPower / 100)); //damage
+					states.Add((18 + Level) * (1 + Power / 100)); //damage
 					break;
 				}
 			case "Красная метка":
 				{
-					states.Add((10 + Power) * (1 + MagicPower / 100)); //time
+					states.Add((10 + Level) * (1 + Power / 100)); //time
 					break;
 				}
 		}
 		return states.ToArray();
 	}
 
-	public static float[] GetEffectStates(string name, float Power = 0, float MagicPower = 0)
+	public static float[] GetEffectStates(string name, float Level = 0, float Power = 0)
     {
 		List<float> states = new List<float>();
 		switch (name)
 		{
 			case "Отравление":
 				{
-					states.Add((2 + Power * 0.25f) * (1 + MagicPower / 100)); //damage
-					states.Add((7 + Power * 0.25f) * (1 + MagicPower / 100)); //time
+					states.Add((2 + Level * 0.25f) * (1 + Power / 100)); //damage
+					states.Add((7 + Level * 0.25f) * (1 + Power / 100)); //time
 					break;
 				}
 			case "Ослабление":
 				{
-					states.Add((40 + Power * 5) * (1 + MagicPower / 100)); //percent
+					states.Add((40 + Level * 5) * (1 + Power / 100)); //percent
 					break;
 				}
 			case "Одержимость":
 				{
-					states.Add((80 + Power * 5) * (1 + MagicPower / 100)); //percent
-					states.Add((10 + Power) * (1 + MagicPower / 100)); //time
-					states.Add((9 + Power) * (1 + MagicPower / 100)); //damage
+					states.Add((80 + Level * 5) * (1 + Power / 100)); //percent
+					states.Add((10 + Level) * (1 + Power / 100)); //time
+					states.Add((9 + Level) * (1 + Power / 100)); //damage
 					break;
 				}
 			case "Уязвимость":
 				{
-					states.Add((30 + Power * 5) * (1 + MagicPower / 100)); //percent
-					states.Add((8 + Power) * (1 + MagicPower / 100)); //time
+					states.Add((30 + Level * 5) * (1 + Power / 100)); //percent
+					states.Add((8 + Level) * (1 + Power / 100)); //time
 					break;
 				}
 			case "Под защитой":
 				{
-					states.Add((60 + Power * 5) * (1 + MagicPower / 100)); //percent
-					states.Add((7 + Power) * (1 + MagicPower / 100)); //time
+					states.Add((60 + Level * 5) * (1 + Power / 100)); //percent
+					states.Add((7 + Level) * (1 + Power / 100)); //time
 					break;
 				}
 			case "Пробитие":
 				{
-					states.Add((60 + Power * 5) * (1 + MagicPower / 100)); //percent
+					states.Add((60 + Level * 5) * (1 + Power / 100)); //percent
 					break;
 				}
 			case "Страдание":
 				{
-					states.Add((50 - Power * 5) * (1 - MagicPower / 100)); //percent
-					states.Add((40 - Power * 2) * (1 - MagicPower / 100)); //time
+					states.Add((50 - Level * 5) * (1 - Power / 100)); //percent
+					states.Add((40 - Level * 2) * (1 - Power / 100)); //time
 					break;
 				}
 			case "Эйфория":
 				{
-					states.Add((20 + Power * 5) * (1 + MagicPower / 100)); //percent
-					states.Add((25 + Power) * (1 + MagicPower / 100)); //time
+					states.Add((20 + Level * 5) * (1 + Power / 100)); //percent
+					states.Add((25 + Level) * (1 + Power / 100)); //time
 					break;
 				}
 			case "Берсерк":
 				{
-					states.Add((70 + Power * 5) * (1 + MagicPower / 100)); //percent
-					states.Add((30 + Power) * (1 + MagicPower / 100)); //time
+					states.Add((70 + Level * 5) * (1 + Power / 100)); //percent
+					states.Add((30 + Level) * (1 + Power / 100)); //time
 					break;
 				}
 			case "Кровотечение":
 				{
-					states.Add((1 + Power * 0.25f) * (1 + MagicPower / 100)); //damage
-					states.Add((12 + Power) * (1 + MagicPower / 100)); //time
+					states.Add((1 + Level * 0.25f) * (1 + Power / 100)); //damage
+					states.Add((12 + Level) * (1 + Power / 100)); //time
 					break;
 				}
 		}
 		return states.ToArray();
 	}
 
-	public static string GetEffectInfo(string name, float Power = 0, float MagicPower = 0, float LifeTime = 0, int Count = 0)
+	public static string GetEffectInfo(string name, float Level = 0, float Power = 0, float LifeTime = 0, int Count = 0)
     {
 		string info = "";
-		float[] states = GetEffectStates(name, Power, MagicPower);
+		float[] states = GetEffectStates(name, Level, Power);
 		switch (name)
 		{
 			case "Отравление": { info = $"-{states[0]} HP/сек. на {states[1]} секунд. Эффекты суммируются"; break; }
@@ -148,10 +148,10 @@ public class Information : MonoBehaviour
 
 		return output;
     }
-	public static string GetSpellInfo(string name, float Power = 0, float MagicPower = 0, float cooldown = 0)
+	public static string GetSpellInfo(string name, float Level = 0, float Power = 0, float cooldown = 0)
 	{
 		string info = "";
-		float[] states = GetSpellStates(name, Power, MagicPower);
+		float[] states = GetSpellStates(name, Level, Power);
 		switch (name)
 		{
 			case "Нестандартная медицина": { info = $"Восстанавливает {states[0]} hp выбранному союзнику, но накладывает на него один эффект “Боль”"; break; }
@@ -180,11 +180,11 @@ public class Information : MonoBehaviour
 	//public string GetHeroSpellInfo(int num) //Возвращает строку с информацией о способности героя
 	//{
 	//	string name = HeroSpellName[num];
-	//	float Power = HeroSpellLevel[num];
-	//	float MagicPower = HeroMagicPower[num / 3];
+	//	float Level = HeroSpellLevel[num];
+	//	float Power = HeroMagicPower[num / 3];
 	//	float cost = HeroSpellCost[num];
 	//	float cooldown = HeroSpellCooldown[num];
 
-	//	return GetSpellInfo(name, Power, MagicPower, cost, cooldown);
+	//	return GetSpellInfo(name, Level, Power, cost, cooldown);
 	//}
 }

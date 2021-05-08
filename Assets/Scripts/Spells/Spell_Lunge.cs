@@ -5,8 +5,6 @@ using System;
 
 public class Spell_Lunge : Spells
 {
-    public int vulPercent = 30;
-    public float damage = 7.0f;
     public VulnerabilityStatus VS;
     override public void Use()
     {
@@ -17,8 +15,9 @@ public class Spell_Lunge : Spells
         {
             var st = Instantiate(VS, enemy.transform);
             //st.weekPercent = weekPercent;
-            st.lifetime = 12f;
-            enemy.TakeDamage(damage*power);
+            st.koef = Information.GetEffectStates("Уязвимость", level, power)[0];
+            st.lifetime = Information.GetEffectStates("Уязвимость", level, power)[1];
+            enemy.TakeDamage(Information.GetSpellStates("Стремительный выпад", level, power)[0]);
             st.character = enemy;
         }
         HeroCharacter.SetReload(reloadtime);

@@ -10,7 +10,8 @@ public class Spell_CoverUp : Spells
         HeroCharacter.PlayEffect("Блок");
         print("Прикрытие");
         var st = Instantiate(status, character.transform);
-        st.lifetime = 8f * power;
+        st.koef = Information.GetEffectStates("Под защитой", level, power)[0];
+        st.lifetime = Information.GetEffectStates("Под защитой", level,power)[1];
         st.character = character;
         HeroCharacter.SetReload(reloadtime);
     }

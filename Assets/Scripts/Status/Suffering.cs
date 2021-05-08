@@ -1,22 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
-public class WeakStatus : Status
+public class Suffering : Status //Страдание
 {
-    public float percent;
+    public float cooldown;
     new void Start()
     {
         base.Start();
-        character.power -= percent;
+        character.CooldownReduction -= cooldown / 100;
     }
+
     new public void OnDestroy()
     {
         base.OnDestroy();
-        if (character != null)
+        if (character!=null)
         {
-            character.power += percent;
+            character.CooldownReduction += cooldown / 100;
         }
     }
 }

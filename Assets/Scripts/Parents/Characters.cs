@@ -9,6 +9,8 @@ public abstract class Characters : MonoBehaviour
 	public string Name;
 	public float maxhp;
 	public float hp;
+	public float HpRegen = 0; //Регенерация здоровья
+	public float CooldownReduction = 0; //Уменьшение перезарядки способностей
 	public FightController fightController;
 	public float height;
 	[HideInInspector] public bool IsSelected = false;
@@ -50,6 +52,14 @@ public abstract class Characters : MonoBehaviour
 		HealthBar.character=this;
 		HealthBar.SetMaxHealth();
 	}
+
+	public void RefreshStatusIcons() //Обновить позиции иконок
+    {
+		for (int i = 0; i<StatusList.Count; i++)
+        {
+			StatusList[i].transform.position = transform.position + new Vector3(-(StatusList.Count-1)*16+i*32,height/2+32,0);
+        }
+    }
 	
 	public void Start()
 	{

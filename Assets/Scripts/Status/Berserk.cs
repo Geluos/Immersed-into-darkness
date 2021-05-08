@@ -1,22 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
-public class WeakStatus : Status
+public class Berserk : Status //Берсерк
 {
-    public float percent;
+    public float bonus;
     new void Start()
     {
         base.Start();
-        character.power -= percent;
+        character.power += bonus;
     }
+
     new public void OnDestroy()
     {
         base.OnDestroy();
         if (character != null)
         {
-            character.power += percent;
+            character.power -= bonus;
         }
     }
 }

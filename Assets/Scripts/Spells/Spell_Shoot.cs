@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Spell_Shoot : Spells
 {
-    const float damage = 18.0f;
     override public void Use(Characters character)
 	{
-        character.TakeDamage(power*damage);
+        character.TakeDamage(Information.GetSpellStates("Прострел", level, power)[0]);
         HeroCharacter.SetReload(reloadtime);
 	}
 }

@@ -5,19 +5,19 @@ using System;
 
 public class Cover_Up : Status
 {
+    public float koef;
     public new void Start()
     {
         base.Start();
-        character.defenceMultiply *= 0.4f;
+        character.defenceMultiply -= koef / 100;
     }
-    public new void Update()
+
+    new public void OnDestroy()
     {
-        time = Math.Max(0, time - Time.deltaTime);
-        lifetime -= Time.deltaTime;
-        if (lifetime < 0f)
+        base.OnDestroy();
+        if (character != null)
         {
-            character.defenceMultiply /= 0.4f;
-            Destroy(this);
+            character.defenceMultiply += koef / 100;
         }
     }
 }

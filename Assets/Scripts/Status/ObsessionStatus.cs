@@ -5,20 +5,20 @@ using System;
 
 public class ObsessionStatus : Status
 {
+    public float damage;
+    public float koef;
     new void Start()
     {
         base.Start();
-        character.power *= 1.8f;
+        character.power += koef;
     }
-    new void Update()
+    new public void OnDestroy()
     {
-        time = Math.Max(0, time - Time.deltaTime);
-        lifetime -= Time.deltaTime;
-        if (lifetime < 0f)
+        base.OnDestroy();
+        if (character != null)
         {
-            character.TakeDamage(8);
-            character.power /= 1.8f;
-            Destroy(this);
+            character.TakeDamage(damage);
+            character.power = koef;
         }
     }
 }

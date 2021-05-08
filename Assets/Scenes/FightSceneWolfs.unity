@@ -516,6 +516,8 @@ MonoBehaviour:
   Name: 
   maxhp: 100
   hp: 100
+  HpRegen: 0
+  CooldownReduction: 0
   fightController: {fileID: 1056311675}
   height: 0
   IsSelected: 0
@@ -532,6 +534,10 @@ MonoBehaviour:
   SpellsIcons: []
   reloadTime: 0
   NumInList: 1
+  Level: 1
+  CurrentExp: 0
+  RequiredExp: 100
+  SpellLevel: 000000000000000000000000
 --- !u!1 &155446171
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,6 +917,10 @@ PrefabInstance:
     - target: {fileID: 6041517691677432006, guid: a940a3aa12e989943ae03184193da201, type: 3}
       propertyPath: hp
       value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041517691677432006, guid: a940a3aa12e989943ae03184193da201, type: 3}
+      propertyPath: power
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7385196848571093691, guid: a940a3aa12e989943ae03184193da201, type: 3}
       propertyPath: m_Name
@@ -1358,6 +1368,10 @@ PrefabInstance:
     - target: {fileID: 6041517691677432006, guid: a940a3aa12e989943ae03184193da201, type: 3}
       propertyPath: hp
       value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041517691677432006, guid: a940a3aa12e989943ae03184193da201, type: 3}
+      propertyPath: power
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7385196848571093691, guid: a940a3aa12e989943ae03184193da201, type: 3}
       propertyPath: m_Name
@@ -2147,6 +2161,10 @@ PrefabInstance:
       propertyPath: hp
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 6041517691677432006, guid: a940a3aa12e989943ae03184193da201, type: 3}
+      propertyPath: power
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7385196848571093691, guid: a940a3aa12e989943ae03184193da201, type: 3}
       propertyPath: m_Name
       value: wolf (1)
@@ -2548,6 +2566,8 @@ MonoBehaviour:
   Name: 
   maxhp: 100
   hp: 100
+  HpRegen: 0
+  CooldownReduction: 0
   fightController: {fileID: 1056311675}
   height: 0
   IsSelected: 0
@@ -2564,6 +2584,10 @@ MonoBehaviour:
   SpellsIcons: []
   reloadTime: 0
   NumInList: 0
+  Level: 1
+  CurrentExp: 0
+  RequiredExp: 100
+  SpellLevel: 000000000000000000000000
 --- !u!1 &2122050337
 GameObject:
   m_ObjectHideFlags: 0
@@ -2689,6 +2713,8 @@ MonoBehaviour:
   Name: 
   maxhp: 100
   hp: 100
+  HpRegen: 0
+  CooldownReduction: 0
   fightController: {fileID: 1056311675}
   height: 0
   IsSelected: 0
@@ -2705,6 +2731,10 @@ MonoBehaviour:
   SpellsIcons: []
   reloadTime: 0
   NumInList: 2
+  Level: 1
+  CurrentExp: 0
+  RequiredExp: 100
+  SpellLevel: 000000000000000000000000
 --- !u!1001 &8223884792478789479
 PrefabInstance:
   m_ObjectHideFlags: 0

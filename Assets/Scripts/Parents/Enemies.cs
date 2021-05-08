@@ -57,7 +57,7 @@ public abstract class Enemies : Characters
 		SetTargetRandom();
 		StartCoroutine(AtakeAnim());
 		AttackTimeout =AttackCooldown;
-		AttackTarget.TakeDamage(Random.Range(DamageMin, DamageMax) * power);
+		AttackTarget.TakeDamage(Random.Range(DamageMin, DamageMax) * (1+power/100));
 		StartCoroutine(AttackTarget.TakingDamageAnim());
 		//Instantiate(AttackPref,AttackTarget.transform.position,transform.rotation);
 	}
