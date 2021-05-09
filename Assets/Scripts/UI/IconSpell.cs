@@ -12,10 +12,14 @@ public class IconSpell : MonoBehaviour
 	public SpriteRenderer Sprite;
 	public bool active=false;
 	public int num;
-    void Start()
+
+	public InfoBar Info;
+	[HideInInspector] public MainController controller;
+	void Start()
     {
 		FightController fightController = (GameObject.FindWithTag("FightController")).GetComponent<FightController>();
-    }
+		controller = GameObject.FindWithTag("GameController").GetComponent<MainController>();
+	}
 	
 	void UseSpell()
 	{
@@ -43,6 +47,15 @@ public class IconSpell : MonoBehaviour
 						fightController.spell=spell;
 						fightController.select_friend=true;
 						fightController.SelectFriend.SetActive(true);
+						for (int i = 0; i < fightController.friends.Count; i++) //Quick Cast
+						{
+							if (fightController.friends[i].IsSelected && fightController.friends[i].alive)
+							{
+								fightController.TargetFriend = fightController.friends[i];
+								fightController.SpellUseTarget();
+								break;
+							}
+						}
 					break;}
 					case "TargetEnemy":{
 						print("Применение способности, направленной на врага");
@@ -50,6 +63,15 @@ public class IconSpell : MonoBehaviour
 						fightController.spell=spell;
 						fightController.select_enemy=true;
 						fightController.SelectEnemy.SetActive(true);
+						for (int i = 0; i < fightController.enemies.Count; i++) //Quick Cast
+							{
+							if (fightController.enemies[i].IsSelected)
+							{
+								fightController.TargetEnemy = fightController.enemies[i];
+								fightController.SpellUseTarget();
+								break;
+							}
+						}
 					break;}
 				}
 			}
@@ -70,19 +92,28 @@ public class IconSpell : MonoBehaviour
 	}
 	
 	void OnMouseOver()
-	{ 
-		print("Mouse on Button Spell");
-		if (Input.GetMouseButtonDown(0))
+	{
+		if ((active) && (character != null))
 		{
-			print("Push Button Spell");
-			if ((active)&&(character!=null))
+			if (Info != null) Info.delete = false;
+			if (controller.infoBar == null)
 			{
-				print("Попытка использовать заклинание");
+				controller.infoBar = Instantiate(controller.InfoBarPref, transform.position, transform.rotation);
+				Info = controller.infoBar.GetComponent<InfoBar>();
+				Info.text = Information.GetSpellInfo(spell.Name, character.SpellLevel[num], character.power);
+				foreach (var x in spell.statusName)
+                {
+					Info.text += '\n'+Information.GetEffectInfo(x, character.SpellLevel[num], character.power);
+                }
+				Info.text += $"\n\n<b>Перезарядка:</b> {spell.reloadtime}";
+				//Info.text += $"\n<b> Уровень:</ b > { spell.level + 1}";
+			}
+			if (Input.GetMouseButtonDown(0))
+			{
 				UseSpell();
 			}
 		}
 	}
-	
 	private KeyCode[] Key = new KeyCode[3] {KeyCode.Q,KeyCode.W,KeyCode.E};
 	void UseSpellOnKey()
 	{

@@ -28,6 +28,8 @@ public class Euphoria : Status //Эйфория
             st.bonus = states[0];
             st.lifetime = states[1];
             st.character = character;
+            st.level = level;
+            st.power = power;
         }
     }
     new public void OnDestroy()

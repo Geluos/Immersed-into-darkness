@@ -13,6 +13,8 @@ public class Spell_CoverUp : Spells
         st.koef = Information.GetEffectStates("Под защитой", level, power)[0];
         st.lifetime = Information.GetEffectStates("Под защитой", level,power)[1];
         st.character = character;
+        st.level = level;
+        st.power = power;
         HeroCharacter.SetReload(reloadtime);
     }
 }

@@ -14,6 +14,7 @@ public abstract class Friends : Characters
 	public float CurrentExp = 0; //Текущий опыт
 	public float RequiredExp = 100; //Необходимый для нового уровня опыт
 	public int[] SpellLevel = { 0, 0, 0 }; //Уровень способности
+	public SpellReload spellReload;
 
 	bool ready = false;
 
@@ -55,20 +56,23 @@ public abstract class Friends : Characters
 			halo = CreateHalo(Color.green);
 		if (Input.GetMouseButtonDown(0))
 		{
-			DestroyHalo(halo);
-			halo = CreateHalo(Color.yellow);
-			if(fightController.CurrentUnit!=null)
-				fightController.CurrentUnit.DestroyHalo(fightController.CurrentUnit.halo);
-			fightController.CurrentUnit = this;
-			print("Вы нажали на " + this);
 			if (fightController.select_friend)
 			{
 				fightController.TargetFriend=this;
 				fightController.SpellUseTarget();
-			}
+			} else
 			if (!fightController.select_enemy) 
 			{
-				ActiveHero();
+				if (fightController.CurrentUnit != this)
+				{
+					DestroyHalo(halo);
+					halo = CreateHalo(Color.yellow);
+					if (fightController.CurrentUnit != null)
+						fightController.CurrentUnit.DestroyHalo(fightController.CurrentUnit.halo);
+					fightController.CurrentUnit = this;
+					print("Вы нажали на " + this);
+					ActiveHero();
+				}
 			}
 		}
 	}
@@ -131,6 +135,12 @@ public abstract class Friends : Characters
 
 	public void SetReload(float time)
 	{
+		if (spellReload==null)
+        {
+			spellReload = Instantiate(Resources.Load<GameObject>("SpellReload"), transform).GetComponent<SpellReload>();
+			spellReload.transform.position = transform.position + new Vector3(0,-height/2+32);
+			spellReload.character = this;
+        }
 		reloadTime = time * (1 - CooldownReduction);
 	}
 

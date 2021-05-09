@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6424179104677745267}
   - component: {fileID: 2384009235739225295}
   - component: {fileID: -8255449729647074797}
+  - component: {fileID: -6658046202249557318}
   m_Layer: 0
   m_Name: Pain
   m_TagString: Untagged
@@ -44,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f267b5ebab77fd74483db388db5a3ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: "\u0411\u043E\u043B\u044C"
   power: 0
   level: 0
   lifetime: 0
@@ -52,6 +54,8 @@ MonoBehaviour:
   last_fight: 0
   character: {fileID: 0}
   time: 0
+  Info: {fileID: 0}
+  controller: {fileID: 0}
   status: {fileID: 7715303476565397273, guid: 962a8c8a57d729a4790a368fe2bb5e75, type: 3}
 --- !u!212 &-8255449729647074797
 SpriteRenderer:
@@ -104,3 +108,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &-6658046202249557318
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8892128395172314799}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 128, y: 128}
+    newSize: {x: 128, y: 128}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 128, y: 128}
+  m_EdgeRadius: 0

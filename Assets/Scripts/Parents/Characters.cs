@@ -15,12 +15,13 @@ public abstract class Characters : MonoBehaviour
 	public float height;
 	[HideInInspector] public bool IsSelected = false;
 	[HideInInspector] public GameObject HB;
+	public SpriteRenderer spriteRend;
 
 	public List<Status> StatusList;
 
 	public bool alive;
 
-	public float power = 1f;
+	public float power = 0;
 
 	public float defenceMultiply = 1f;
 
@@ -60,18 +61,20 @@ public abstract class Characters : MonoBehaviour
 			StatusList[i].transform.position = transform.position + new Vector3(-(StatusList.Count-1)*16+i*32,height/2+32,0);
         }
     }
-	
-	public void Start()
+    public void Awake()
+    {
+		//Расчет высоты спрайта
+		spriteRend = gameObject.GetComponent<SpriteRenderer>();
+		height = spriteRend.sprite.bounds.size.y;
+    }
+
+    public void Start()
 	{
 		FightController fightController = (GameObject.FindWithTag("FightController")).GetComponent<FightController>();
 		hp=maxhp;
 		alive = true;
 		var AS = gameObject.AddComponent<AudioSource>();
 		AS.outputAudioMixerGroup = Resources.Load<AudioMixer>("AudioMixer").FindMatchingGroups("Effects")[0];
-		//Расчет высоты спрайта
-		SpriteRenderer spt;
-		spt = gameObject.GetComponent<SpriteRenderer>();
-		height = spt.sprite.bounds.size.y;
 	}
 
 	public void PlayEffect(string name)

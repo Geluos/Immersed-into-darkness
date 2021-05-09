@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6810667438151409390}
   - component: {fileID: 6229170160133364755}
   - component: {fileID: -3186713186980272574}
+  - component: {fileID: -2530861868860333564}
   m_Layer: 0
   m_Name: CoverUp
   m_TagString: Untagged
@@ -44,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8aba1fc78332784f998baf93a1ccd1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: "\u041F\u043E\u0434 \u0437\u0430\u0449\u0438\u0442\u043E\u0439"
   power: 0
   level: 0
   lifetime: 0
@@ -52,6 +54,9 @@ MonoBehaviour:
   last_fight: 0
   character: {fileID: 0}
   time: 0
+  Info: {fileID: 0}
+  controller: {fileID: 0}
+  koef: 0
 --- !u!212 &-3186713186980272574
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -103,3 +108,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &-2530861868860333564
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644621609069775229}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 128, y: 128}
+    newSize: {x: 128, y: 128}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 128, y: 128}
+  m_EdgeRadius: 0

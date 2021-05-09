@@ -15,6 +15,8 @@ public class Spell_Potion_of_Devil : Spells
         st.lifetime = Information.GetEffectStates("Одержимость",level,power)[1];
         st.character = character;
         st.damage = Information.GetEffectStates("Одержимость", level, power)[2];
+        st.level = level;
+        st.power = power;
         HeroCharacter.SetReload(reloadtime);
     }
 }

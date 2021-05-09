@@ -19,6 +19,8 @@ public class Spell_Lunge : Spells
             st.lifetime = Information.GetEffectStates("Уязвимость", level, power)[1];
             enemy.TakeDamage(Information.GetSpellStates("Стремительный выпад", level, power)[0]);
             st.character = enemy;
+            st.level = level;
+            st.power = power;
         }
         HeroCharacter.SetReload(reloadtime);
     }

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7385196848571093688}
   - component: {fileID: 6041517691677432006}
   - component: {fileID: 7385196848571093689}
-  - component: {fileID: 7385196848571093690}
   m_Layer: 0
   m_Name: wolf
   m_TagString: Enemy
@@ -100,12 +99,16 @@ MonoBehaviour:
   Name: 
   maxhp: 80
   hp: 80
+  HpRegen: 0
+  CooldownReduction: 0
   fightController: {fileID: 0}
   height: 1
   IsSelected: 0
   HB: {fileID: 0}
   StatusList: []
   alive: 0
+  power: 1
+  defenceMultiply: 1
   halo: {fileID: 0}
   AttackType: Melee
   AttackCooldown: 5
@@ -140,24 +143,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 200, y: 100}
   m_EdgeRadius: 0
---- !u!50 &7385196848571093690
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7385196848571093691}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0

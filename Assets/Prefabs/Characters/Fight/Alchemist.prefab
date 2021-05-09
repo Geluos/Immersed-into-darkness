@@ -122,16 +122,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f92c5efea7585da49b332619c04def2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
+  Name: "\u0410\u043B\u0445\u0438\u043C\u0438\u043A"
   maxhp: 80
   hp: 80
+  HpRegen: 0
+  CooldownReduction: 0
   fightController: {fileID: 0}
   height: 0
   IsSelected: 0
   HB: {fileID: 0}
+  spriteRend: {fileID: 6720259328612612520}
   StatusList: []
   alive: 1
-  power: 1
+  power: 0
   defenceMultiply: 1
   halo: {fileID: 0}
   Spells:
@@ -141,3 +144,8 @@ MonoBehaviour:
   SpellsIcons: []
   reloadTime: 0
   NumInList: 0
+  Level: 1
+  CurrentExp: 0
+  RequiredExp: 100
+  SpellLevel: 000000000000000000000000
+  spellReload: {fileID: 0}

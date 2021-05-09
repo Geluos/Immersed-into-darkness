@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7006195040736533457}
   - component: {fileID: 7006195040736533456}
   m_Layer: 0
-  m_Name: Spell_Stimulator
+  m_Name: Stimulator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "\u041F\u0441\u0438\u0445\u043E\u0441\u0442\u0438\u043C\u0443\u043B\u044F\u0442\u043E\u0440"
+  statusName:
+  - "\u042D\u0439\u0444\u043E\u0440\u0438\u044F"
+  - "\u0411\u0435\u0440\u0441\u0435\u0440\u043A"
   fightController: {fileID: 0}
   HeroCharacter: {fileID: 0}
   type: TargetFriend

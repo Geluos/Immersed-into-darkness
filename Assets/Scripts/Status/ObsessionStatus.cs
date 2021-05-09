@@ -18,7 +18,7 @@ public class ObsessionStatus : Status
         if (character != null)
         {
             character.TakeDamage(damage);
-            character.power = koef;
+            character.power -= koef;
         }
     }
 }

@@ -14,6 +14,8 @@ public class Spell_Poison : Spells
         st.lifetime = Information.GetEffectStates("Отравление", level, power)[1];
         st.period = 1f;
         st.character = character;
+        st.level = level;
+        st.power = power;
         HeroCharacter.SetReload(reloadtime);
     }
 }

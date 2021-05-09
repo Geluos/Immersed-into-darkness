@@ -5,8 +5,11 @@ using UnityEngine;
 public abstract class Spells : MonoBehaviour
 {
 	public string Name;
-	public FightController fightController;
-	public Friends HeroCharacter;
+	public List<string> statusName;
+
+	[HideInInspector] public FightController fightController;
+	[HideInInspector] public Friends HeroCharacter;
+	
 	public string type;
 	public float power;
 	public int level;

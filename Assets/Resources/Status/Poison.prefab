@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5028717180584576203}
   - component: {fileID: -8996799964614128394}
   - component: {fileID: -734131632298340852}
+  - component: {fileID: -4804442232390267521}
   m_Layer: 0
   m_Name: Poison
   m_TagString: Untagged
@@ -44,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d365f81ebd8e05344a558ca0aacbf17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: "\u041E\u0442\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435"
   power: 0
   level: 0
   lifetime: 0
@@ -52,6 +54,8 @@ MonoBehaviour:
   last_fight: 0
   character: {fileID: 0}
   time: 0
+  Info: {fileID: 0}
+  controller: {fileID: 0}
   damage: 0
 --- !u!212 &-734131632298340852
 SpriteRenderer:
@@ -104,3 +108,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &-4804442232390267521
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7375372468687441032}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 128, y: 128}
+    newSize: {x: 128, y: 128}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 128, y: 128}
+  m_EdgeRadius: 0

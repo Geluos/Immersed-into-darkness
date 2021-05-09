@@ -45,6 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: "\u0421\u043B\u0435\u0437\u043E\u0442\u043E\u0447\u0438\u0432\u044B\u0439
     \u0433\u0430\u0437"
+  statusName:
+  - "\u041E\u0441\u043B\u0430\u0431\u043B\u0435\u043D\u0438\u0435"
   fightController: {fileID: 0}
   HeroCharacter: {fileID: 0}
   type: All
@@ -52,5 +54,4 @@ MonoBehaviour:
   level: 0
   sprite: {fileID: 21300000, guid: 137d369588cf78645af16da3928f43af, type: 3}
   reloadtime: 10
-  weekPercent: 40
   WS: {fileID: 1790577027715245458, guid: d22b819a80c30c741b0a52be668fafb0, type: 3}

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2237824054638714872}
   - component: {fileID: 3072840519652562310}
   - component: {fileID: 2237824054638714873}
-  - component: {fileID: 2237824054638714874}
   m_Layer: 0
   m_Name: Shark
   m_TagString: Enemy
@@ -100,12 +99,16 @@ MonoBehaviour:
   Name: 
   maxhp: 250
   hp: 250
+  HpRegen: 0
+  CooldownReduction: 0
   fightController: {fileID: 0}
   height: 1
   IsSelected: 0
   HB: {fileID: 0}
   StatusList: []
   alive: 0
+  power: 1
+  defenceMultiply: 1
   halo: {fileID: 0}
   AttackType: Melee
   AttackCooldown: 7
@@ -140,24 +143,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 200, y: 100}
   m_EdgeRadius: 0
---- !u!50 &2237824054638714874
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2237824054638714875}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0

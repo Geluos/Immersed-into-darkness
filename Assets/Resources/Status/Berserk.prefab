@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3707824343336303407}
   - component: {fileID: 7797540443371246063}
   - component: {fileID: 5600028763540083879}
+  - component: {fileID: 7700467130461332475}
   m_Layer: 0
   m_Name: Berserk
   m_TagString: Untagged
@@ -95,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df92821c54e83214bbfad38312c8ce74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: "\u0411\u0435\u0440\u0441\u0435\u0440\u043A"
   power: 0
   level: 0
   lifetime: 0
@@ -103,4 +105,32 @@ MonoBehaviour:
   last_fight: 0
   character: {fileID: 0}
   time: 0
+  Info: {fileID: 0}
+  controller: {fileID: 0}
   bonus: 0
+--- !u!61 &7700467130461332475
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5776658328925634896}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 128, y: 128}
+    newSize: {x: 128, y: 128}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 128, y: 128}
+  m_EdgeRadius: 0

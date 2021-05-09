@@ -46,8 +46,9 @@ public abstract class Enemies : Characters
 	}
 	
 
-	void Awake()
+	new void Awake()
 	{
+		base.Awake();
 		AttackTimeout = AttackCooldown;
 		Combat=true;
 	}

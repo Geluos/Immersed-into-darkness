@@ -538,6 +538,7 @@ MonoBehaviour:
   CurrentExp: 0
   RequiredExp: 100
   SpellLevel: 000000000000000000000000
+  spellReload: {fileID: 0}
 --- !u!1 &155446171
 GameObject:
   m_ObjectHideFlags: 0
@@ -1638,6 +1639,7 @@ MonoBehaviour:
   - {fileID: 701046752}
   - {fileID: 913271867}
   - {fileID: 487976685}
+  SpellReloadPref: {fileID: 4672953450344821076, guid: 08b9e975eeced744cb1615bf46768746, type: 3}
   textTimeRes: {fileID: 102170330}
   music1: {fileID: 1056311677}
   music2: {fileID: 1056311678}
@@ -2429,6 +2431,7 @@ MonoBehaviour:
   CurrentExp: 0
   RequiredExp: 100
   SpellLevel: 000000000000000000000000
+  spellReload: {fileID: 0}
 --- !u!1 &2122050337
 GameObject:
   m_ObjectHideFlags: 0
@@ -2576,6 +2579,7 @@ MonoBehaviour:
   CurrentExp: 0
   RequiredExp: 100
   SpellLevel: 000000000000000000000000
+  spellReload: {fileID: 0}
 --- !u!1001 &2027085408718710610
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,6 +11,9 @@ public class Spell_Red_mark : Spells
         st.koef = Information.GetEffectStates("Пробитие", level, power)[0];
         st.lifetime = Information.GetSpellStates("Красная метка", level, power)[0];
         st.character = character;
+        st.Name = "Пробитие";
+        st.level = level;
+        st.power = power;
         HeroCharacter.SetReload(reloadtime);
     }
 }

@@ -45,6 +45,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: "\u041D\u0435\u0441\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u043D\u0430\u044F
     \u043C\u0435\u0434\u0438\u0446\u0438\u043D\u0430"
+  statusName:
+  - "\u0411\u043E\u043B\u044C"
+  - "\u0421\u0442\u0440\u0430\u0434\u0430\u043D\u0438\u0435"
   fightController: {fileID: 0}
   HeroCharacter: {fileID: 0}
   type: TargetFriend
@@ -52,5 +55,4 @@ MonoBehaviour:
   level: 0
   sprite: {fileID: 21300000, guid: 693e045d3d1acf84d88e52db501f9b81, type: 3}
   reloadtime: 9
-  heal: 12
   status: {fileID: 2384009235739225295, guid: 51f2af6f248fccb4a9c614398e1a2a9b, type: 3}

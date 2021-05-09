@@ -238,6 +238,19 @@ public class FightController : MonoBehaviour
 		{
 			ChangeCurrentUnit();
 		}
+		if (select_friend||select_enemy) //Если применяется способность, обладатель которой уже мертв
+        {
+			if (!spell.HeroCharacter.alive)
+            {
+				select_friend = false;
+				select_enemy = false;
+				spell = null;
+				SelectFriend.SetActive(false);
+				SelectEnemy.SetActive(false);
+				TargetFriend = null;
+				TargetEnemy = null;
+			}
+        }
 		/*
 		if (res)
 		{

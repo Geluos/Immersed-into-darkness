@@ -44,10 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "\u0421\u043A\u0430\u043B\u044C\u043F\u0435\u043B\u044C"
+  statusName:
+  - "\u041A\u0440\u043E\u0432\u043E\u0442\u0435\u0447\u0435\u043D\u0438\u0435"
   fightController: {fileID: 0}
   HeroCharacter: {fileID: 0}
   type: TargetEnemy
   power: 0
+  level: 0
   sprite: {fileID: 21300000, guid: 0109d5fd8ee5e8d4fa1970a4f9d9d49a, type: 3}
   reloadtime: 5
   PS: {fileID: 634960028705529110, guid: 71044d663a48abf4f84c41109f9f9a7d, type: 3}

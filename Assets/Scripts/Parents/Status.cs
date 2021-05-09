@@ -5,6 +5,7 @@ using System;
 
 public abstract class Status : MonoBehaviour
 {
+    public string Name;
     public float power;
     public float level;
 
@@ -15,10 +16,15 @@ public abstract class Status : MonoBehaviour
     public Characters character;
     [HideInInspector] public float time;
 
+    public InfoBar Info;
+    [HideInInspector] public MainController controller;
+
     public void Start()
     {
+        controller = GameObject.FindWithTag("GameController").GetComponent<MainController>();
         if (character!=null)
         {
+            //transform.SetParent(character.transform);
             character.StatusList.Add(this);
             character.RefreshStatusIcons();
         }
@@ -27,6 +33,17 @@ public abstract class Status : MonoBehaviour
             Destroy(gameObject);
         }
         time = period;
+    }
+
+    public void OnMouseOver()
+    {
+        if (Info != null) Info.delete = false;
+        if (controller.infoBar == null)
+        {
+            controller.infoBar = Instantiate(controller.InfoBarPref, transform.position, transform.rotation);
+            Info = controller.infoBar.GetComponent<InfoBar>();
+            Info.text = Information.GetEffectInfo(Name, level, power);
+        }
     }
 
     public void OnDestroy()

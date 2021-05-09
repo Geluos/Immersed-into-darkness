@@ -15,6 +15,8 @@ public class Spell_Bleeding : Spells
         st.lifetime = states[1];
         st.period = 1f;
         st.character = character;
+        st.level = level;
+        st.power = power;
         character.TakeDamage(Information.GetSpellStates("Скальпель", level, power)[0]);
         HeroCharacter.SetReload(reloadtime * (1 - HeroCharacter.CooldownReduction));
 	}
