@@ -194,14 +194,14 @@ GameObject:
   - component: {fileID: 3208891563174769689}
   - component: {fileID: 3208891563174769688}
   - component: {fileID: 3208891563174769691}
-  - component: {fileID: 3208891563174769695}
+  - component: {fileID: 4553703320637824251}
   m_Layer: 5
   m_Name: answer option 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3208891563174769694
 RectTransform:
   m_ObjectHideFlags: 0
@@ -218,7 +218,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -183, y: -154}
+  m_AnchoredPosition: {x: -183, y: -142.5}
   m_SizeDelta: {x: 150, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3208891563174769689
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C"
+  m_text: "\u0411\u043E\u044F \u043D\u0435 \u0438\u0437\u0431\u0435\u0440\u0436\u0430\u0442\u044C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f741dba484b4cc41a2e306d062e62d7, type: 2}
   m_sharedMaterial: {fileID: 1432200242435357646, guid: 3f741dba484b4cc41a2e306d062e62d7, type: 2}
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -43.053787, w: 0}
+  m_margin: {x: -38.08673, y: 0, z: -43.053787, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -342,9 +342,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 150, y: 20}
+  m_Size: {x: 230, y: 20}
   m_EdgeRadius: 0
---- !u!114 &3208891563174769695
+--- !u!114 &4553703320637824251
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -353,11 +353,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 3208891563174769690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75415131006c42f4ea65900e10886799, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a96a1e4aa04c5f40b5d9182df3dbbf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MainController: {fileID: 0}
-  NextPage: {fileID: 4517227080106033222, guid: e7aa2ecf37f4ea749a09670626dfa8de, type: 3}
+  NextPage: {fileID: 1490986761388171861, guid: f1918f60fbb17444397dce468b551d62, type: 3}
+  Background: {fileID: 21300000, guid: 979f0fba63647c24290d76d004ed7efd, type: 3}
+  Lights:
+  - {fileID: 9124444873953392295, guid: 2c9773cf025c1ba4ca59cb577e66343d, type: 3}
+  EnemyList:
+  - {fileID: 3817524512503585565, guid: 98216dcd2897be544ac2a56328d6aa7c, type: 3}
 --- !u!1 &3208891563183480510
 GameObject:
   m_ObjectHideFlags: 0

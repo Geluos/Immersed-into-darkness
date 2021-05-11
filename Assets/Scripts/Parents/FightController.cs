@@ -56,7 +56,8 @@ public class FightController : MonoBehaviour
 	IEnumerator SortHeroes()
     {
 		yield return new WaitForFixedUpdate();
-		
+		//Чтобы бой не заканчивался в начале
+		finish = false;
 		Friends TempF;
 		if(friends[0].NumInList!=0)
         {
@@ -230,13 +231,14 @@ public class FightController : MonoBehaviour
 		return res;
 	}
 
-	bool finish = false;
+	bool finish = true;
     private void Update()
     {
 		if(AliveHeroes() == 0)
         {
 			//Поражение
         }
+
 		if(enemies.Count == 0 && !finish)
         {
 			finish = true;
