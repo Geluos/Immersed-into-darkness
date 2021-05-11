@@ -4535,6 +4535,42 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: -4647458607948366122, guid: 2f6cfd3125d3df94a9b2273d902f8482, type: 2}
+    - target: {fileID: 577017662581961242, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: MusicForStages.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: PagesForStages.list.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: PagesForStages.list.Array.data[0].list.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: PagesForStages.list.Array.data[1].list.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: PagesForStages.list.Array.data[2].list.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: PagesForStages.list.Array.data[3].list.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: PagesForStages.list.Array.data[4].list.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: PagesForStages.list.Array.data[5].list.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
       propertyPath: SwordmanP
       value: 
@@ -4555,6 +4591,74 @@ PrefabInstance:
       propertyPath: InfoBarPref
       value: 
       objectReference: {fileID: 1635612605275527206, guid: bfe153463aaf8a9459f75dbd558cee4a, type: 3}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: MusicForStages.Array.data[0]
+      value: Nikfus - Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: MusicForStages.Array.data[1]
+      value: Nikfus - Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: MusicForStages.Array.data[2]
+      value: Nikfus - Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: MusicForStages.Array.data[3]
+      value: Nikfus - Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: MusicForStages.Array.data[4]
+      value: Nikfus - Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: MusicForStages.Array.data[5]
+      value: Nikfus - Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: MusicForStages.Array.data[6]
+      value: Nikfus - Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: MusicForStages.Array.data[7]
+      value: Nikfus - Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: MusicForStages.Array.data[8]
+      value: Nikfus - Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: MusicForStages.Array.data[9]
+      value: Nikfus - Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: MusicForStages.Array.data[10]
+      value: Nikfus - Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: PagesForStages.list.Array.data[0].list.Array.data[0]
+      value: 
+      objectReference: {fileID: 9079484145895339758, guid: 06547ef47b8c29b4493d6be74d99d60b, type: 3}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: PagesForStages.list.Array.data[1].list.Array.data[0]
+      value: 
+      objectReference: {fileID: 1326976686080007714, guid: fe1485b9453ab84498dc33122b2e6e3a, type: 3}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: PagesForStages.list.Array.data[2].list.Array.data[0]
+      value: 
+      objectReference: {fileID: 8404023593854679503, guid: e5027a1934158e64c8da35aa95c9c43a, type: 3}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: PagesForStages.list.Array.data[3].list.Array.data[0]
+      value: 
+      objectReference: {fileID: 998147177797306845, guid: b68127bc8ed265b429e97e92d5efa493, type: 3}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: PagesForStages.list.Array.data[4].list.Array.data[0]
+      value: 
+      objectReference: {fileID: 1021890367714157537, guid: 159b49e3c9a13a545b0ba8f367a0dfcf, type: 3}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: PagesForStages.list.Array.data[5].list.Array.data[0]
+      value: 
+      objectReference: {fileID: 3480171246805090963, guid: d37560b19fa3be044812f4db6528857a, type: 3}
     - target: {fileID: 6654286766640664026, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

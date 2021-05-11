@@ -7,6 +7,9 @@ public class buttonToBattle : MonoBehaviour
 {
     public GameObject MainController;
     public GameObject NextPage;
+    public Sprite Background;
+    public List<GameObject> Lights;
+    public List<Enemies> EnemyList;
 
     private MainController MC;
     // Start is called before the first frame update
@@ -25,12 +28,10 @@ public class buttonToBattle : MonoBehaviour
             //Перестать отображть page
             MC.StopMusic();
             MC.UnActiveLastPage();
-            if(MC.stage==2)
-                SceneManager.LoadScene("FightSceneWolfs");
-            else if(MC.stage == 3)
-                SceneManager.LoadScene("FightSceneShark");
-            else
-                SceneManager.LoadScene("Goddes");
+            MC.Background = Background;
+            MC.Lights = Lights;
+            MC.EnemyList = EnemyList;
+            MC.ToFightScene();
             MC.BattlePage = NextPage;
         }
     }

@@ -20,8 +20,12 @@ public abstract class Enemies : Characters
     {
 		base.Start();
 		AttackTimeout = AttackCooldown;
+
+		if (fightController == null)
+			print("Нет контроллера!");
+		else
+			print("Есть контроллера!!");
 		fightController.enemies.Add(this);
-		CreateHealthBar();
     }
 	
 	void OnMouseOver()
@@ -49,6 +53,7 @@ public abstract class Enemies : Characters
 	new void Awake()
 	{
 		base.Awake();
+		CreateHealthBar();
 		AttackTimeout = AttackCooldown;
 		Combat=true;
 	}

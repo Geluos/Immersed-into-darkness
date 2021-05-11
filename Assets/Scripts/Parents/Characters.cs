@@ -70,7 +70,7 @@ public abstract class Characters : MonoBehaviour
 
     public void Start()
 	{
-		FightController fightController = (GameObject.FindWithTag("FightController")).GetComponent<FightController>();
+		fightController = (GameObject.FindWithTag("FightController")).GetComponent<FightController>();
 		hp=maxhp;
 		alive = true;
 		var AS = gameObject.AddComponent<AudioSource>();

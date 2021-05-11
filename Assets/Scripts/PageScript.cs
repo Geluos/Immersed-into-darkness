@@ -5,21 +5,31 @@ using TMPro;
 
 public class PageScript : MonoBehaviour
 {
-    public double textSpeed = 3.4;
+    public double textSpeed = 3.5;
     public double time;
     public GameObject Text;
 
     public List<GameObject> buttonsList;
 
-    public string txt;
+    [TextArea(10, 20)] public string txt;
 
     private string ptxt = "";
     private int tpos = 0;
     public bool printed = false;
 
+    private int strl = 0;
+
+    void Awake()
+    {
+        ptxt = "";
+        //унификация
+        textSpeed = 1.5;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        
         time = textSpeed;
         foreach(GameObject but in buttonsList)
         {
@@ -49,7 +59,7 @@ public class PageScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!printed && Input.GetMouseButtonDown(0) && ptxt.Length>20)
+        if (!printed && Input.GetMouseButtonDown(0) && ptxt.Length>2)
         {
             printed = true;
             ptxt = txt;
@@ -63,7 +73,8 @@ public class PageScript : MonoBehaviour
         {
             if(time<=0)
             {
-                if(tpos<txt.Length){
+                if(tpos<txt.Length)
+                {
                     if(txt[tpos]=='<')
                     {
                         ptxt += txt[tpos];
@@ -73,8 +84,27 @@ public class PageScript : MonoBehaviour
                             ptxt += txt[tpos];
                             ++tpos;
                         }
+                        strl = 0;
                     }
-                    ptxt += txt[tpos];
+                    if(txt[tpos]==' ')
+                    {
+                        int tempt = tpos+1;
+                        while(tempt<txt.Length)
+                        {
+                            if(txt[tempt]==' ')
+                                break;
+                             ++tempt;
+                        }
+                        ptxt += txt[tpos];
+                        if( tempt-tpos + strl>20)
+                        {
+                            ptxt += "<br>"; 
+                            strl = 0;
+                        }
+                    }
+                    if(tpos<txt.Length && txt[tpos]!=' ')
+                        ptxt += txt[tpos];
+                    ++strl;
                     ++tpos;
                     var t = Text.GetComponent<TextMeshProUGUI>();
                     t.text = ptxt;

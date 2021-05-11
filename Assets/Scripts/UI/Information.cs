@@ -6,6 +6,15 @@ public class Information : MonoBehaviour
 {
 	public static float[] GetSpellStates(string name, float Level = 0, float Power = 0) //Возвращает некоторые характеристики способностей в виде массива вещественных чисел
 	{
+		/*
+		 Для режима Бога
+		 * */
+		if(GameObject.FindWithTag("GameController").GetComponent<MainController>().godmode)
+        {
+			List<float> states1 = new List<float>();
+			states1.Add(500);
+			return states1.ToArray();
+		}
 		List<float> states = new List<float>();
 		switch (name)
 		{

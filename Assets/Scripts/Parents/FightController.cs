@@ -9,8 +9,9 @@ public class FightController : MonoBehaviour
 	[HideInInspector] public bool select_friend;
 	[HideInInspector] public bool select_enemy;
 	
+	public GameObject background;
 	public List<Friends> friends;
-	public List<Enemies> enemies;
+	public List<Enemies> enemies = new List<Enemies>();
 	public GameObject[] EnemyPref = new GameObject[1];//UPDATE
 	public Spells spell;
 	[HideInInspector] public Friends UseFriend;
@@ -34,6 +35,19 @@ public class FightController : MonoBehaviour
 
     void Start()
     {
+		var GC = GameObject.FindWithTag("GameController").GetComponent<MainController>();
+		foreach (var enemy in GC.EnemyList)
+		{
+			Instantiate(enemy);
+		}
+
+		foreach (var light in GC.Lights)
+		{
+			Instantiate(light);
+		}
+
+		background.GetComponent<SpriteRenderer>().sprite = GC.Background;
+
 		//Здесь была отрисовка иконок
 		StartCoroutine(PlayMusic());
 		StartCoroutine(SortHeroes()); 

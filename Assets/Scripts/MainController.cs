@@ -3,20 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+[System.Serializable]
+public class ListGameObj
+{
+    public List<GameObject> list;
+}
+
+[System.Serializable]
+public class ListListGameObj
+{
+    public List<ListGameObj> list;
+}
+
+[System.Serializable]
 public class MainController : MonoBehaviour
 {
 
     //Изначально 
     public GameObject FirstPage;
 
+
     public GameObject BattlePage;
 
     //Пока публичный для просмотра
     public List<GameObject> Pages;
 
+    public ListListGameObj PagesForStages;
+
     public int stage;
-    //1 - Хаб
-    //2 - Начальный текст
+    //-1 - Хаб
+    //0 - Начальный текст
 
     public Friends SwordmanP;
     public Friends AlchemistP;
@@ -25,6 +42,14 @@ public class MainController : MonoBehaviour
 
     public List<Friends> friends;
 
+    public bool godmode = true;
+
+    public List<string> MusicForStages;
+
+    [HideInInspector] public Sprite Background;
+    [HideInInspector] public List<GameObject> Lights;
+    [HideInInspector] public List<Enemies> EnemyList;
+
     [HideInInspector] public string[] names;
 
     public GameObject InfoBarPref; //Префаб всплывающего окна с информацией
@@ -32,8 +57,8 @@ public class MainController : MonoBehaviour
 
     void Start()
     {
-        stage = 1;
-        Do();
+        stage = -1;
+        PlayMusic("Nikfus - Lullaby");
     }
 
 
@@ -58,11 +83,10 @@ public class MainController : MonoBehaviour
             pg.SetActive(false);
         }
         Pages.Add(Instantiate(BattlePage, transform));
-        PlayMusic("Nikfus - Dialogue");
+        PlayMusic(MusicForStages[stage]);
     }
     public void EndBattle()
     {
-        ++stage;
         StartCoroutine(EndB());
     }
 
@@ -93,39 +117,61 @@ public class MainController : MonoBehaviour
         gameObject.GetComponent<AudioSource>().Stop();
     }
 
+    public void NextStage()
+    {
+        if(Pages.Count - 1>0)
+            Pages[Pages.Count - 1].SetActive(false);
+        ++stage;
+        PlayMusic(MusicForStages[stage]);
+        var rand = new System.Random();
+        int index = rand.Next(PagesForStages.list[stage].list.Count-1);
+        Pages.Add(Instantiate(PagesForStages.list[stage].list[index], transform));
+        Pages[Pages.Count - 1].SetActive(true);
+    }
+
+    public void ToFightScene()
+    {
+        SceneManager.LoadScene("FightScene");
+        //FightController FightControl = GameObject.FindGameObjectWithTag("FightController").GetComponent<FightController>();
+    }
+
     public void Do()
     {
         //Временное решение?
         switch (stage) {
-            case 1:
-                PlayMusic("Nikfus - Lullaby");
+            case -1:
                 break;
-            case 2:
-                for(int i=0; i<3; ++i)
-                {
-                    switch(names[i])
-                    {
-                        case "swordsman":
-                            friends.Add(Instantiate(SwordmanP, transform).GetComponent<Warrior>());
-                            break;
-                        case "doctor":
-                            friends.Add(Instantiate(DocP, transform).GetComponent<Warrior>());
-                            break;
-                        case "alchemist":
-                            friends.Add(Instantiate(AlchemistP, transform).GetComponent<Warrior>());
-                            break;
-                        case "rifflewoman":
-                            friends.Add(Instantiate(RifflewomanP, transform).GetComponent<Warrior>());
-                            break;
-                    }
-                    friends[i].gameObject.SetActive(false);
-                }
+            case 0:
+                CreateHeroes();
                 Pages.Add(Instantiate(FirstPage, transform));
                 //Активируем первую страницу
                 Pages[1].SetActive(true);
                 break;
             default:
                 break;
+        }
+    }
+
+    public void CreateHeroes()
+    {
+        for (int i = 0; i < 3; ++i)
+        {
+            switch (names[i])
+            {
+                case "swordsman":
+                    friends.Add(Instantiate(SwordmanP, transform).GetComponent<Warrior>());
+                    break;
+                case "doctor":
+                    friends.Add(Instantiate(DocP, transform).GetComponent<Warrior>());
+                    break;
+                case "alchemist":
+                    friends.Add(Instantiate(AlchemistP, transform).GetComponent<Warrior>());
+                    break;
+                case "rifflewoman":
+                    friends.Add(Instantiate(RifflewomanP, transform).GetComponent<Warrior>());
+                    break;
+            }
+            friends[i].gameObject.SetActive(false);
         }
     }
 }
