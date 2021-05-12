@@ -4683,6 +4683,22 @@ PrefabInstance:
       propertyPath: PagesForStages.list.Array.data[6].list.Array.data[0]
       value: 
       objectReference: {fileID: 4251408647744143909, guid: 2eae1fdb777ed924b89c7b45c60d8aff, type: 3}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: PagesForStages.list.Array.data[7].list.Array.data[0]
+      value: 
+      objectReference: {fileID: 3208891563525687402, guid: 1a37572f225beae449acde8d55d80615, type: 3}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: PagesForStages.list.Array.data[8].list.Array.data[0]
+      value: 
+      objectReference: {fileID: 8852372422143972124, guid: 60ea0c7168178154a839f5f9e727ffdc, type: 3}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: PagesForStages.list.Array.data[9].list.Array.data[0]
+      value: 
+      objectReference: {fileID: 5269165164916915636, guid: 6d3245b5680d1fe4398cdb760e1cc601, type: 3}
+    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
+      propertyPath: PagesForStages.list.Array.data[10].list.Array.data[0]
+      value: 
+      objectReference: {fileID: 5830264171477944390, guid: 9e46a29a06b31c641b2c147b7d22e75f, type: 3}
     - target: {fileID: 6654286766640664026, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
