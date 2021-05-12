@@ -97,6 +97,12 @@ public class Information : MonoBehaviour
 					states.Add((7 + Level) * (1 + Power / 100)); //time
 					break;
 				}
+			case "Неуязвимость":
+				{
+					states.Add(666); //percent
+					states.Add(7); //time
+					break;
+				}
 			case "Пробитие":
 				{
 					states.Add((60 + Level * 5) * (1 + Power / 100)); //percent
@@ -160,6 +166,7 @@ public class Information : MonoBehaviour
 			case "Кровотечение": {info = $"-{states[0]} HP/сек. на {states[1]} секунд"; break;}
 			case "Уклонение": { info = $"Шанс {states[0]}% увернуться от атаки или сбросить заклятие"; break; }
 			case "Кровотечениe": { info = $"-{states[0]} HP/сек. на {states[1]} секунд"; break; } //Для Ассасина
+			case "Неуязвимость": { info = $"Полная невосприимчивость к урону на {states[1]} секунд"; break; } //Для Короля
 		}
 		string output = $"<b>{name}:</b>\n{info}";
 

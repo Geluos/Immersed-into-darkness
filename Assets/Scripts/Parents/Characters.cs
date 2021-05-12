@@ -26,6 +26,7 @@ public abstract class Characters : MonoBehaviour
 	public float defenceMultiply = 1f;
 
 	[HideInInspector] public Halo halo; //Ореол
+	public HealthBar healthBar;
 	virtual public Halo CreateHalo(Color col) //Создать ореол
 	{
 		var obj = (Instantiate(Resources.Load<GameObject>("Halo"), transform)).GetComponent<Halo>();
@@ -48,10 +49,10 @@ public abstract class Characters : MonoBehaviour
 		var THB = Resources.Load<GameObject>("HealthBar");
 		var bar=Instantiate(THB, transform);
 		HB = bar;
-		var HealthBar = bar.GetComponentInChildren<HealthBar>();
-		HealthBar.transform.parent.position += new Vector3(0, height/2+4f, 0);
-		HealthBar.character=this;
-		HealthBar.SetMaxHealth();
+		healthBar = bar.GetComponentInChildren<HealthBar>();
+		healthBar.transform.parent.position += new Vector3(0, height/2+4f, 0);
+		healthBar.character=this;
+		healthBar.SetMaxHealth();
 	}
 
 	virtual public void RefreshStatusIcons() //Обновить позиции иконок
@@ -145,7 +146,7 @@ public abstract class Characters : MonoBehaviour
 	
 	virtual public void TakeDamage(float damage)
 	{
-		hp = Math.Max(0f, hp-damage*defenceMultiply);
+		hp = Math.Max(0f, hp-damage*Mathf.Max(0,defenceMultiply));
 	}
 	
 	public void TakeHeal(float heal)
