@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 3480171246550613730}
   - component: {fileID: 2439937096430509898}
   m_Layer: 5
-  m_Name: answer option 1
+  m_Name: "\u041D\u0430\u0447\u0430\u043B\u043E \u0431\u043E\u044F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -276,11 +276,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainController: {fileID: 0}
   NextPage: {fileID: 5112872274071927788, guid: d654c94d03acc2b41a044ef19d1fba9e, type: 3}
-  Background: {fileID: 21300000, guid: e6fa88370c67a764883090bf91df7136, type: 3}
+  Background: {fileID: 21300000, guid: 485870c7248ed774490364bfe8ca321c, type: 3}
   Lights:
-  - {fileID: 9124444873953392295, guid: 2c9773cf025c1ba4ca59cb577e66343d, type: 3}
+  - {fileID: 3981081886308196297, guid: b9da6ea96d5199144a9ab2e3901cdf39, type: 3}
+  - {fileID: 573035377128777146, guid: 137a5a1b40a0a444bbb2b87b7779caac, type: 3}
+  - {fileID: 1303265664253162986, guid: be6e218fdc7c4b64f80e086d5f225778, type: 3}
   EnemyList:
-  - {fileID: 3817524512503585565, guid: 98216dcd2897be544ac2a56328d6aa7c, type: 3}
+  - {fileID: 8935291387034483326, guid: 4f40bfeb1bcc57242935c0ed3339a823, type: 3}
 --- !u!1 &3480171246608864327
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,6 +476,7 @@ MonoBehaviour:
   textSpeed: 1
   time: 1
   Text: {fileID: 3480171246608864327}
+  t: {fileID: 0}
   buttonsList:
   - {fileID: 3480171246550613731}
   txt: "\u0412\u043D\u0435\u0437\u0430\u043F\u043D\u043E \u0432\u044B \u0447\u0443\u0432\u0441\u0442\u0432\u0443\u0435\u0442\u0435

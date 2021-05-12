@@ -58,7 +58,7 @@ public class MainController : MonoBehaviour
     void Start()
     {
         stage = -1;
-        PlayMusic("Nikfus - Lullaby");
+        PlayMusic("Nikfus - Tragedy");
     }
 
 
@@ -122,7 +122,11 @@ public class MainController : MonoBehaviour
         if(Pages.Count - 1>0)
             Pages[Pages.Count - 1].SetActive(false);
         ++stage;
-        if(stage>0 && MusicForStages[stage-1] != MusicForStages[stage])
+        if (stage == 0)
+        {
+            //PlayMusic(MusicForStages[stage]);
+        }
+        if (stage>0 && MusicForStages[stage-1] != MusicForStages[stage])
             PlayMusic(MusicForStages[stage]);
         var rand = new System.Random();
         int index = rand.Next(PagesForStages.list[stage].list.Count-1);

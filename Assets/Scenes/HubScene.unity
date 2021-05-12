@@ -2950,7 +2950,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 47cef7357f43b784180d0e049448ac25, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aefcb6c8713226d429f0dae3e3e510e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2969,7 +2969,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481901850}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: -150, z: 90}
+  m_LocalPosition: {x: -3, y: -168, z: 90}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1522557927}
@@ -4621,7 +4621,7 @@ PrefabInstance:
       objectReference: {fileID: 1635612605275527206, guid: bfe153463aaf8a9459f75dbd558cee4a, type: 3}
     - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
       propertyPath: MusicForStages.Array.data[0]
-      value: Nikfus - Dialogue
+      value: Nikfus - Tragedy
       objectReference: {fileID: 0}
     - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
       propertyPath: MusicForStages.Array.data[1]
@@ -4629,7 +4629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
       propertyPath: MusicForStages.Array.data[2]
-      value: Nikfus - Dialogue
+      value: Nikfus - Lullaby
       objectReference: {fileID: 0}
     - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
       propertyPath: MusicForStages.Array.data[3]
@@ -4637,7 +4637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
       propertyPath: MusicForStages.Array.data[4]
-      value: Nikfus - Dialogue
+      value: Nikfus - Lullaby
       objectReference: {fileID: 0}
     - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
       propertyPath: MusicForStages.Array.data[5]
@@ -4645,7 +4645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
       propertyPath: MusicForStages.Array.data[6]
-      value: Nikfus - Dialogue
+      value: Nikfus - Lullaby
       objectReference: {fileID: 0}
     - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
       propertyPath: MusicForStages.Array.data[7]
@@ -4653,7 +4653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
       propertyPath: MusicForStages.Array.data[8]
-      value: Nikfus - Dialogue
+      value: Nikfus - Tragedy
       objectReference: {fileID: 0}
     - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
       propertyPath: MusicForStages.Array.data[9]
@@ -4661,7 +4661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
       propertyPath: MusicForStages.Array.data[10]
-      value: Nikfus - Dialogue
+      value: Nikfus - Tragedy
       objectReference: {fileID: 0}
     - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
       propertyPath: PagesForStages.list.Array.data[0].list.Array.data[0]
@@ -11370,7 +11370,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522557924}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -10, z: -65}
+  m_LocalPosition: {x: 0, y: 0.8, z: -65}
   m_LocalScale: {x: 40, y: 50, z: 50}
   m_Children: []
   m_Father: {fileID: 481901852}
