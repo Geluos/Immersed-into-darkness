@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5112872273190438815}
   - component: {fileID: 5112872273190438814}
   - component: {fileID: 5112872273190438813}
-  - component: {fileID: 5112872273190438809}
+  - component: {fileID: 8517138421133545182}
   m_Layer: 5
   m_Name: answer option 1
   m_TagString: Untagged
@@ -162,7 +162,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 150, y: 20}
   m_EdgeRadius: 0
---- !u!114 &5112872273190438809
+--- !u!114 &8517138421133545182
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,11 +171,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5112872273190438812}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75415131006c42f4ea65900e10886799, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ae2d6a5243129b439359c7b4475cf86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainController: {fileID: 0}
-  NextPage: {fileID: 4517227080106033222, guid: e7aa2ecf37f4ea749a09670626dfa8de, type: 3}
 --- !u!1 &5112872273216204088
 GameObject:
   m_ObjectHideFlags: 0
