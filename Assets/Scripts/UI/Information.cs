@@ -11,9 +11,9 @@ public class Information : MonoBehaviour
 		 * */
 		if(GameObject.FindWithTag("GameController").GetComponent<MainController>().godmode)
         {
-			//List<float> states1 = new List<float>();
-			//states1.Add(500);
-			//return states1.ToArray();
+			List<float> states1 = new List<float>();
+			states1.Add(500);
+			return states1.ToArray();
 		}
 		List<float> states = new List<float>();
 		switch (name)
