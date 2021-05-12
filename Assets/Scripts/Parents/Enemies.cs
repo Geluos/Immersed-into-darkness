@@ -58,7 +58,7 @@ public abstract class Enemies : Characters
 		Combat=true;
 	}
 
-	void Attack()
+	virtual public void Attack()
 	{
 		SetTargetRandom();
 		StartCoroutine(AtakeAnim());
@@ -82,8 +82,8 @@ public abstract class Enemies : Characters
 		}
 	}
 	//Атака
-	
-	void Update()
+
+	public void Update()
 	{
 		HB.GetComponentInChildren<TextMeshProUGUI>().text = $"{Mathf.Ceil(hp)}/{Mathf.Ceil(maxhp)}";
 		if ((Combat))

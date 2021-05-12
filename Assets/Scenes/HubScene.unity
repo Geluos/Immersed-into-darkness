@@ -2419,6 +2419,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MusicOpen
       objectReference: {fileID: 0}
+    - target: {fileID: 1329862436300714652, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1329862436786276276, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2531,6 +2535,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1956505996}
+    - target: {fileID: 1329862436786276283, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1329862436823344817, guid: d73f23a0cfb7e244ebac0f78fb2c6b48, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

@@ -8,6 +8,7 @@ public class PageScript : MonoBehaviour
     public double textSpeed = 3.5;
     public double time;
     public GameObject Text;
+    [HideInInspector] public TextMeshProUGUI t;
 
     public List<GameObject> buttonsList;
 
@@ -21,6 +22,9 @@ public class PageScript : MonoBehaviour
 
     void Awake()
     {
+        t = Text.GetComponent<TextMeshProUGUI>();
+        t.text = "";
+        t.ForceMeshUpdate();
         ptxt = "";
         //унификация
         textSpeed = 1.5;
@@ -59,66 +63,68 @@ public class PageScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!printed && Input.GetMouseButtonDown(0) && ptxt.Length>2)
+        if (Time.timeScale != 0f)
         {
-            printed = true;
-            ptxt = txt;
-            var t = Text.GetComponent<TextMeshProUGUI>();
-            t.text = ptxt;
-            show_All_Buttons();
-        }
-
-
-        if (!printed)
-        {
-            if(time<=0)
+            if (!printed && Input.GetMouseButtonDown(0) && ptxt.Length > 2)
             {
-                if(tpos<txt.Length)
+                printed = true;
+                ptxt = txt;
+                t.text = ptxt;
+                show_All_Buttons();
+            }
+
+
+            if (!printed)
+            {
+                if (time <= 0)
                 {
-                    if(txt[tpos]=='<')
+                    if (tpos < txt.Length)
                     {
-                        ptxt += txt[tpos];
-                        ++tpos;
-                        while(txt[tpos]!='>')
+                        if (txt[tpos] == '<')
                         {
                             ptxt += txt[tpos];
                             ++tpos;
-                        }
-                        strl = 0;
-                    }
-                    if(txt[tpos]==' ')
-                    {
-                        int tempt = tpos+1;
-                        while(tempt<txt.Length)
-                        {
-                            if(txt[tempt]==' ')
-                                break;
-                             ++tempt;
-                        }
-                        ptxt += txt[tpos];
-                        if( tempt-tpos + strl>20)
-                        {
-                            ptxt += "<br>"; 
+                            while (txt[tpos] != '>')
+                            {
+                                ptxt += txt[tpos];
+                                ++tpos;
+                            }
                             strl = 0;
                         }
+                        if (txt[tpos] == ' ')
+                        {
+                            int tempt = tpos + 1;
+                            while (tempt < txt.Length)
+                            {
+                                if (txt[tempt] == ' ')
+                                    break;
+                                ++tempt;
+                            }
+                            ptxt += txt[tpos];
+                            if (tempt - tpos + strl > 20)
+                            {
+                                ptxt += "<br>";
+                                strl = 0;
+                            }
+                        }
+                        if (tpos < txt.Length && txt[tpos] != ' ')
+                            ptxt += txt[tpos];
+                        ++strl;
+                        ++tpos;
+                        var t = Text.GetComponent<TextMeshProUGUI>();
+                        t.text = ptxt;
                     }
-                    if(tpos<txt.Length && txt[tpos]!=' ')
-                        ptxt += txt[tpos];
-                    ++strl;
-                    ++tpos;
-                    var t = Text.GetComponent<TextMeshProUGUI>();
-                    t.text = ptxt;
+                    else
+                    {
+                        show_All_Buttons();
+                        printed = true;
+                    }
+                    time = textSpeed;
                 }
                 else
-                {
-                    show_All_Buttons();
-                    printed = true;
-                }
-                time = textSpeed;
+                    //здесь что-то с числом кадров в секунду
+                    time -= 0.2;
             }
-            else
-            //здесь что-то с числом кадров в секунду
-                time-=0.2;
         }
     }
 }

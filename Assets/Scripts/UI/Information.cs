@@ -11,9 +11,9 @@ public class Information : MonoBehaviour
 		 * */
 		if(GameObject.FindWithTag("GameController").GetComponent<MainController>().godmode)
         {
-			List<float> states1 = new List<float>();
-			states1.Add(500);
-			return states1.ToArray();
+			//List<float> states1 = new List<float>();
+			//states1.Add(500);
+			//return states1.ToArray();
 		}
 		List<float> states = new List<float>();
 		switch (name)
@@ -126,6 +126,17 @@ public class Information : MonoBehaviour
 					states.Add((12 + Level) * (1 + Power / 100)); //time
 					break;
 				}
+			case "Кровотечениe": //Для Ассасина
+				{
+					states.Add((1 + Level * 0.25f) * (1 + Power / 100)); //time
+					states.Add((3 + Level) * (1 + Power / 100)); //time
+					break;
+				}
+			case "Уклонение":
+                {
+					states.Add((50 + Level * 5) * (1 + Power / 100)); //percent
+					break;
+				}
 		}
 		return states.ToArray();
 	}
@@ -147,6 +158,8 @@ public class Information : MonoBehaviour
 			case "Эйфория": {info = $"-{states[0]}% к получаемому урону на {states[1]} секунд. При получении 3 эффектов, эффекты  “Эйфория” обнуляются и персонаж получает эффект “Берсерк”"; break;}
 			case "Берсерк": {info = $"+{states[0]}% к наносимому урону на {states[1]} секунд"; break;}
 			case "Кровотечение": {info = $"-{states[0]} HP/сек. на {states[1]} секунд"; break;}
+			case "Уклонение": { info = $"Шанс {states[0]}% увернуться от атаки или сбросить заклятие"; break; }
+			case "Кровотечениe": { info = $"-{states[0]} HP/сек. на {states[1]} секунд"; break; } //Для Ассасина
 		}
 		string output = $"<b>{name}:</b>\n{info}";
 

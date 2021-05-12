@@ -85,9 +85,9 @@ public class FightController : MonoBehaviour
 	public void CopyHeroesFromMain()
     {
 		//копирование героев из контроллера на боевую сцену
+		var GC = GameObject.FindWithTag("GameController").GetComponent<MainController>();
 		for (int i = 0; i < 3; ++i)
 		{
-			var GC = GameObject.FindWithTag("GameController").GetComponent<MainController>();
 			//friends[i] = GC.friends[i];
 
 			friends[i].Name = GC.friends[i].Name;
@@ -107,7 +107,14 @@ public class FightController : MonoBehaviour
 			}
 			friends[i].alive = GC.friends[i].alive;
 			friends[i].gameObject.GetComponent<SpriteRenderer>().sprite = GC.friends[i].gameObject.GetComponent<SpriteRenderer>().sprite;
-			friends[i].Initialize();
+			if (!friends[i].alive)
+			{
+				friends[i].spriteRend.sprite = null;
+			}
+			else
+            {
+				friends[i].Initialize();
+			}
 		}
 	}
 
@@ -132,7 +139,7 @@ public class FightController : MonoBehaviour
 
 	void ChangeCurrentUnit()
 	{
-		if (Input.GetKeyDown(KeyCode.Tab))
+		if (Input.GetKeyDown(KeyCode.Tab) && Time.timeScale != 0f)
 		{
 			if (CurrentUnit==null)
 			{

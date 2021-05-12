@@ -42,7 +42,7 @@ public class MainController : MonoBehaviour
 
     public List<Friends> friends;
 
-    public bool godmode = true;
+    public bool godmode = false;
 
     public List<string> MusicForStages;
 
