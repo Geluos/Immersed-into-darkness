@@ -4580,26 +4580,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
-      propertyPath: PagesForStages.list.Array.data[6].list.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
-      propertyPath: PagesForStages.list.Array.data[7].list.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
-      propertyPath: PagesForStages.list.Array.data[8].list.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
-      propertyPath: PagesForStages.list.Array.data[9].list.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
-      propertyPath: PagesForStages.list.Array.data[10].list.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
       propertyPath: SwordmanP
       value: 
       objectReference: {fileID: 6369252786735352375, guid: 94b6c7abeff577049a227464e487eb92, type: 3}
@@ -4687,10 +4667,6 @@ PrefabInstance:
       propertyPath: PagesForStages.list.Array.data[5].list.Array.data[0]
       value: 
       objectReference: {fileID: 3480171246805090963, guid: d37560b19fa3be044812f4db6528857a, type: 3}
-    - target: {fileID: 6654286766640664025, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
-      propertyPath: PagesForStages.list.Array.data[6].list.Array.data[0]
-      value: 
-      objectReference: {fileID: 4251408647744143909, guid: 2eae1fdb777ed924b89c7b45c60d8aff, type: 3}
     - target: {fileID: 6654286766640664026, guid: cd7f47cfe1907b347a9eb6df14b83d02, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
