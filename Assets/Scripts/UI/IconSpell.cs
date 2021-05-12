@@ -118,7 +118,7 @@ public class IconSpell : MonoBehaviour
 	void UseSpellOnKey()
 	{
 		//print("QWE");
-        if (Input.GetKeyDown(Key[num]) && fightController.CurrentUnit == character)
+        if (Input.GetKeyDown(Key[num]) && fightController.CurrentUnit == character && Time.timeScale!=0f)
         {
             UseSpell();
         }

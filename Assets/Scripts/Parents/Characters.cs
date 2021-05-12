@@ -26,7 +26,8 @@ public abstract class Characters : MonoBehaviour
 	public float defenceMultiply = 1f;
 
 	[HideInInspector] public Halo halo; //Ореол
-	public Halo CreateHalo(Color col) //Создать ореол
+	public HealthBar healthBar;
+	virtual public Halo CreateHalo(Color col) //Создать ореол
 	{
 		var obj = (Instantiate(Resources.Load<GameObject>("Halo"), transform)).GetComponent<Halo>();
 		obj.spr.sprite = gameObject.GetComponent<SpriteRenderer>().sprite;
@@ -48,17 +49,17 @@ public abstract class Characters : MonoBehaviour
 		var THB = Resources.Load<GameObject>("HealthBar");
 		var bar=Instantiate(THB, transform);
 		HB = bar;
-		var HealthBar = bar.GetComponentInChildren<HealthBar>();
-		HealthBar.transform.parent.position += new Vector3(0, height/2+4f, 0);
-		HealthBar.character=this;
-		HealthBar.SetMaxHealth();
+		healthBar = bar.GetComponentInChildren<HealthBar>();
+		healthBar.transform.parent.position += new Vector3(0, height/2+4f, 0);
+		healthBar.character=this;
+		healthBar.SetMaxHealth();
 	}
 
-	public void RefreshStatusIcons() //Обновить позиции иконок
+	virtual public void RefreshStatusIcons() //Обновить позиции иконок
     {
 		for (int i = 0; i<StatusList.Count; i++)
         {
-			StatusList[i].transform.position = transform.position + new Vector3(-(StatusList.Count-1)*16+i*32,height/2+32,0);
+			StatusList[i].transform.position = transform.position + new Vector3(-(StatusList.Count-1)*16+i*32,height/2+32,-1);
         }
     }
     public void Awake()
@@ -143,9 +144,9 @@ public abstract class Characters : MonoBehaviour
 		alive = false;
 	}
 	
-	public void TakeDamage(float damage)
+	virtual public void TakeDamage(float damage)
 	{
-		hp = Math.Max(0f, hp-damage*defenceMultiply);
+		hp = Math.Max(0f, hp-damage*Mathf.Max(0,defenceMultiply));
 	}
 	
 	public void TakeHeal(float heal)
