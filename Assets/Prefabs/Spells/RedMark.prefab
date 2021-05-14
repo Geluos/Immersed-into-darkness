@@ -54,3 +54,4 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 3a53214e2546dd54c94fdb0dec0c91b8, type: 3}
   reloadtime: 4
   VS: {fileID: 1970459056119566784, guid: b12b353bdb66ef94fb7b1228716a5476, type: 3}
+  spr: {fileID: 21300000, guid: 3a53214e2546dd54c94fdb0dec0c91b8, type: 3}
