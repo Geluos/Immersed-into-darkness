@@ -109,7 +109,7 @@ public abstract class Enemies : Characters
 			//Удалить все эффекты
 			fightController.enemies.Remove(this);
 			DestroyHalo(halo);
-			Destroy(gameObject);
+			Death();
 		}
 	}
 }

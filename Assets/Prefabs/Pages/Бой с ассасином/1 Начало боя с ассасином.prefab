@@ -283,6 +283,7 @@ MonoBehaviour:
   - {fileID: 1303265664253162986, guid: be6e218fdc7c4b64f80e086d5f225778, type: 3}
   EnemyList:
   - {fileID: 8935291387034483326, guid: 4f40bfeb1bcc57242935c0ed3339a823, type: 3}
+  MusicName: Nikfus - Go Adventures!
 --- !u!1 &3480171246608864327
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class Spell_Shkval : Spells
 {
     override public void Use(Characters character)
 	{
+        HeroCharacter.PlayEffect("очередь");
         character.TakeDamage(Information.GetSpellStates("Стрельба на поражение", level, power)[0]);
         HeroCharacter.SetReload(reloadtime);
         fightController = character.fightController;

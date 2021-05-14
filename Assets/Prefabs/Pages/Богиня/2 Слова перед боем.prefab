@@ -48,6 +48,7 @@ MonoBehaviour:
   textSpeed: 1
   time: 1
   Text: {fileID: 516448476317290636}
+  t: {fileID: 0}
   buttonsList:
   - {fileID: 516448476257860136}
   txt: "\u0421\u043B\u043E\u0432\u0430 \u043F\u0435\u0440\u0435\u0434 \u0431\u043E\u0435\u043C"
@@ -64,14 +65,14 @@ GameObject:
   - component: {fileID: 516448476257860139}
   - component: {fileID: 516448476257860138}
   - component: {fileID: 516448476257860137}
-  - component: {fileID: 516448476257860141}
+  - component: {fileID: 3946015213083957805}
   m_Layer: 5
   m_Name: answer option 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &516448476257860140
 RectTransform:
   m_ObjectHideFlags: 0
@@ -88,7 +89,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -183, y: -154}
+  m_AnchoredPosition: {x: -182.2, y: -148.1}
   m_SizeDelta: {x: 150, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &516448476257860139
@@ -119,7 +120,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C"
+  m_text: "\u041F\u0443\u0442\u0438 \u043D\u0430\u0437\u0430\u0434 \u043D\u0435\u0442"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f741dba484b4cc41a2e306d062e62d7, type: 2}
   m_sharedMaterial: {fileID: 1432200242435357646, guid: 3f741dba484b4cc41a2e306d062e62d7, type: 2}
@@ -182,7 +183,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -43.053787, w: 0}
+  m_margin: {x: 0, y: -14.359436, z: 0.024505615, w: -15.204102}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -212,9 +213,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 150, y: 20}
+  m_Size: {x: 150, y: 50}
   m_EdgeRadius: 0
---- !u!114 &516448476257860141
+--- !u!114 &3946015213083957805
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,11 +224,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 516448476257860136}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75415131006c42f4ea65900e10886799, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a96a1e4aa04c5f40b5d9182df3dbbf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MainController: {fileID: 0}
-  NextPage: {fileID: 4517227080106033222, guid: e7aa2ecf37f4ea749a09670626dfa8de, type: 3}
+  NextPage: {fileID: 1906378840895248421, guid: 40849f76d38517445bc6d8e4d677a064, type: 3}
+  Background: {fileID: 21300000, guid: 979f0fba63647c24290d76d004ed7efd, type: 3}
+  Lights:
+  - {fileID: 3981081886308196297, guid: b9da6ea96d5199144a9ab2e3901cdf39, type: 3}
+  - {fileID: 573035377128777146, guid: 137a5a1b40a0a444bbb2b87b7779caac, type: 3}
+  - {fileID: 1303265664253162986, guid: be6e218fdc7c4b64f80e086d5f225778, type: 3}
+  EnemyList:
+  - {fileID: 8935291387034483326, guid: 4f40bfeb1bcc57242935c0ed3339a823, type: 3}
+  MusicName: Nikfus, rest.in.pills - Goddes Fury
 --- !u!1 &516448476317290636
 GameObject:
   m_ObjectHideFlags: 0

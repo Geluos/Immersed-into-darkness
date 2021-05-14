@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainController: {fileID: 0}
-  NextPage: {fileID: 4517227080106033222, guid: e7aa2ecf37f4ea749a09670626dfa8de, type: 3}
+  NextPage: {fileID: 5068865955858960859, guid: 3440c8c97e02f2e45b060876f9dd7fde, type: 3}
 --- !u!1 &5830264170601225874
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,6 +470,7 @@ MonoBehaviour:
   textSpeed: 1
   time: 1
   Text: {fileID: 5830264170601225874}
+  t: {fileID: 0}
   buttonsList:
   - {fileID: 5830264170558567478}
   txt: "\u0412\u044B \u043E\u0431\u043D\u0430\u0440\u0443\u0436\u0438\u0432\u0430\u0435\u0442\u0435

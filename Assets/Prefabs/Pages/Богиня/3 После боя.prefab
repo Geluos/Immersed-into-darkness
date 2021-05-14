@@ -130,6 +130,7 @@ MonoBehaviour:
   textSpeed: 1
   time: 1
   Text: {fileID: 1906378841218027249}
+  t: {fileID: 0}
   buttonsList:
   - {fileID: 1906378841208923221}
   txt: "\u041F\u043E\u0441\u043B\u0435 \u0431\u043E\u044F"
@@ -146,7 +147,7 @@ GameObject:
   - component: {fileID: 1906378841208923222}
   - component: {fileID: 1906378841208923223}
   - component: {fileID: 1906378841208923220}
-  - component: {fileID: 1906378841208923216}
+  - component: {fileID: 8503126280440080399}
   m_Layer: 5
   m_Name: answer option 1
   m_TagString: Untagged
@@ -296,7 +297,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 150, y: 20}
   m_EdgeRadius: 0
---- !u!114 &1906378841208923216
+--- !u!114 &8503126280440080399
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -305,11 +306,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1906378841208923221}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75415131006c42f4ea65900e10886799, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ae2d6a5243129b439359c7b4475cf86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainController: {fileID: 0}
-  NextPage: {fileID: 4517227080106033222, guid: e7aa2ecf37f4ea749a09670626dfa8de, type: 3}
 --- !u!1 &1906378841218027249
 GameObject:
   m_ObjectHideFlags: 0

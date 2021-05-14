@@ -47,6 +47,7 @@ MonoBehaviour:
   textSpeed: 1
   time: 1
   Text: {fileID: 998147178009730825}
+  t: {fileID: 0}
   buttonsList:
   - {fileID: 3493578888357823776}
   txt: "\u0412 \u043F\u0435\u0449\u0435\u0440\u0430\u0445 \u044D\u0442\u043E \u043D\u0435\u0437\u0430\u043C\u0435\u0442\u043D\u043E,
@@ -416,6 +417,10 @@ PrefabInstance:
       propertyPath: Lights.Array.data[1]
       value: 
       objectReference: {fileID: 5238114477096620736, guid: df12e4999f2c9d047b1999b50eeeb9eb, type: 3}
+    - target: {fileID: 4867655346323786683, guid: 4b5427bfe73533f4cb7d93935176aaad, type: 3}
+      propertyPath: MusicName
+      value: Nikfus - Clarion
+      objectReference: {fileID: 0}
     - target: {fileID: 5633126238618027384, guid: 4b5427bfe73533f4cb7d93935176aaad, type: 3}
       propertyPath: m_Name
       value: To Battle
