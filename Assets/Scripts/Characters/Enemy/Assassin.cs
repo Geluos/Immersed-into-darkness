@@ -35,6 +35,7 @@ public class Assassin : Enemies
     {
         base.Attack();
         var st = Instantiate(bleeding, AttackTarget.transform);
+        //Зачем, Витя?
         st.Name = "Кровотечениe"; //С английской е на конце
         st.damage = Information.GetEffectStates("Кровотечениe")[0];
         st.lifetime = Information.GetEffectStates("Кровотечениe")[1];
