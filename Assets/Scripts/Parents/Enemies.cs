@@ -67,7 +67,8 @@ public abstract class Enemies : Characters
 		StartCoroutine(AttackTarget.TakingDamageAnim());
 		//Instantiate(AttackPref,AttackTarget.transform.position,transform.rotation);
 	}
-	//Переписать
+	
+
 	void SetTargetRandom()
 	{
 		if (fightController.AliveHeroes() > 0)
@@ -109,7 +110,7 @@ public abstract class Enemies : Characters
 			//Удалить все эффекты
 			fightController.enemies.Remove(this);
 			DestroyHalo(halo);
-			Destroy(gameObject);
+			Death();
 		}
 	}
 }

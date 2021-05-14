@@ -61,6 +61,14 @@ public class MainController : MonoBehaviour
         PlayMusic("Nikfus - Tragedy");
     }
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A) && Input.GetKeyDown(KeyCode.S) && Input.GetKeyDown(KeyCode.D) && Input.GetKeyDown(KeyCode.F))
+        {
+            godmode = true;
+        }
+    }
+
 
     public void Awake()
     {
@@ -119,19 +127,28 @@ public class MainController : MonoBehaviour
 
     public void NextStage()
     {
-        if(Pages.Count - 1>0)
-            Pages[Pages.Count - 1].SetActive(false);
-        ++stage;
-        if (stage == 0)
+        if (stage == 10)
         {
-            //PlayMusic(MusicForStages[stage]);
+            StopMusic();
+            SceneManager.LoadScene("Goddes");
+            Pages[Pages.Count - 1].SetActive(false);
         }
-        if (stage>0 && MusicForStages[stage-1] != MusicForStages[stage])
-            PlayMusic(MusicForStages[stage]);
-        var rand = new System.Random();
-        int index = rand.Next(PagesForStages.list[stage].list.Count-1);
-        Pages.Add(Instantiate(PagesForStages.list[stage].list[index], transform));
-        Pages[Pages.Count - 1].SetActive(true);
+        else
+        {
+            if (Pages.Count - 1 > 0)
+                Pages[Pages.Count - 1].SetActive(false);
+            ++stage;
+            if (stage == 0)
+            {
+                //PlayMusic(MusicForStages[stage]);
+            }
+            if (stage > 0 && MusicForStages[stage - 1] != MusicForStages[stage])
+                PlayMusic(MusicForStages[stage]);
+            var rand = new System.Random();
+            int index = rand.Next(PagesForStages.list[stage].list.Count - 1);
+            Pages.Add(Instantiate(PagesForStages.list[stage].list[index], transform));
+            Pages[Pages.Count - 1].SetActive(true);
+        }
     }
 
     public void ToFightScene()

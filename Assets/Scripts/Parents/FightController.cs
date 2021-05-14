@@ -132,10 +132,11 @@ public class FightController : MonoBehaviour
 	IEnumerator PlayMusic()
 	{
 		yield return new WaitForSeconds(1);
+		/*
 		music1.Play();
 		//yield return new WaitForSeconds(6.0857f);
 		yield return new WaitForSeconds(music1.clip.length);
-		music2.Play();
+		music2.Play();*/
 	}
 
 	void ChangeCurrentUnit()

@@ -7,6 +7,7 @@ public class Spell_Stimulator : Spells
     public Euphoria status;
     override public void Use(Characters character)
     {
+        HeroCharacter.PlayEffect("Шприц");
         var st = Instantiate(status, character.transform);
         st.level = level;
         st.power = power;

@@ -423,6 +423,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3541493648561036824}
   - component: {fileID: 3541493648561036827}
+  - component: {fileID: 721125590115821671}
   m_Layer: 0
   m_Name: "2 \u041F\u0440\u0438\u0432\u0430\u043B"
   m_TagString: Untagged
@@ -461,6 +462,7 @@ MonoBehaviour:
   textSpeed: 1
   time: 1
   Text: {fileID: 3541493647813281998}
+  t: {fileID: 0}
   buttonsList:
   - {fileID: 3541493647872467562}
   txt: "\u0412\u044B\u0431\u0440\u0430\u0442\u044C\u0441\u044F \u043D\u0430\u0432\u0435\u0440\u0445
@@ -470,6 +472,18 @@ MonoBehaviour:
     \u0438 \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E \u0447\u0430\u0441\u043E\u0432
     \u043E\u0442\u0434\u044B\u0445\u0430\u0435\u0442\u0435 \u0432 \u043F\u043E\u043B\u0443\u0434\u0440\u0435\u043C\u0435."
   printed: 0
+--- !u!114 &721125590115821671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3541493648561036826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 340397c74435d1243b26fc65334383f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4469952566808805199
 GameObject:
   m_ObjectHideFlags: 0

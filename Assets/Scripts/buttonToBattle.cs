@@ -10,6 +10,7 @@ public class buttonToBattle : MonoBehaviour
     public Sprite Background;
     public List<GameObject> Lights;
     public List<Enemies> EnemyList;
+    public string MusicName = "";
 
     private MainController MC;
     // Start is called before the first frame update
@@ -33,6 +34,8 @@ public class buttonToBattle : MonoBehaviour
             MC.EnemyList = EnemyList;
             MC.ToFightScene();
             MC.BattlePage = NextPage;
+            if (MusicName != "")
+                MC.PlayMusic(MusicName);
         }
     }
 }
