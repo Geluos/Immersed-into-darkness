@@ -14,8 +14,6 @@ public class ImpBuff : MonoBehaviour
             {
                 hero.power += 30;
                 hero.maxhp -= 10;
-                if (hero.hp > hero.maxhp)
-                    hero.hp = hero.maxhp;
             }
         }
     }

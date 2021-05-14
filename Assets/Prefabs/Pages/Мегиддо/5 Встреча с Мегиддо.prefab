@@ -554,7 +554,6 @@ MonoBehaviour:
   textSpeed: 1
   time: 1
   Text: {fileID: 1127041622103317443}
-  t: {fileID: 0}
   buttonsList:
   - {fileID: 1127041622144938343}
   txt: "\u0412 \u0432\u0430\u0448\u0435\u0439 \u043F\u0430\u043C\u044F\u0442\u0438

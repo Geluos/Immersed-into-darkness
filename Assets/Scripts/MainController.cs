@@ -61,14 +61,6 @@ public class MainController : MonoBehaviour
         PlayMusic("Nikfus - Tragedy");
     }
 
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A) && Input.GetKeyDown(KeyCode.S) && Input.GetKeyDown(KeyCode.D) && Input.GetKeyDown(KeyCode.F))
-        {
-            godmode = true;
-        }
-    }
-
 
     public void Awake()
     {

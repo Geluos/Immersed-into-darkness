@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 3067077889432448422}
   - component: {fileID: 3067077889432448423}
   - component: {fileID: 3067077889432448420}
-  - component: {fileID: 6045694648958468004}
+  - component: {fileID: 6954917402971049486}
   m_Layer: 5
   m_Name: answer option 1
   m_TagString: Untagged
@@ -345,7 +345,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -220, y: -187}
+  m_AnchoredPosition: {x: -190, y: -175}
   m_SizeDelta: {x: 150, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3067077889432448422
@@ -471,7 +471,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 150, y: 20}
   m_EdgeRadius: 0
---- !u!114 &6045694648958468004
+--- !u!114 &6954917402971049486
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -480,11 +480,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3067077889432448421}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75415131006c42f4ea65900e10886799, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ae2d6a5243129b439359c7b4475cf86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainController: {fileID: 0}
-  NextPage: {fileID: 3203255885084291976, guid: 997e86fca702a93419524a31aed76436, type: 3}
 --- !u!1 &3067077889807916659
 GameObject:
   m_ObjectHideFlags: 0

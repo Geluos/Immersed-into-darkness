@@ -67,8 +67,7 @@ public abstract class Enemies : Characters
 		StartCoroutine(AttackTarget.TakingDamageAnim());
 		//Instantiate(AttackPref,AttackTarget.transform.position,transform.rotation);
 	}
-	
-
+	//Переписать
 	void SetTargetRandom()
 	{
 		if (fightController.AliveHeroes() > 0)
