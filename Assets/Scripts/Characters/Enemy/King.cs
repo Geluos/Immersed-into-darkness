@@ -27,12 +27,14 @@ public class King : Enemies
                     int count = minionCount - minions.Count;
                     for (int i = 0; i < count; i++)
                     {
-                        int dir = Random.Range(225,135);
                         var enem = Instantiate(minion, transform.position, transform.rotation).GetComponent<Enemies>();
                         minions.Add(enem);
                         enem.maxhp = minionHP;
                         enem.hp = minionHP;
-                        enem.transform.position += new Vector3(200 * Mathf.Cos(Mathf.Deg2Rad * dir)+Random.Range(-60,60), 200 * Mathf.Sin(Mathf.Deg2Rad * dir) + Random.Range(-60, 60));
+                        if(i==0)
+                            enem.transform.position += new Vector3(-50, 50);
+                        else
+                            enem.transform.position += new Vector3(-50, -50);
                         enem.healthBar.SetMaxHealth();
                     }
                     break;
