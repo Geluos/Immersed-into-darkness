@@ -603,10 +603,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 2027085408782131212, guid: 6e67e6dfa8910844b8a4a064e23e8d4d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2027085408782131212, guid: 6e67e6dfa8910844b8a4a064e23e8d4d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 2027085408782131213, guid: 6e67e6dfa8910844b8a4a064e23e8d4d, type: 3}
       propertyPath: fight
       value: 
       objectReference: {fileID: 1926839430}
+    - target: {fileID: 2027085408782131250, guid: 6e67e6dfa8910844b8a4a064e23e8d4d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e72a992701d4a254ea3af05916dfb71f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e67e6dfa8910844b8a4a064e23e8d4d, type: 3}
 --- !u!1 &645243531 stripped
@@ -674,6 +686,7 @@ MonoBehaviour:
   power: 1
   defenceMultiply: 1
   halo: {fileID: 0}
+  healthBar: {fileID: 0}
   Spells:
   - {fileID: -2946307387239578792, guid: 810a884573225fc499925cfc6066914d, type: 3}
   - {fileID: 1764254152852817350, guid: 8492e6dbab165d24b9a1b7968d319d6c, type: 3}
@@ -948,6 +961,7 @@ MonoBehaviour:
   power: 1
   defenceMultiply: 1
   halo: {fileID: 0}
+  healthBar: {fileID: 0}
   Spells:
   - {fileID: -2946307387239578792, guid: 810a884573225fc499925cfc6066914d, type: 3}
   - {fileID: 1764254152852817350, guid: 8492e6dbab165d24b9a1b7968d319d6c, type: 3}
@@ -1443,6 +1457,7 @@ MonoBehaviour:
   power: 1
   defenceMultiply: 1
   halo: {fileID: 0}
+  healthBar: {fileID: 0}
   Spells:
   - {fileID: -609199673152717092, guid: ec1a96c536fcaf8408ac8eeb90003bb3, type: 3}
   - {fileID: 1708011467649049992, guid: 3fa8b91cc4efffe4288fbced014c8f39, type: 3}

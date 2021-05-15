@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1502414188121980918
+--- !u!1 &1249078248904269382
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1502414188121980914}
-  - component: {fileID: 1502414188121980917}
-  - component: {fileID: 1502414188121980916}
-  - component: {fileID: 5967911082079501503}
+  - component: {fileID: 1249078248904269378}
+  - component: {fileID: 1249078248904269381}
+  - component: {fileID: 1249078248904269380}
+  - component: {fileID: 4639731612935799811}
   m_Layer: 0
-  m_Name: Goddes
+  m_Name: Lady 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1502414188121980914
+--- !u!4 &1249078248904269378
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502414188121980918}
+  m_GameObject: {fileID: 1249078248904269382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 228.54913, y: -82.56041, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1502414188121980917
+--- !u!212 &1249078248904269381
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502414188121980918}
+  m_GameObject: {fileID: 1249078248904269382}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 98a366f77015ad64380c3ae2c2fc1698, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eca814588a8879047b1405b00828b05f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,13 +84,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1502414188121980916
+--- !u!61 &1249078248904269380
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502414188121980918}
+  m_GameObject: {fileID: 1249078248904269382}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -101,30 +101,30 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 164, y: 287}
+    oldSize: {x: 182, y: 290}
     newSize: {x: 1.28, y: 0.96}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 160, y: 300}
+  m_Size: {x: 160, y: 250}
   m_EdgeRadius: 0
---- !u!114 &5967911082079501503
+--- !u!114 &4639731612935799811
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502414188121980918}
+  m_GameObject: {fileID: 1249078248904269382}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d83435384d107fd4297e6e50d366509b, type: 3}
+  m_Script: {fileID: 11500000, guid: 80079b15228dbd34989d42f53639d0fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
-  maxhp: 200
-  hp: 200
+  Name: "\u041B\u0435\u0434\u0438"
+  maxhp: 180
+  hp: 150
   HpRegen: 0
   CooldownReduction: 0
   fightController: {fileID: 0}
@@ -139,15 +139,12 @@ MonoBehaviour:
   halo: {fileID: 0}
   healthBar: {fileID: 0}
   AttackType: 
-  AttackCooldown: 0
+  AttackCooldown: 12
   AttackTimeout: 0
-  DamageMin: 0
-  DamageMax: 0
-  Combat: 0
+  DamageMin: 5
+  DamageMax: 10
+  Combat: 1
   AttackTarget: {fileID: 0}
-  time: 5
-  cooldown: 7
-  damage: 10
-  weak: {fileID: 1790577027715245458, guid: d22b819a80c30c741b0a52be668fafb0, type: 3}
-  poison: {fileID: -8996799964614128394, guid: e8b7c221d935f9b4b80c61b75d503b0c, type: 3}
-  razmes: 1
+  time: 4
+  cooldown: 4
+  vulnerability: {fileID: 1970459056119566784, guid: b12b353bdb66ef94fb7b1228716a5476, type: 3}

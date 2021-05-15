@@ -16,7 +16,7 @@ public abstract class Enemies : Characters
 	[HideInInspector] public Friends AttackTarget;
 	
 
-	new void Start()
+	virtual new public void Start()
     {
 		base.Start();
 		AttackTimeout = AttackCooldown;
@@ -85,7 +85,7 @@ public abstract class Enemies : Characters
 	}
 	//Атака
 
-	public void Update()
+	virtual public void Update()
 	{
 		HB.GetComponentInChildren<TextMeshProUGUI>().text = $"{Mathf.Ceil(hp)}/{Mathf.Ceil(maxhp)}";
 		if ((Combat))
