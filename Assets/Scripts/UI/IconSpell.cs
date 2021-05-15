@@ -108,7 +108,7 @@ public class IconSpell : MonoBehaviour
 				Info.text += $"\n\n<b>Перезарядка:</b> {spell.reloadtime}";
 				//Info.text += $"\n<b> Уровень:</ b > { spell.level + 1}";
 			}
-			if (Input.GetMouseButtonDown(0))
+			if (Input.GetMouseButtonDown(0) && Time.timeScale != 0f)
 			{
 				UseSpell();
 			}

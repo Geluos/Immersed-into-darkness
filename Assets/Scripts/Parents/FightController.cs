@@ -33,8 +33,31 @@ public class FightController : MonoBehaviour
 	public AudioSource music1;
 	public AudioSource music2;
 
+	private GameObject tacticalPause;
+	private bool isPause = false;
+
+	private void Pause()
+    {
+		if (Input.GetKeyDown(KeyCode.Space))
+        {
+			if (!isPause)
+            {
+				Time.timeScale = 0f;
+				isPause = true;
+				tacticalPause.SetActive(true);
+            }
+			else
+            {
+				Time.timeScale = 1f;
+				isPause = false;
+				tacticalPause.SetActive(false);
+			}
+        }
+    }
     void Start()
     {
+		tacticalPause = Instantiate(Resources.Load<GameObject>("tacticalPause"), transform);
+		tacticalPause.SetActive(false);
 		var GC = GameObject.FindWithTag("GameController").GetComponent<MainController>();
 		foreach (var enemy in GC.EnemyList)
 		{
@@ -242,7 +265,8 @@ public class FightController : MonoBehaviour
 	bool finish = true;
     private void Update()
     {
-		if(AliveHeroes() == 0)
+		Pause();
+		if (AliveHeroes() == 0)
         {
 			//Поражение
         }

@@ -19,7 +19,6 @@ public class ListListGameObj
 [System.Serializable]
 public class MainController : MonoBehaviour
 {
-
     //Изначально 
     public GameObject FirstPage;
 

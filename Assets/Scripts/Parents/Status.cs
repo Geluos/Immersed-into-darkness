@@ -43,6 +43,10 @@ public abstract class Status : MonoBehaviour
             controller.infoBar = Instantiate(controller.InfoBarPref, transform.position, transform.rotation);
             Info = controller.infoBar.GetComponent<InfoBar>();
             Info.text = Information.GetEffectInfo(Name, level, power);
+            if ( Time.timeScale == 0f)
+            {
+                Info.text += $"\n\n<color=\"green\"><b>Осталось:</b> {Mathf.Ceil(lifetime*10)/10} сек.<color=\"white\">";
+            }
         }
     }
 

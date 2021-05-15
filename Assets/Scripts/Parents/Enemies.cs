@@ -30,9 +30,10 @@ public abstract class Enemies : Characters
 	
 	void OnMouseOver()
 	{
+
 		IsSelected = true;
 		if (halo==null) halo = CreateHalo(Color.red);
-		if (Input.GetMouseButtonDown(0))
+		if (Input.GetMouseButtonDown(0) && Time.timeScale != 0f)
 		{
 			print("Вы нажали на врага");
 			if (fightController.select_enemy)
