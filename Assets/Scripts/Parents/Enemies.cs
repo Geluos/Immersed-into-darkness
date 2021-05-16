@@ -14,6 +14,8 @@ public abstract class Enemies : Characters
 	public float DamageMax;
 	public bool Combat;
 	[HideInInspector] public Friends AttackTarget;
+
+	public bool isLearn = false;
 	
 
 	virtual new public void Start()
@@ -106,7 +108,7 @@ public abstract class Enemies : Characters
 				}
 			}
 		}
-		if (hp<=0)
+		if (hp<=0 && !isLearn)
 		{
 			//Удалить все эффекты
 			fightController.enemies.Remove(this);
