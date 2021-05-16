@@ -23,16 +23,18 @@ public class Learn : MonoBehaviour
     public void Next()
     {
         g[i - 1].SetActive(false);
-        g[i].SetActive(true);
-        i++;
         if (i == g.Length-1)
         {
             for (int i = 0; i < e.Length; i++)
             {
-                e[i].AttackCooldown = 5;
-                e[i].hp = 80;
+                e[i].hp = 0;
                 e[i].isLearn = false;
             }
+        }
+        else
+        {
+            g[i].SetActive(true);
+            i++;
         }
     }
 
