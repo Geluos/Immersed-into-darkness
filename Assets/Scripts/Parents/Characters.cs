@@ -145,8 +145,9 @@ public abstract class Characters : MonoBehaviour
 	public void Death()
 	{
 		PlayEffect("Звук удара по тарелке");
-		StartCoroutine(DoTransparent());
 		alive = false;
+		StartCoroutine(DoTransparent());
+		
 	}
 	
 	virtual public void TakeDamage(float damage)

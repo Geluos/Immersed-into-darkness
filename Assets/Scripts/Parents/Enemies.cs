@@ -34,7 +34,7 @@ public abstract class Enemies : Characters
 	{
 
 		IsSelected = true;
-		if (halo==null) halo = CreateHalo(Color.red);
+		if (halo==null && alive) halo = CreateHalo(Color.red);
 		if (Input.GetMouseButtonDown(0) && !fightController.GC.pause.isPause)
 		{
 			print("Вы нажали на врага");
@@ -108,7 +108,8 @@ public abstract class Enemies : Characters
 				}
 			}
 		}
-		if (hp<=0 && !isLearn)
+
+		if (hp <= 0 && alive)
 		{
 			//Удалить все эффекты
 			fightController.enemies.Remove(this);
