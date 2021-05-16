@@ -3,15 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Goddes : Enemies
+public class Lady : Enemies
 {
     public float time = 5;
-    public float cooldown = 10;
-    public float damage;
-    public WeakStatus weak;
-    public PoisonStatus poison;
-    public bool razmes = true;
-    private float allTime = 0f;
+    public float cooldown = 6;
+    public VulnerabilityStatus vulnerability;
 
     void SetTargetRandom()
     {
@@ -30,18 +26,12 @@ public class Goddes : Enemies
     new private void Start()
     {
         base.Start();
-        if(razmes)
-            foreach(Friends f in fightController.friends)
-            {
-                f.gameObject.transform.position += new Vector3(20, 0);
-            }
-        
+
     }
 
 
     new public void Update()
     {
-        allTime+= Time.deltaTime;
         //base.Update();
         if (hp <= 0)
         {
@@ -55,48 +45,30 @@ public class Goddes : Enemies
         else
         {
             time = cooldown;
-            float r = Random.Range(0, 3);
+            float r = Random.Range(0, 2);
             switch (r)
             {
                 case 0:
-                    foreach (var x in fightController.friends)
-                    {
-                        var st = Instantiate(weak, x.transform);
-                        st.Name = "Ослабление";
-                        st.lifetime = 8;
-                        st.percent = Information.GetEffectStates("Ослабление", 0, -50)[0];
-                        st.power = -20;
-                        st.character = x;
-                        x.TakeDamage(damage);
-                    }
-                    break;
-                case 1:
                     SetTargetRandom();
                     StartCoroutine(AtakeAnim());
                     AttackTimeout = AttackCooldown;
-                    AttackTarget.TakeDamage(Random.Range(DamageMin, DamageMax) * (1 + power / 100));
+                    float dam = Random.Range(DamageMin, DamageMax) * (1 + power / 100);
+                    AttackTarget.TakeDamage(dam);
+                    TakeHeal(dam);
                     StartCoroutine(AttackTarget.TakingDamageAnim());
                     break;
-                case 2:
+                case 1:
                     foreach (var x in fightController.friends)
                     {
-                        var st = Instantiate(poison, x.transform);
-                        st.Name = "Отравление";
+                        var st = Instantiate(vulnerability, x.transform);
+                        st.Name = "Уязвимость";
                         st.lifetime = 8;
-                        st.period = 1;
-                        st.damage = 1;
+                        st.koef = Information.GetEffectStates("Уязвимость", 1, 0)[0];
                         st.character = x;
-                        //x.TakeDamage(damage);
+                        x.TakeDamage(3);
                     }
                     break;
             }
-        }
-
-        if(razmes && allTime > 12)
-        {
-            SetTargetRandom();
-            StartCoroutine(AtakeAnim());
-            StartCoroutine(AttackTarget.TakingDamageAnim());
         }
     }
 }

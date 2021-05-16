@@ -30,10 +30,14 @@ public abstract class Characters : MonoBehaviour
 	virtual public Halo CreateHalo(Color col) //Создать ореол
 	{
 		var obj = (Instantiate(Resources.Load<GameObject>("Halo"), transform)).GetComponent<Halo>();
-		obj.spr.sprite = gameObject.GetComponent<SpriteRenderer>().sprite;
-		obj.transform.position = transform.position;
-		obj.transform.localScale = transform.localScale;
-		obj.color = col;
+		if (alive)
+		{
+			
+			obj.spr.sprite = gameObject.GetComponent<SpriteRenderer>().sprite;
+			obj.transform.position = transform.position;
+			obj.transform.localScale = transform.localScale;
+			obj.color = col;
+		}
 		return obj;
 	}
 	public void DestroyHalo(Halo obj) //Удалить ореол

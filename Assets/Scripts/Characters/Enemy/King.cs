@@ -31,7 +31,12 @@ public class King : Enemies
                         minions.Add(enem);
                         enem.maxhp = minionHP;
                         enem.hp = minionHP;
-                        enem.transform.position += new Vector3(-50, 50-i*100);
+
+                        if(i==0)
+                            enem.transform.position += new Vector3(-120, 80);
+                        else
+                            enem.transform.position += new Vector3(-120, -80);
+
                         enem.healthBar.SetMaxHealth();
                     }
                     break;

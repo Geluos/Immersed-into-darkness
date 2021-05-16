@@ -68,6 +68,16 @@ public class MainController : MonoBehaviour
         {
             godmode = true;
         }
+        if (Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.KeypadPlus))
+        {
+            if (stage < 10)
+                ++stage;
+        }
+        if (Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.KeypadMinus))
+        {
+            if (stage > 0)
+                --stage;
+        }
     }
 
 

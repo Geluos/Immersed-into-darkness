@@ -11,6 +11,8 @@ public class Button : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            var GC = GameObject.FindWithTag("GameController");
+            Destroy(GC);
             SceneManager.LoadScene("Menu");
         }
     }

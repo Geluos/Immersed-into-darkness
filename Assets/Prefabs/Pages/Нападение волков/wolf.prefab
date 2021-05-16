@@ -111,11 +111,12 @@ MonoBehaviour:
   power: 0
   defenceMultiply: 1
   halo: {fileID: 0}
+  healthBar: {fileID: 0}
   AttackType: Melee
   AttackCooldown: 5
   AttackTimeout: 0
-  DamageMin: 8
-  DamageMax: 10
+  DamageMin: 5
+  DamageMax: 8
   Combat: 1
   AttackTarget: {fileID: 0}
 --- !u!61 &94618895760920930
