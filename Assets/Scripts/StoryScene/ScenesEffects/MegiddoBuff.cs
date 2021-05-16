@@ -15,11 +15,6 @@ public class MegiddoBuff : MonoBehaviour
             hero.Level++;
             hero.power += 30;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        MC.heroInformation?.RefreshInfo();
     }
 }

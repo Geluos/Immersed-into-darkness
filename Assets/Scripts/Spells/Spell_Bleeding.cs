@@ -8,6 +8,7 @@ public class Spell_Bleeding : Spells
     public PoisonStatus PS;
     override public void Use(Characters character)
 	{
+        base.Use(character);
         HeroCharacter.PlayEffect("Кровь");
         print("Наложили кровотечение");
         var st = Instantiate(PS, character.transform);

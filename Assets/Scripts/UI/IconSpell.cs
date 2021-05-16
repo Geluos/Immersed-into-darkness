@@ -17,7 +17,6 @@ public class IconSpell : MonoBehaviour
 	[HideInInspector] public MainController controller;
 	void Start()
     {
-		FightController fightController = (GameObject.FindWithTag("FightController")).GetComponent<FightController>();
 		controller = GameObject.FindWithTag("GameController").GetComponent<MainController>();
 	}
 	
@@ -108,7 +107,7 @@ public class IconSpell : MonoBehaviour
 				Info.text += $"\n\n<b>Перезарядка:</b> {spell.reloadtime}";
 				//Info.text += $"\n<b> Уровень:</ b > { spell.level + 1}";
 			}
-			if (Input.GetMouseButtonDown(0) && Time.timeScale != 0f)
+			if (Input.GetMouseButtonDown(0) && Time.timeScale != 0 && fightController.lvl==null)
 			{
 				UseSpell();
 			}
@@ -118,7 +117,7 @@ public class IconSpell : MonoBehaviour
 	void UseSpellOnKey()
 	{
 		//print("QWE");
-        if (Input.GetKeyDown(Key[num]) && fightController.CurrentUnit == character && Time.timeScale!=0f)
+        if (Input.GetKeyDown(Key[num]) && fightController.CurrentUnit == character && Time.timeScale!=0 && fightController.lvl == null)
         {
             UseSpell();
         }

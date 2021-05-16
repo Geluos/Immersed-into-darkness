@@ -53,6 +53,8 @@ public class MainController : MonoBehaviour
 
     public GameObject InfoBarPref; //Префаб всплывающего окна с информацией
     [HideInInspector] public GameObject infoBar; //Текущее окно с информацией
+    [HideInInspector] public HeroInformation heroInformation = null;
+    [HideInInspector] public PauseGame pause = null;
 
     void Start()
     {
@@ -71,6 +73,7 @@ public class MainController : MonoBehaviour
 
     public void Awake()
     {
+        pause = GetComponent<PauseGame>();
         if (FindObjectsOfType(GetType()).Length == 1)
 		{
 			DontDestroyOnLoad(gameObject);

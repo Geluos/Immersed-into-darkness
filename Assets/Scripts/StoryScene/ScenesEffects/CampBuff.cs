@@ -20,11 +20,6 @@ public class CampBuff : MonoBehaviour
                 hero.hp = 30;
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        MC.heroInformation?.RefreshInfo();
     }
 }

@@ -17,6 +17,7 @@ public class HeroInformation : MonoBehaviour
     void Start()
     {
         controller = GameObject.FindWithTag("GameController").GetComponent<MainController>();
+        controller.heroInformation = this;
         for (int i=0; i<3; i++)
         {
             var icon = Instantiate(HeroSpellPref, transform).GetComponent<HeroSpell>();
@@ -41,6 +42,7 @@ public class HeroInformation : MonoBehaviour
         }
         for (int i = 0; i<3; i++)
         {
+            SpellList[i].level = controller.friends[num].SpellLevel[i];
             SpellList[i].spell = controller.friends[num].Spells[i];
             SpellList[i].spriteRend.sprite = SpellList[i].spell.sprite;
         }
@@ -59,10 +61,5 @@ public class HeroInformation : MonoBehaviour
             output += $"<b>Усиление способностей:</b> {controller.friends[num].power}\n";
         }
         return output;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

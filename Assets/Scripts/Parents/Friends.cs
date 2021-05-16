@@ -54,7 +54,7 @@ public abstract class Friends : Characters
 		IsSelected = true;
 		if (halo==null && ready) 
 			halo = CreateHalo(Color.green);
-		if (Input.GetMouseButtonDown(0) && Time.timeScale != 0f)
+		if (Input.GetMouseButtonDown(0) && !fightController.GC.pause.isPause)
 		{
 			if (fightController.select_friend)
 			{

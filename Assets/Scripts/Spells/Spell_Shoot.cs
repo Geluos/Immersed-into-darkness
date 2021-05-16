@@ -6,6 +6,7 @@ public class Spell_Shoot : Spells
 {
     override public void Use(Characters character)
 	{
+        base.Use(character);
         HeroCharacter.PlayEffect("Выстрел");
         character.TakeDamage(Information.GetSpellStates("Прострел", level, power)[0]);
         HeroCharacter.SetReload(reloadtime);

@@ -35,30 +35,34 @@ public class FightController : MonoBehaviour
 
 	private GameObject tacticalPause;
 	private bool isPause = false;
+	public MainController GC;
 
 	private void Pause()
     {
-		if (Input.GetKeyDown(KeyCode.Space))
-        {
-			if (!isPause)
-            {
-				Time.timeScale = 0f;
-				isPause = true;
-				tacticalPause.SetActive(true);
-            }
-			else
-            {
-				Time.timeScale = 1f;
-				isPause = false;
-				tacticalPause.SetActive(false);
+		if (!GC.pause.isPause && lvl == null)
+		{
+			if (Input.GetKeyDown(KeyCode.Space))
+			{
+				if (!isPause)
+				{
+					Time.timeScale = 0f;
+					isPause = true;
+					tacticalPause.SetActive(true);
+				}
+				else
+				{
+					Time.timeScale = 1f;
+					isPause = false;
+					tacticalPause.SetActive(false);
+				}
 			}
-        }
+		}
     }
     void Start()
     {
+		GC = GameObject.FindWithTag("GameController").GetComponent<MainController>();
 		tacticalPause = Instantiate(Resources.Load<GameObject>("tacticalPause"), transform);
 		tacticalPause.SetActive(false);
-		var GC = GameObject.FindWithTag("GameController").GetComponent<MainController>();
 		foreach (var enemy in GC.EnemyList)
 		{
 			Instantiate(enemy);
@@ -109,7 +113,6 @@ public class FightController : MonoBehaviour
 	public void CopyHeroesFromMain()
     {
 		//копирование героев из контроллера на боевую сцену
-		var GC = GameObject.FindWithTag("GameController").GetComponent<MainController>();
 		for (int i = 0; i < 3; ++i)
 		{
 			//friends[i] = GC.friends[i];
@@ -144,11 +147,22 @@ public class FightController : MonoBehaviour
 
 	public void CopyHeroesToMain()
     {
-		var GC = GameObject.FindWithTag("GameController").GetComponent<MainController>();
+		print("скопировано");
 		for (int i = 0; i < 3; ++i)
 		{
-			GC.friends[i].hp = friends[i].hp;
 			GC.friends[i].alive = friends[i].alive;
+			GC.friends[i].hp = friends[i].hp;
+			GC.friends[i].maxhp = friends[i].maxhp;
+			if (friends[i].alive)
+			{
+				GC.friends[i].CurrentExp = friends[i].CurrentExp;
+				GC.friends[i].RequiredExp = friends[i].RequiredExp;
+				GC.friends[i].Level = friends[i].Level;
+				for (int j = 0; j < 3; ++j)
+				{
+					GC.friends[i].SpellLevel[j] = friends[i].SpellLevel[j];
+				}
+			}
 		}
 	}
 
@@ -164,7 +178,7 @@ public class FightController : MonoBehaviour
 
 	void ChangeCurrentUnit()
 	{
-		if (Input.GetKeyDown(KeyCode.Tab) && Time.timeScale != 0f)
+		if (Input.GetKeyDown(KeyCode.Tab) && !GC.pause.isPause && lvl == null)
 		{
 			if (CurrentUnit==null)
 			{
@@ -175,7 +189,10 @@ public class FightController : MonoBehaviour
 			}
 			else
 			{
-				CurrentUnit.DestroyHalo(CurrentUnit.halo);
+				if (CurrentUnit.halo!=null)
+				{
+					CurrentUnit.DestroyHalo(CurrentUnit.halo);
+				}
 				do
 				{
 					CurrentUnit = friends[(friends.IndexOf(CurrentUnit) + 1) % 3];
@@ -263,6 +280,7 @@ public class FightController : MonoBehaviour
 	}
 
 	bool finish = true;
+	public LevelUpgrade lvl = null;
     private void Update()
     {
 		Pause();
@@ -273,8 +291,34 @@ public class FightController : MonoBehaviour
 
 		if(enemies.Count == 0 && !finish)
         {
-			finish = true;
-			GameObject.FindWithTag("GameController").GetComponent<MainController>().EndBattle();
+			for (int i = 0; i < friends.Count; i++)
+			{
+				if (friends[i].alive)
+				{
+					foreach (var x in friends[i].StatusList)
+                    {
+						Destroy(x);
+                    }
+					while (friends[i].CurrentExp >= friends[i].RequiredExp)
+					{
+						if (lvl == null)
+						{ 
+							lvl = (Instantiate(Resources.Load<GameObject>("LevelUpgrade"))).GetComponent<LevelUpgrade>();
+							print("новый уровень");
+						}
+						friends[i].CurrentExp -= friends[i].RequiredExp;
+						friends[i].RequiredExp += 25 * friends[i].Level;
+						friends[i].Level++;
+						lvl.Hero.Enqueue(friends[i]);
+						lvl.Level.Enqueue((int)friends[i].Level);
+					}
+				}
+			}
+			if (lvl == null)
+			{
+				finish = true;
+				GameObject.FindWithTag("GameController").GetComponent<MainController>().EndBattle();
+			}
 		}
 		
 		if (AliveHeroes() == 0)

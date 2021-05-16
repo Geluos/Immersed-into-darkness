@@ -18,11 +18,6 @@ public class ImpBuff : MonoBehaviour
                     hero.hp = hero.maxhp;
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        MC.heroInformation?.RefreshInfo();
     }
 }

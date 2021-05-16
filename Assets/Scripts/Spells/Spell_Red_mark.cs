@@ -8,6 +8,7 @@ public class Spell_Red_mark : Spells
     public Sprite spr;
     override public void Use(Characters character)
     {
+        base.Use(character);
         HeroCharacter.PlayEffect("Метка");
         var st = Instantiate(VS, character.transform);
         st.GetComponent<SpriteRenderer>().sprite = spr;

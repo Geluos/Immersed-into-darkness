@@ -15,11 +15,6 @@ public class WitchesBuff : MonoBehaviour
                 hero.TakeHeal(30);
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        MC.heroInformation?.RefreshInfo();
     }
 }

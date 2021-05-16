@@ -8,6 +8,7 @@ public class Spell_Lunge : Spells
     public VulnerabilityStatus VS;
     override public void Use()
     {
+        base.Use();
         HeroCharacter.PlayEffect("Выпад-вар2");
         //weekPercent += (int)(Math.Min(50f, 20f * (power - 1f)));
         fightController = HeroCharacter.fightController;

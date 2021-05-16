@@ -33,7 +33,7 @@ public abstract class Enemies : Characters
 
 		IsSelected = true;
 		if (halo==null) halo = CreateHalo(Color.red);
-		if (Input.GetMouseButtonDown(0) && Time.timeScale != 0f)
+		if (Input.GetMouseButtonDown(0) && !fightController.GC.pause.isPause)
 		{
 			print("Вы нажали на врага");
 			if (fightController.select_enemy)
