@@ -13,10 +13,11 @@ public class Learn : MonoBehaviour
     {
         g[i].SetActive(true);
         i++;
-        for (int i = 0; i < e.Length; i++)
+        for (int j = 0; j < e.Length; j++)
         {
-            e[i].AttackCooldown = 1000;
-            e[i].isLearn = true;
+            e[j].DamageMax = 0;
+            e[j].DamageMin = 0;
+            e[j].isLearn = true;
         }
     }
 
@@ -25,14 +26,18 @@ public class Learn : MonoBehaviour
         g[i - 1].SetActive(false);
         g[i].SetActive(true);
         i++;
-        if (i == g.Length-1)
+    }
+
+    public void Close()
+    {
+        print(1);
+        g[6].SetActive(false);
+        for (int j = 0; j < e.Length; j++)
         {
-            for (int i = 0; i < e.Length; i++)
-            {
-                e[i].AttackCooldown = 5;
-                e[i].hp = 80;
-                e[i].isLearn = false;
-            }
+            e[j].DamageMax = 8;
+            e[j].DamageMin = 5;
+            e[j].hp = 80;
+            e[j].isLearn = false;
         }
     }
 
