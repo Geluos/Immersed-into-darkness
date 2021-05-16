@@ -157,7 +157,7 @@ public class MainController : MonoBehaviour
             if (stage > 0 && MusicForStages[stage - 1] != MusicForStages[stage])
                 PlayMusic(MusicForStages[stage]);
             var rand = new System.Random();
-            int index = rand.Next(PagesForStages.list[stage].list.Count - 1);
+            int index = rand.Next(PagesForStages.list[stage].list.Count);
             Pages.Add(Instantiate(PagesForStages.list[stage].list[index], transform));
             Pages[Pages.Count - 1].SetActive(true);
         }

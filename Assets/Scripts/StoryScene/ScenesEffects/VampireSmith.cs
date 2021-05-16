@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ImpBuff : MonoBehaviour
+public class VampireSmith : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -12,10 +12,8 @@ public class ImpBuff : MonoBehaviour
         {
             if (hero.alive)
             {
-                hero.power += 20;
-                hero.maxhp -= 10;
-                if (hero.hp > hero.maxhp)
-                    hero.hp = hero.maxhp;
+                hero.power += 12;
+                hero.hp = System.Math.Max(hero.hp - 15, 1);
             }
         }
         MC.heroInformation?.RefreshInfo();

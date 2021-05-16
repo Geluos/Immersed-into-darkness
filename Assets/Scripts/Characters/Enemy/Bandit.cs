@@ -34,13 +34,14 @@ public class Bandit : Enemies
         if (cooldown > 0) { cooldown -= Time.deltaTime; }
         else
         {
+            System.Random random = new System.Random();
             if (!invisible)
             {
-                cooldown = timeout / 3;
+                cooldown = timeout / 4 + (float)random.NextDouble();
                 invisible = true;
                 transform.localScale = new Vector3(0,0,0);
-                transform.position = startPos + new Vector3(Random.Range(-100, 100), Random.Range(-100, 100));
-                TakeHeal(Random.Range(5,20));
+                transform.position = startPos + new Vector3(Random.Range(-20, 20), Random.Range(-20, 20));
+                TakeHeal(Random.Range(2,6));
                 foreach (var x in StatusList)
                 {
                     Destroy(x.gameObject);
@@ -50,7 +51,7 @@ public class Bandit : Enemies
             }
             else
             {
-                cooldown = timeout;
+                cooldown = timeout + (float)random.NextDouble();
                 invisible = false;
                 transform.localScale = scale;
                 Combat = true;

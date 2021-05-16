@@ -257,6 +257,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 26187900}
   m_CullTransparentMesh: 0
+--- !u!1 &74684308 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8223884792593466442, guid: 1405702fa30650f42b97b948e59a49fd, type: 3}
+  m_PrefabInstance: {fileID: 8223884792478789479}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &82657138 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7065176419583781431, guid: 56860819511623349a700320bc8e7833, type: 3}
@@ -2901,7 +2906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   select_friend: 0
   select_enemy: 0
-  background: {fileID: 0}
+  background: {fileID: 74684308}
   friends: []
   enemies: []
   EnemyPref: []

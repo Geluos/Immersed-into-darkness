@@ -392,9 +392,45 @@ PrefabInstance:
       value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 4867655346323786683, guid: 4b5427bfe73533f4cb7d93935176aaad, type: 3}
+      propertyPath: Lights.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4867655346323786683, guid: 4b5427bfe73533f4cb7d93935176aaad, type: 3}
+      propertyPath: EnemyList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4867655346323786683, guid: 4b5427bfe73533f4cb7d93935176aaad, type: 3}
       propertyPath: NextPage
       value: 
-      objectReference: {fileID: 8404023593854679503, guid: e5027a1934158e64c8da35aa95c9c43a, type: 3}
+      objectReference: {fileID: 6428123074735793147, guid: f23dcc3b68d2a734bb705a6992f565b9, type: 3}
+    - target: {fileID: 4867655346323786683, guid: 4b5427bfe73533f4cb7d93935176aaad, type: 3}
+      propertyPath: MusicName
+      value: Nikfus - Cresset
+      objectReference: {fileID: 0}
+    - target: {fileID: 4867655346323786683, guid: 4b5427bfe73533f4cb7d93935176aaad, type: 3}
+      propertyPath: Background
+      value: 
+      objectReference: {fileID: 21300000, guid: 485870c7248ed774490364bfe8ca321c, type: 3}
+    - target: {fileID: 4867655346323786683, guid: 4b5427bfe73533f4cb7d93935176aaad, type: 3}
+      propertyPath: Lights.Array.data[0]
+      value: 
+      objectReference: {fileID: 5585721569966462309, guid: ae51ec3b2a4de4241828fcc3e7608305, type: 3}
+    - target: {fileID: 4867655346323786683, guid: 4b5427bfe73533f4cb7d93935176aaad, type: 3}
+      propertyPath: Lights.Array.data[1]
+      value: 
+      objectReference: {fileID: 4097352998814312846, guid: a290f062edbdd4f42932e5e07818d230, type: 3}
+    - target: {fileID: 4867655346323786683, guid: 4b5427bfe73533f4cb7d93935176aaad, type: 3}
+      propertyPath: Lights.Array.data[2]
+      value: 
+      objectReference: {fileID: 6635458219071556856, guid: b20c8a9c5248c7747abbb4bc37ec459f, type: 3}
+    - target: {fileID: 4867655346323786683, guid: 4b5427bfe73533f4cb7d93935176aaad, type: 3}
+      propertyPath: EnemyList.Array.data[0]
+      value: 
+      objectReference: {fileID: 1467034085666150536, guid: 5cfcf9af236a615449d829f62598ec8c, type: 3}
+    - target: {fileID: 4867655346323786683, guid: 4b5427bfe73533f4cb7d93935176aaad, type: 3}
+      propertyPath: EnemyList.Array.data[1]
+      value: 
+      objectReference: {fileID: 5288789024550792523, guid: 9ee92c4ab9609fb49852d5b44749bfbf, type: 3}
     - target: {fileID: 5633126238618027384, guid: 4b5427bfe73533f4cb7d93935176aaad, type: 3}
       propertyPath: m_Name
       value: To Battle
