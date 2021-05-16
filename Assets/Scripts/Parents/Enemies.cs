@@ -109,8 +109,8 @@ public abstract class Enemies : Characters
 			}
 		}
 
-		if (hp <= 0 && alive)
-		{
+		if (hp <= 0 && alive && !isLearn)
+			{
 			//Удалить все эффекты
 			fightController.enemies.Remove(this);
 			DestroyHalo(halo);
