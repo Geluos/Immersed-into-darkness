@@ -21,10 +21,4 @@ public class PlayEffect : MonoBehaviour
         yield return new WaitForSeconds(life_time);
         Destroy(gameObject);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
