@@ -145,9 +145,10 @@ MonoBehaviour:
   DamageMax: 0
   Combat: 0
   AttackTarget: {fileID: 0}
+  isLearn: 0
   time: 5
   cooldown: 7
   damage: 10
   weak: {fileID: 1790577027715245458, guid: d22b819a80c30c741b0a52be668fafb0, type: 3}
   poison: {fileID: -8996799964614128394, guid: e8b7c221d935f9b4b80c61b75d503b0c, type: 3}
-  minions: []
+  razmes: 0

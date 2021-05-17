@@ -64,10 +64,11 @@ MonoBehaviour:
   AttackType: 
   AttackCooldown: 12
   AttackTimeout: 0
-  DamageMin: 20
-  DamageMax: 30
+  DamageMin: 12
+  DamageMax: 20
   Combat: 1
   AttackTarget: {fileID: 0}
+  isLearn: 0
   time: 5
   cooldown: 10
   minion: {fileID: 6041517691677432006, guid: a940a3aa12e989943ae03184193da201, type: 3}

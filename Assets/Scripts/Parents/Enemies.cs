@@ -15,7 +15,7 @@ public abstract class Enemies : Characters
 	public bool Combat;
 	[HideInInspector] public Friends AttackTarget;
 
-	public bool isLearn = false;
+	[HideInInspector] public bool isLearn = false;
 	
 
 	virtual new public void Start()

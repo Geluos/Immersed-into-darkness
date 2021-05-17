@@ -58,7 +58,7 @@ public class HeroInformation : MonoBehaviour
         }
         if (controller.friends[num].power != 0)
         {
-            output += $"<b>Усиление способностей:</b> {controller.friends[num].power}\n";
+            output += $"<b>Усиление способностей:</b> {controller.friends[num].power}%\n";
         }
         return output;
     }

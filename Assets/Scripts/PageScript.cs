@@ -101,11 +101,11 @@ public class PageScript : MonoBehaviour
                                 ++tempt;
                             }
                             ptxt += txt[tpos];
-                            if (tempt - tpos + strl > 20)
+                            /*if (tempt - tpos + strl > 22)
                             {
                                 ptxt += "<br>";
                                 strl = 0;
-                            }
+                            }*/
                         }
                         if (tpos < txt.Length && txt[tpos] != ' ')
                             ptxt += txt[tpos];

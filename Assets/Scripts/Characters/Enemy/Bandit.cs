@@ -37,7 +37,7 @@ public class Bandit : Enemies
             System.Random random = new System.Random();
             if (!invisible)
             {
-                cooldown = timeout / 4 + (float)random.NextDouble();
+                cooldown = timeout / 5 + (float)Random.Range(0, 11) / 10;
                 invisible = true;
                 transform.localScale = new Vector3(0,0,0);
                 transform.position = startPos + new Vector3(Random.Range(-20, 20), Random.Range(-20, 20));
@@ -51,7 +51,7 @@ public class Bandit : Enemies
             }
             else
             {
-                cooldown = timeout + (float)random.NextDouble();
+                cooldown = timeout + (float)random.NextDouble()*2;
                 invisible = false;
                 transform.localScale = scale;
                 Combat = true;

@@ -52,7 +52,7 @@ public abstract class Friends : Characters
 	void OnMouseOver()
 	{
 		IsSelected = true;
-		if (halo==null && ready) 
+		if (halo==null && ready && alive) 
 			halo = CreateHalo(Color.green);
 		if (Input.GetMouseButtonDown(0) && !fightController.GC.pause.isPause)
 		{

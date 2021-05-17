@@ -119,9 +119,10 @@ MonoBehaviour:
   DamageMax: 8
   Combat: 1
   AttackTarget: {fileID: 0}
+  isLearn: 0
   poison: {fileID: -8996799964614128394, guid: e8b7c221d935f9b4b80c61b75d503b0c, type: 3}
-  timeout: 5
-  cooldown: 5
+  timeout: 6
+  cooldown: 6
 --- !u!61 &1247904968258274078
 BoxCollider2D:
   m_ObjectHideFlags: 0
