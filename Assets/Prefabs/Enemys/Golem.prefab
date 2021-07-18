@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 809ed2ab17a089a4fb9bf80b34135e5e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 391179875
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8a2abb5ca6ff9494a94a034cc5afab0b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -99,17 +99,27 @@ MonoBehaviour:
   Name: 
   maxhp: 150
   hp: 0
+  HpRegen: 0
+  CooldownReduction: 0
   fightController: {fileID: 0}
-  alive: 0
   height: 1
+  IsSelected: 0
+  HB: {fileID: 0}
+  spriteRend: {fileID: 0}
+  StatusList: []
+  alive: 0
+  power: 0
+  defenceMultiply: 1
+  halo: {fileID: 0}
+  healthBar: {fileID: 0}
   AttackType: Melee
-  AttackPref: {fileID: 5907825325455355098, guid: 609a6ff8589470b40801e25470174791, type: 3}
   AttackCooldown: 6
   AttackTimeout: 0
   DamageMin: 25
   DamageMax: 30
   Combat: 1
   AttackTarget: {fileID: 0}
+  isLearn: 0
 --- !u!61 &4333648086047084417
 BoxCollider2D:
   m_ObjectHideFlags: 0

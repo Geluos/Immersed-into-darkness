@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f7367ecedfe5d1542b670cdab1f589d5, type: 2}
+  - {fileID: 2100000, guid: 809ed2ab17a089a4fb9bf80b34135e5e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 391179875
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 591cf1f0d86dea143b581d8c21ef3735, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -137,6 +137,7 @@ MonoBehaviour:
   power: 0
   defenceMultiply: 1
   halo: {fileID: 0}
+  healthBar: {fileID: 0}
   Spells:
   - {fileID: 1708011467649049992, guid: 3fa8b91cc4efffe4288fbced014c8f39, type: 3}
   - {fileID: 7006195040736533456, guid: 9cc09e18e432c0a4cbaae29d0cd79182, type: 3}

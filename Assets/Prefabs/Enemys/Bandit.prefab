@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f7367ecedfe5d1542b670cdab1f589d5, type: 2}
+  - {fileID: 2100000, guid: 809ed2ab17a089a4fb9bf80b34135e5e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 391179875
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1d57e8aecb9a1c740afaeaee292d1911, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -111,6 +111,7 @@ MonoBehaviour:
   power: 0
   defenceMultiply: 1
   halo: {fileID: 0}
+  healthBar: {fileID: 0}
   AttackType: Melee
   AttackCooldown: 5
   AttackTimeout: 0
@@ -118,6 +119,7 @@ MonoBehaviour:
   DamageMax: 14
   Combat: 1
   AttackTarget: {fileID: 0}
+  isLearn: 0
   poison: {fileID: -8996799964614128394, guid: e8b7c221d935f9b4b80c61b75d503b0c, type: 3}
   timeout: 5
   cooldown: 5

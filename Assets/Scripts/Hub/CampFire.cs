@@ -1,16 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class CampFire : MonoBehaviour
 {
-    public Light MyLight;
-    private float iStart;
+    public Light2D MyLight;
     private float xStart;
     private float yStart;
-    void Awake()
+    void Start()
     {
-        iStart = MyLight.intensity;
         xStart = transform.position.x;
         yStart = transform.position.y;
     }
@@ -18,6 +17,14 @@ public class CampFire : MonoBehaviour
     void Update()
     {
         transform.position = new Vector2(xStart + Random.Range(-1, 1), yStart + Random.Range(-1, 1));
-        MyLight.intensity = iStart + Random.Range(-3, 3);
+        if(MyLight.intensity>0.3&& MyLight.intensity<0.7)
+            MyLight.intensity += (float)Random.Range(-1, 2) / 50;
+        else
+        {
+            if (MyLight.intensity > 0.3)
+                MyLight.intensity += -0.05f;
+            else
+                MyLight.intensity += 0.05f;
+        }
     }
 }
