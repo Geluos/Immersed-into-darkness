@@ -13,6 +13,9 @@ public class PauseGame : MonoBehaviour
 	public AudioMixerGroup EffectsMixer;
 	public GameObject[] buttons;
 
+	// (от 1 до 10 - чем больше, тем аккуратнее настройка)
+	private float sens_music = 4;
+
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Escape))
@@ -31,6 +34,11 @@ public class PauseGame : MonoBehaviour
 	public void Start()
     {
 		DontDestroyOnLoad(pauseUI);
+
+		//Стартовые настройки громкости музыки
+		MasterMixer.audioMixer.SetFloat("MasterVolume", Mathf.Lerp(-80, 5, (float)System.Math.Pow(0.8, 1.0 / sens_music)));
+		MusicMixer.audioMixer.SetFloat("MusicVolume", Mathf.Lerp(-80, 5, (float)System.Math.Pow(0.8, 1.0 / sens_music)));
+		EffectsMixer.audioMixer.SetFloat("EffectsVolume", Mathf.Lerp(-80, 5, (float)System.Math.Pow(0.8, 1.0 / sens_music)));
 	}
 
 	public void Resume()
@@ -67,17 +75,17 @@ public class PauseGame : MonoBehaviour
 
 	public void ChangeVolumeMaster(float volume)
     {
-		MasterMixer.audioMixer.SetFloat("MasterVolume", Mathf.Lerp(-80, 0, volume));
+		MasterMixer.audioMixer.SetFloat("MasterVolume", Mathf.Lerp(-80, 5, (float)System.Math.Pow(volume, 1.0 / sens_music) ));
     }
 
 	public void ChangeVolumeMusic(float volume)
 	{
-		MusicMixer.audioMixer.SetFloat("MusicVolume", Mathf.Lerp(-80, 0, volume));
+		MusicMixer.audioMixer.SetFloat("MusicVolume", Mathf.Lerp(-80, 5, (float)System.Math.Pow(volume, 1.0 / sens_music) ));
 	}
 
 	public void ChangeVolumeEffects(float volume)
 	{
-		EffectsMixer.audioMixer.SetFloat("EffectsVolume", Mathf.Lerp(-80, 0, volume));
+		EffectsMixer.audioMixer.SetFloat("EffectsVolume", Mathf.Lerp(-80, 5, (float)System.Math.Pow(volume, 1.0 / sens_music) ));
 	}
 
 	public void Quit()
