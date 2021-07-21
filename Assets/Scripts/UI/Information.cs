@@ -216,8 +216,8 @@ public class Information : MonoBehaviour
 		switch (name)
 		{
 			case "Отравление": { info = $"-{cg}{newStates[0]}{cw}({oldStates[0]}) HP/сек. на {cg}{newStates[1]}{cw}({oldStates[1]}) секунд. Эффекты суммируются"; break; }
-			case "Ослабление": { info = $"Урон от атаки уменьшен на {newStates[0]}({oldStates[0]})%"; break; }
-			case "Одержимость": { info = $"+{cg}{newStates[0]}{cw}({oldStates[0]})% к эффективности способностей на {newStates[1]}{cw}({oldStates[1]}) секунд. После окончания эффекта наносит {cg}{newStates[2]}{cw}({oldStates[2]}) урона"; break; }
+			case "Ослабление": { info = $"Урон от атаки уменьшен на {cg}{newStates[0]}{cw}({oldStates[0]})%"; break; }
+			case "Одержимость": { info = $"+{cg}{newStates[0]}{cw}({oldStates[0]})% к эффективности способностей на {cg}{newStates[1]}{cw}({oldStates[1]}) секунд. После окончания эффекта наносит {cg}{newStates[2]}{cw}({oldStates[2]}) урона"; break; }
 			case "Уязвимость": { info = $"+{cg}{newStates[0]}{cw}({oldStates[0]})% к получаемому урону на {cg}{newStates[1]}{cw}({oldStates[1]}) секунд"; break; }
 			case "Под защитой": { info = $"-{cg}{newStates[0]}{cw}({oldStates[0]})% к получаемому урону на {cg}{newStates[1]}{cw}({oldStates[1]}) секунд"; break; }
 			case "Пробитие": { info = $"+{cg}{newStates[0]}{cw}({oldStates[0]})% получаемого урона"; break; }

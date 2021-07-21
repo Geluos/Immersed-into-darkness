@@ -149,14 +149,27 @@ public abstract class Characters : MonoBehaviour
 		StartCoroutine(DoTransparent());
 		
 	}
-	
+	public void CreatePopUpNumbers(float number)
+    {
+		if (fightController != null)
+		{
+			if (number != 0)
+			{
+				var popUpNumbers = Instantiate(fightController.PopUpNumbersPref, transform.position + new Vector3(0, height / 4), transform.rotation).GetComponent<PopUpNumbers>();
+				popUpNumbers.transform.position += new Vector3(UnityEngine.Random.Range(-48f, 48f), UnityEngine.Random.Range(-48f, 48f));
+				popUpNumbers.number = number;
+			}
+		}
+    }
 	virtual public void TakeDamage(float damage)
 	{
+		CreatePopUpNumbers(Mathf.Ceil(-damage * Mathf.Max(0, defenceMultiply)));
 		hp = Math.Max(0f, hp-damage*Mathf.Max(0,defenceMultiply));
 	}
 	
 	public void TakeHeal(float heal)
 	{
+		CreatePopUpNumbers(Mathf.Floor(heal));
 		hp = Math.Min(hp + heal, maxhp);
 	}
 

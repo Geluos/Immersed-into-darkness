@@ -37,6 +37,7 @@ public class FightController : MonoBehaviour
 	private bool isPause = false;
 	public MainController GC;
 
+	public GameObject PopUpNumbersPref;
 	private void Pause()
     {
 		if (!GC.pause.isPause && lvl == null)
@@ -62,6 +63,7 @@ public class FightController : MonoBehaviour
     {
 		GC = GameObject.FindWithTag("GameController").GetComponent<MainController>();
 		tacticalPause = Instantiate(Resources.Load<GameObject>("tacticalPause"), transform);
+		PopUpNumbersPref = Resources.Load<GameObject>("PopUpNumbers");
 		tacticalPause.SetActive(false);
 		foreach (var enemy in GC.EnemyList)
 		{

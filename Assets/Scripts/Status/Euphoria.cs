@@ -10,11 +10,17 @@ public class Euphoria : Status //Эйфория
         base.Start();
         character.defenceMultiply -= Information.GetEffectStates("Эйфория", level, power)[0]/100;
         int count = 0;
+        bool removePain = true;
         foreach (var x in character.StatusList)
         {
             if (x is Euphoria)
             {
                 count++;
+            }
+            if (x is Pain && removePain)
+            {
+                removePain = false;
+                Destroy(x.gameObject);
             }
         }
         if (count >= 3)
